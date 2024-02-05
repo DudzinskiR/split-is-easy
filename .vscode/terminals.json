@@ -1,0 +1,56 @@
+{
+  "autorun": false,
+  "terminals": [
+    {
+      "name": "Frontend - host",
+      "focus": false,
+      "execute": true,
+      "color": "terminal.ansiCyan",
+      "icon": "globe",
+      "commands": ["cd ./frontend", "npm run dev"]
+    },
+    {
+      "name": "Frontend - test",
+      "focus": false,
+      "execute": true,
+      "commands": ["cd ./frontend", "npm run test -- --ui"],
+      "color": "terminal.ansiCyan",
+      "icon": "beaker",
+      "split": "Frontend - host"
+    },
+    {
+      "name": "Backend - host",
+      "focus": false,
+      "execute": true,
+      "color": "terminal.ansiRed",
+      "icon": "database",
+      "commands": ["cd ./backend", "npm run dev"]
+    },
+    {
+      "name": "Backend - test",
+      "focus": false,
+      "execute": true,
+      "commands": ["cd ./backend", "npm run test -- --ui"],
+      "color": "terminal.ansiRed",
+      "icon": "beaker",
+      "split": "Backend - host"
+    },
+    {
+      "name": "Npm - Frontend",
+      "focus": false,
+      "execute": true,
+      "color": "terminal.ansiBlue",
+      "icon": "globe",
+      "commands": ["cd ./frontend", "npm outdated"]
+    },
+    {
+      "name": "Npm - Backend",
+      "focus": false,
+      "execute": true,
+      "commands": ["cd ./backend", "npm outdated"],
+      "color": "terminal.ansiBlue",
+      "icon": "database",
+      "split": "Npm - Frontend"
+    }
+  ]
+}
