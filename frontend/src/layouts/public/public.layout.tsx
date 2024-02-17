@@ -20,7 +20,7 @@ const PublicLayout = () => {
           />
         </div>
       </header>
-      <div className="flex justify-center">
+      <div className="flex justify-center overflow-x-hidden">
         <PublicRoutes />
       </div>
     </>
