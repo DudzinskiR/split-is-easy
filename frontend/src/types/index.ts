@@ -1,5 +1,6 @@
 export * from "./account";
 export * from "./bill";
+export * from "./carousel";
 export * from "./currency";
 export * from "./exception";
 export * from "./invitation";
