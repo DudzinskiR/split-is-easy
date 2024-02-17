@@ -14,7 +14,7 @@ const segments: { component: ReactNode; fullScreen?: boolean }[] = [
   { component: <PublicHomeTitleSegment /> },
   { component: <PublicHomeCarousel />, fullScreen: true },
   { component: <PublicHomeForGroupSegment /> },
-  { component: <PublicHomeStatisticSegment /> },
+  { component: <PublicHomeStatisticSegment />, fullScreen: true },
   { component: <PublicHomeFAQSegment /> },
   { component: <PublicHomeFooterSegment /> },
 ];

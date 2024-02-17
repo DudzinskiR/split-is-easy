@@ -8,3 +8,4 @@ export * from "./navbar";
 export * from "./new-payment-button";
 export * from "./pie-chart";
 export * from "./virtual-list";
+export * from "./visible-count-up";
