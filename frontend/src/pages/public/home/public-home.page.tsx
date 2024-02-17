@@ -1,5 +1,6 @@
 import { ReactNode } from "react";
 import {
+  PublicHomeCarousel,
   PublicHomeFAQSegment,
   PublicHomeFooterSegment,
   PublicHomeForGroupSegment,
@@ -9,20 +10,25 @@ import {
 
 import { PublicHomeSegmentTemplate } from "./components/segment-template/public-home-segment-template.component";
 
-const segments: ReactNode[] = [
-  <PublicHomeTitleSegment />,
-  <PublicHomeStatisticSegment />,
-  <PublicHomeForGroupSegment />,
-  <PublicHomeFAQSegment />,
-  <PublicHomeFooterSegment />,
+const segments: { component: ReactNode; fullScreen?: boolean }[] = [
+  { component: <PublicHomeTitleSegment /> },
+  { component: <PublicHomeCarousel />, fullScreen: true },
+  { component: <PublicHomeForGroupSegment /> },
+  { component: <PublicHomeStatisticSegment /> },
+  { component: <PublicHomeFAQSegment /> },
+  { component: <PublicHomeFooterSegment /> },
 ];
 
 const PublicHomePage = () => {
   return (
     <div className="flex flex-col w-full">
       {segments.map((item, index) => (
-        <PublicHomeSegmentTemplate whiteBackground={index % 2 == 0} key={index}>
-          {item}
+        <PublicHomeSegmentTemplate
+          whiteBackground={index % 2 == 0}
+          key={index}
+          fullScreen={item.fullScreen}
+        >
+          {item.component}
         </PublicHomeSegmentTemplate>
       ))}
     </div>

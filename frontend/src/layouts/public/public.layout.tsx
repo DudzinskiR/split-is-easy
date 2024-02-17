@@ -7,7 +7,7 @@ import { PROJECT_NAME } from "src/utils/const";
 const PublicLayout = () => {
   return (
     <>
-      <header className="fixed w-full h-16 shadow-md flex justify-center bg-white">
+      <header className="fixed w-full h-16 shadow-md flex justify-center bg-white z-[100]">
         <div className="flex flex-row justify-around items-center max-w-7xl w-screen">
           <Link to="/">
             <div className="text-2xl font-semibold">{PROJECT_NAME}</div>
