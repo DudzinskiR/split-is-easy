@@ -3,11 +3,13 @@ import { twJoin } from "tailwind-merge";
 interface CarouselLayerButtonProps {
   isShow: boolean;
   isLocalShow: boolean;
+  onClick?: () => void;
 }
 
 export const CarouselLayerButton = ({
   isShow,
   isLocalShow,
+  onClick,
 }: CarouselLayerButtonProps) => {
   return (
     <div className="absolute z-50 bottom-1/4 translate-y-[25%] overflow-hidden">
@@ -22,6 +24,7 @@ export const CarouselLayerButton = ({
             "md:p-3 p-1 md:text-xl text-sm font-semibold duration-150",
             "bg-transparent hover:bg-white hover:border-0 border-2 text-white hover:text-black"
           )}
+          onClick={onClick}
         >
           LOGIN
         </button>

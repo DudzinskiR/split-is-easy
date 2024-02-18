@@ -12,12 +12,14 @@ interface CarouselLayerProps {
   title: string;
   isShow: boolean;
   backgroundURL: string;
+  onButtonClick?: () => void;
 }
 
 export const CarouselLayer = ({
   title,
   backgroundURL,
   isShow,
+  onButtonClick,
 }: CarouselLayerProps) => {
   const [isLocalShow, setLocalShow] = useState(isShow);
   const { newTimer, clearAllTimers } = useTimers();
@@ -49,7 +51,11 @@ export const CarouselLayer = ({
           isShow={isShow}
           isLocalShow={isLocalShow}
         />
-        <CarouselLayerButton isShow={isShow} isLocalShow={isLocalShow} />
+        <CarouselLayerButton
+          isShow={isShow}
+          isLocalShow={isLocalShow}
+          onClick={onButtonClick}
+        />
         <CarouselLayerBackground backgroundURL={backgroundURL} />
       </div>
     </>

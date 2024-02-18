@@ -78,6 +78,7 @@ export const Carousel = ({
           key={index}
           title={item.title}
           backgroundURL={item.backgroundURL}
+          onButtonClick={item.onButtonClick}
           isShow={indexToShow === index}
         />
       ))}
