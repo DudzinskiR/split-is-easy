@@ -36,6 +36,7 @@ export const firebaseAuth = () => {
 export const signInWithGoogle = async () => {
   try {
     await signInWithPopup(auth, provider);
+    localStorage.setItem("LOGGED", "TRUE");
     return FirebaseAuthResponse.SUCCESS;
   } catch (e) {
     if (e instanceof FirebaseError) return checkFirebaseError(e);
@@ -45,7 +46,7 @@ export const signInWithGoogle = async () => {
 export const signInWithEmail = async (email: string, password: string) => {
   try {
     await signInWithEmailAndPassword(auth, email, password);
-
+    localStorage.setItem("LOGGED", "TRUE");
     return FirebaseAuthResponse.SUCCESS;
   } catch (e) {
     if (e instanceof FirebaseError) return checkFirebaseError(e);
@@ -55,7 +56,7 @@ export const signInWithEmail = async (email: string, password: string) => {
 export const signUpWithMail = async (email: string, password: string) => {
   try {
     await createUserWithEmailAndPassword(auth, email, password);
-
+    localStorage.setItem("LOGGED", "TRUE");
     return FirebaseAuthResponse.SUCCESS;
   } catch (e) {
     if (e instanceof FirebaseError) return checkFirebaseError(e);
@@ -83,5 +84,6 @@ export const changePassword = async (oldPassword: string, password: string) => {
 };
 
 export const signOutAccount = async () => {
+  localStorage.removeItem("LOGGED");
   getAuth().signOut();
 };

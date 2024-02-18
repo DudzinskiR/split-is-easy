@@ -28,6 +28,10 @@ function App() {
     };
   }, [userStatus]);
 
+  if (userStatus === "UNKNOWN" && !localStorage.getItem("LOGGED")) {
+    return <PublicLayout />;
+  }
+
   switch (userStatus) {
     case "LOGGED":
       return <UserLayout />;
