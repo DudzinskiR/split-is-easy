@@ -22,7 +22,7 @@ export const PublicHomeSegmentTemplate = ({
       {fullScreen ? (
         <>{children}</>
       ) : (
-        <div className={"max-w-7xl w-screen my-5"}>{children}</div>
+        <div className={"max-w-7xl w-screen my-5 py-2"}>{children}</div>
       )}
     </div>
   );
