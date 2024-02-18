@@ -1,5 +1,4 @@
-import forGroupImage from "src/assets/for-group.png";
-
+import promo from "src/assets/promo.png";
 const group: { name: string; text: string }[] = [
   {
     name: "Housemates",
@@ -51,7 +50,7 @@ export const PublicHomeForGroupSegment = () => {
           </ul>
         </div>
         <div className="flex justify-center items-center mt-5">
-          <img src={forGroupImage} alt="group" className="" />
+          <img src={promo} alt="group" className="" />
         </div>
       </div>
     </section>
