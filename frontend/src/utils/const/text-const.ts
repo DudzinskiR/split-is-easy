@@ -1,1 +1,1 @@
-export const PROJECT_NAME = "Split is Ease";
+export const PROJECT_NAME = "Split is Easy";
