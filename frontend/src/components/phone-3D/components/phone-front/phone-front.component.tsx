@@ -1,10 +1,6 @@
 import { usePhone3DContext } from "../../hook/phone-3D.hook";
-
-interface PhoneFrontProps {
-  text: string;
-}
-
-export const PhoneFront = ({ text }: PhoneFrontProps) => {
+import aaa from "src/assets/Przechwytywanie.png";
+export const PhoneFront = () => {
   const { length, width, height, radius } = usePhone3DContext();
 
   return (
@@ -31,14 +27,19 @@ export const PhoneFront = ({ text }: PhoneFrontProps) => {
           boxShadow: "inset 0px 0px 4px 2px rgba(50, 50, 50, 0.3)",
         }}
       >
-        <div className="w-full flex justify-center">
+        <div className="absolute w-full flex justify-center">
           <div className="relative w-1/2 bg-zinc-900 h-[15px] rounded-b-lg flex items-center shadow-[0px_2px_3px_1px_rgba(50,50,50,0.5)]">
             <div className="w-[8px] h-[8px] bg-zinc-800 rounded-full absolute left-[10px] top-[2px]"></div>
           </div>
         </div>
-        <div className="flex h-full justify-center items-center text-3xl text-white">
+        <img
+          src={aaa}
+          className="h-full absolute top-0 left-0 -z-10"
+          style={{ borderRadius: `${radius}px` }}
+        />
+        {/* <div className="flex h-full justify-center items-center text-3xl text-white">
           - {text} -
-        </div>
+        </div> */}
       </div>
     </div>
   );
