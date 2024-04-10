@@ -8,5 +8,6 @@ export * from "./navbar";
 export * from "./new-payment-button";
 export * from "./phone-3D";
 export * from "./pie-chart";
+export * from "./ping";
 export * from "./virtual-list";
 export * from "./visible-count-up";
