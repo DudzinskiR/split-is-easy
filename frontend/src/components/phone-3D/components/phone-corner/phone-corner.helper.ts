@@ -1,5 +1,5 @@
 import { CSSProperties } from "react";
-import { Vector2 } from "src/types";
+import { Vector2 } from "src/utils/math";
 
 export const getCornersStyles = (
   nodes: number,
@@ -52,10 +52,9 @@ const getAngleDeg = (a: Vector2, b: Vector2) => {
 const getCornerPoints2D = (nodes: number, radius: number) => {
   const points: Vector2[] = [];
   for (let i = 0; i < nodes; i++) {
-    points.push({
-      x: calcPosX(nodes, radius, i),
-      y: calcPosY(nodes, radius, i),
-    });
+    points.push(
+      new Vector2(calcPosX(nodes, radius, i), calcPosY(nodes, radius, i))
+    );
   }
 
   return points;
