@@ -10,4 +10,3 @@ export * from "./other";
 export * from "./response";
 export * from "./socket";
 export * from "./user";
-export * from "./vector";
