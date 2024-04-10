@@ -7,10 +7,12 @@ import { PROJECT_NAME } from "src/utils/const";
 const PublicLayout = () => {
   return (
     <>
-      {/* <header className="fixed w-full h-16 shadow-md flex justify-center bg-white z-[100]">
+      <header className="fixed w-full h-16 shadow-md flex justify-center bg-transparent z-[100]">
         <div className="flex flex-row justify-around items-center max-w-7xl w-screen">
           <Link to="/">
-            <div className="text-2xl font-semibold">{PROJECT_NAME}</div>
+            <div className="text-2xl font-semibold text-white">
+              {PROJECT_NAME}
+            </div>
           </Link>
           <Button
             color={ButtonColor.PURPLE}
@@ -19,8 +21,8 @@ const PublicLayout = () => {
             to="/login"
           />
         </div>
-      </header> */}
-      <div className="flex justify-center overflow-x-hidden">
+      </header>
+      <div className="relative flex justify-center overflow-x-hidden w-full">
         <PublicRoutes />
       </div>
     </>

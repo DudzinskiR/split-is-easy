@@ -24,6 +24,7 @@ const segments: { component: ReactNode; fullScreen?: boolean }[] = [
 const PublicHomePage = () => {
   return (
     <div className="flex flex-col w-full">
+      {/* <TestComponent /> */}
       {segments.map((item, index) => (
         <PublicHomeSegmentTemplate
           whiteBackground={index % 2 == 0}

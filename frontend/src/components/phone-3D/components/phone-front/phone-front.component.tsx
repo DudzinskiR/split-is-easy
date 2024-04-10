@@ -37,9 +37,6 @@ export const PhoneFront = () => {
           className="h-full absolute top-0 left-0 -z-10"
           style={{ borderRadius: `${radius}px` }}
         />
-        {/* <div className="flex h-full justify-center items-center text-3xl text-white">
-          - {text} -
-        </div> */}
       </div>
     </div>
   );
