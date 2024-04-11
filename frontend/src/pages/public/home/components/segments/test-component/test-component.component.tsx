@@ -13,6 +13,7 @@ import {
   startPhoneBTransform,
 } from "./const";
 import { useRotatePhones } from "./hooks";
+import { GridCursorOverlay } from "src/components";
 
 const multiply = 1.5;
 
@@ -41,6 +42,7 @@ const TestComponent = () => {
           "linear-gradient(45deg, rgba(0,0,70,1) 0%, rgba(79,28,150,1) 33%, rgba(28,181,224,1) 100%)",
       }}
     >
+      <GridCursorOverlay />
       <div className="relative max-w-7xl w-screen h-full">
         <Description delay={2} />
         <div
