@@ -5,7 +5,7 @@ import { twMerge } from "tailwind-merge";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   text?: string;
-  color?: ButtonColor;
+  color?: ButtonColor | string;
   rounded?: boolean;
   icons?: ButtonIcons;
   to?: string;
@@ -31,12 +31,12 @@ export const Button = ({
     return (
       <button
         className={twMerge(
-          color || ButtonColor.BLUE,
           disabled
             ? "saturate-0 cursor-default"
             : "cursor-pointer hover:saturate-[1.5] duration-100",
           rounded ? "rounded-full" : "rounded-lg",
           "flex justify-center gap-2 items-center shadow-md text-white font-semibold select-none p-3 no-underline w-full",
+          color || ButtonColor.BLUE,
           to ? "" : className
         )}
         disabled={disabled}
