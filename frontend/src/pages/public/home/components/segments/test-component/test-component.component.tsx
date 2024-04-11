@@ -41,27 +41,7 @@ const TestComponent = () => {
       }}
     >
       <div className="relative max-w-7xl w-screen h-full">
-        {/* <div className="h-full flex items-center">
-          <div className="flex flex-col items-center justify-center w-full sm:w-1/3 mt-5 sm:mt-0 gap-5">
-            <h1>
-              <p className="text-6xl font-semibold text-center text-white">
-                Shared Bills, Shared Experiences
-              </p>
-              <p className="text-center text-xl">
-                Our app makes finances easy and enjoyable!
-              </p>
-            </h1>
-            <div className="flex sm:flex-row flex-col justify-around items-center gap-5 w-full">
-              <Button text="Login" className="w-40" to="/login" />
-              <Button
-                text="Sign up"
-                className="w-40"
-                color={ButtonColor.PURPLE}
-                to="/login?t=sign-up"
-              />
-            </div>
-          </div>
-        </div> */}
+        <Description delay={2} />
         <div
           className="right-0 top-1/2 translate-y-[calc(-50%+50px)] scale-[0.85]"
           ref={phonesRef}
