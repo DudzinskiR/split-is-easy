@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { useTimers } from "src/hooks";
 
 import { Pings } from "./components";
+import { Description, Pings } from "./components";
 import { Phones } from "./components/phones/phones";
 import {
   finishPhoneATransform,
