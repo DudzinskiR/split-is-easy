@@ -88,13 +88,13 @@ export class Transform3D {
   public addRotation(x: number, y: number, z: number): Transform3D;
   public addRotation(arg1: number | Vector3, y?: number, z?: number) {
     if (arg1 instanceof Vector3) {
-      this._rotation = arg1;
+      this._rotation.add(arg1);
     } else if (
       typeof arg1 === "number" &&
       typeof y === "number" &&
       typeof z === "number"
     ) {
-      this._rotation = new Vector3(arg1, y, z);
+      this._rotation.add(arg1, y, z);
     } else {
       throw new Error("Invalid arguments provided to add rotation function");
     }
@@ -106,13 +106,13 @@ export class Transform3D {
   public addPosition(x: number, y: number, z: number): Transform3D;
   public addPosition(arg1: number | Vector3, y?: number, z?: number) {
     if (arg1 instanceof Vector3) {
-      this._position = arg1;
+      this._position.add(arg1);
     } else if (
       typeof arg1 === "number" &&
       typeof y === "number" &&
       typeof z === "number"
     ) {
-      this._position = new Vector3(arg1, y, z);
+      this._position.add(arg1, y, z);
     } else {
       throw new Error("Invalid arguments provided to add position function");
     }
