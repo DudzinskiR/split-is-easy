@@ -22,9 +22,14 @@ export default {
           "10%": { opacity: 1 },
           "100%": { opacity: 0, transform: "scale(1)" },
         },
+        reveal: {
+          "20%": { opacity: 0 },
+          "100%": { opacity: 1, top: 0 },
+        },
       },
       animation: {
         "custom-ping": "custom-ping 6s ease-in-out infinite",
+        reveal: "reveal 1s ease-in-out ",
       },
     },
   },
