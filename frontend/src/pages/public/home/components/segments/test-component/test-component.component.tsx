@@ -36,7 +36,7 @@ const TestComponent = () => {
 
   return (
     <div
-      className="w-full h-screen select-none relative flex justify-center"
+      className="w-full h-screen relative flex justify-center"
       style={{
         background:
           "linear-gradient(45deg, rgba(0,0,70,1) 0%, rgba(79,28,150,1) 33%, rgba(28,181,224,1) 100%)",
