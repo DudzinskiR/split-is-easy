@@ -1,5 +1,6 @@
 export * from "./box";
 export * from "./button";
+export * from "./chat-bubble-3d";
 export * from "./expandable-bar";
 export * from "./fade-in-out";
 export * from "./faq";
