@@ -9,8 +9,8 @@ export class Transform3D {
   constructor(arg1: Transform3D | Vector3 | undefined, rotation?: Vector3) {
     if (arg1) {
       if (arg1 instanceof Transform3D) {
-        this._position = arg1._position;
-        this._rotation = arg1._rotation;
+        this._position = new Vector3(arg1._position);
+        this._rotation = new Vector3(arg1._rotation);
       } else if (arg1 instanceof Vector3) {
         this._position = arg1;
         if (rotation) {
