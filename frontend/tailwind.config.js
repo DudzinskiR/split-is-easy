@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 import vitePluginRequire from "vite-plugin-require";
-import { animationDelay, animationFill } from "./tailwind";
+import { animation } from "./tailwind";
 const defaultTheme = vitePluginRequire("tailwindcss/defaultTheme");
 
 export default {
@@ -52,9 +52,5 @@ export default {
       },
     },
   },
-  plugins: [
-    vitePluginRequire("@tailwindcss/forms"),
-    animationDelay,
-    animationFill,
-  ],
+  plugins: [vitePluginRequire("@tailwindcss/forms"), animation],
 };

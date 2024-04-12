@@ -1,4 +1,4 @@
-import plugin from "tailwindcss/plugin";
+import { PluginAPI } from "tailwindcss/types/config";
 
 const defaultValues = [
   "backwards",
@@ -12,10 +12,10 @@ const defaultValues = [
   "unset",
 ];
 
-export const animationFill = plugin(({ addUtilities, e }) => {
+export const animationFill = ({ addUtilities, e }: PluginAPI) => {
   const utilities = defaultValues.map((item) => ({
     [`.${e(`animation-fill-${item}`)}`]: { animationFillMode: `${item}` },
   }));
 
   addUtilities(utilities);
-});
+};
