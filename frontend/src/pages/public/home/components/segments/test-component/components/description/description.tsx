@@ -28,13 +28,13 @@ export const Description = React.memo(({ delay }: DescriptionProps) => {
         style={{ animationDelay: "4s", animationFillMode: "forwards" }}
       >
         <Button
-          color="bg-white hover:bg-slate-200 text-indigo-500"
+          color="bg-white hover:bg-slate-200 text-indigo-700"
           className="w-40"
           text="Login"
           to="/login"
         />
         <Button
-          color="bg-white hover:bg-slate-200 text-indigo-500"
+          color="bg-white hover:bg-slate-200 text-indigo-700"
           className=" w-40"
           text="Sign up"
           to="/login?t=sign-up"
