@@ -5,10 +5,14 @@ import { Vector2 } from "src/utils/math";
 export const useRotatePhones = () => {
   const [rotation, setRotation] = useState<Vector2>(Vector2.zero);
   const phonesRef = useRef<HTMLDivElement>(null);
-  const mousePosition = useMousePosition();
+  const { mousePosition, ref: containerRef } = useMousePosition();
 
   useEffect(() => {
     if (phonesRef.current === null) return;
+    if (!mousePosition) {
+      setRotation(Vector2.zero);
+      return;
+    }
 
     const top = phonesRef.current.getBoundingClientRect().top;
     const height = phonesRef.current.getBoundingClientRect().height;
@@ -32,5 +36,5 @@ export const useRotatePhones = () => {
     return result;
   };
 
-  return { rotation, phonesRef };
+  return { rotation, phonesRef, containerRef };
 };

@@ -11,6 +11,7 @@ import {
 } from "./const";
 import { useRotatePhones } from "./hooks";
 import { GridCursorOverlay } from "src/components";
+import { twJoin } from "tailwind-merge";
 
 const multiply = 1.5;
 
@@ -18,7 +19,7 @@ const TestComponent = () => {
   const [phoneATransform, setPhoneATransform] = useState(startPhoneATransform);
   const [phoneBTransform, setPhoneBTransform] = useState(startPhoneBTransform);
 
-  const { rotation, phonesRef } = useRotatePhones();
+  const { rotation, phonesRef, containerRef } = useRotatePhones();
   const { newTimer, clearAllTimers } = useTimers();
 
   useEffect(() => {
@@ -33,6 +34,7 @@ const TestComponent = () => {
 
   return (
     <div
+      ref={containerRef}
       className="w-full h-screen relative flex justify-center"
       style={{
         background:

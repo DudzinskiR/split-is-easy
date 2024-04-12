@@ -20,9 +20,8 @@ export const GridCursorOverlay = React.memo(
     gridLineWidth = 2,
   }: GridCursorOverlayProps) => {
     const canvasRef = useRef<HTMLCanvasElement>(null);
-    const mousePosition = useMousePosition();
+    const { mousePosition, ref: mousePositionRef } = useMousePosition();
     const { ref, height, width } = useRefHeight();
-
     useEffect(() => {
       if (!canvasRef.current) return;
       if (!width && !height) return;
@@ -37,7 +36,14 @@ export const GridCursorOverlay = React.memo(
         imageData = ctx.createImageData(width, height);
         imageBuffer = new Uint32Array(imageData.data.buffer);
       }
+
       new Uint32Array(imageData.data.buffer).fill(0);
+
+      if (!mousePosition) {
+        ctx.putImageData(imageData, 0, 0);
+        return;
+      }
+
       for (
         let x = mousePosition.x - radius;
         x < mousePosition.x + radius;
@@ -52,7 +58,13 @@ export const GridCursorOverlay = React.memo(
             x % gridDensity < gridLineWidth ||
             y % gridDensity < gridLineWidth
           ) {
-            if (x < 0 || x > width || y < 0 || y > height) continue;
+            if (
+              x < gridLineWidth ||
+              x > width ||
+              y < gridLineWidth ||
+              y > height
+            )
+              continue;
             if (Math.hypot(x - mousePosition.x, y - mousePosition.y) < radius) {
               imageBuffer[y * width + x] = rgbaToHex(
                 255,
@@ -80,13 +92,15 @@ export const GridCursorOverlay = React.memo(
     };
 
     return (
-      <div ref={ref} className="absolute w-full h-full">
-        <canvas
-          ref={canvasRef}
-          width={width}
-          height={height}
-          className="absolute w-full h-full"
-        />
+      <div ref={mousePositionRef} className="absolute w-full h-full">
+        <div ref={ref} className="absolute w-full h-full">
+          <canvas
+            ref={canvasRef}
+            width={width}
+            height={height}
+            className="absolute w-full h-full"
+          />
+        </div>
       </div>
     );
   }
