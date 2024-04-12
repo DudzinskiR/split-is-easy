@@ -7,6 +7,7 @@ import {
   ChatBubble3DSide,
 } from "./components";
 import { ReactNode } from "react";
+import { twMerge } from "tailwind-merge";
 
 export interface ChatBubble3DProps {
   transform: Transform3D;
@@ -19,6 +20,7 @@ export interface ChatBubble3DProps {
   backgroundColor?: string;
   side?: "LEFT" | "RIGHT";
   icon?: ReactNode;
+  animationDirect?: "LEFT-RIGHT" | "UP-DOWN";
 }
 
 export const ChatBubble3D = ({
@@ -32,6 +34,7 @@ export const ChatBubble3D = ({
   backgroundColor = "#ffffff",
   side,
   icon,
+  animationDirect,
 }: ChatBubble3DProps) => {
   // return <></>;
   const getSizeMultiply = () => {
@@ -49,7 +52,16 @@ export const ChatBubble3D = ({
   };
 
   return (
-    <div style={{ transformStyle: "preserve-3d" }}>
+    <div
+      style={{ transformStyle: "preserve-3d" }}
+      className={twMerge(
+        animationDirect
+          ? animationDirect === "LEFT-RIGHT"
+            ? "animate-chat-bubble-move-left-right"
+            : "animate-chat-bubble-move-up-down"
+          : ""
+      )}
+    >
       <ChatBubble3DContextProvider
         value={{
           transform,

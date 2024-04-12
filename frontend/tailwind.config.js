@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 import vitePluginRequire from "vite-plugin-require";
-
 const defaultTheme = vitePluginRequire("tailwindcss/defaultTheme");
 
 export default {
@@ -26,10 +25,24 @@ export default {
           "20%": { opacity: 0 },
           "100%": { opacity: 1, top: 0 },
         },
+        "chat-bubble-move-up-down": {
+          "0%": { transform: `translateY(5px)` },
+          "50%": { transform: `translateY(-5px)` },
+          "100%": { transform: `translateY(5px)` },
+        },
+        "chat-bubble-move-left-right": {
+          "0%": { transform: `translateX(5px)` },
+          "50%": { transform: `translateX(-5px)` },
+          "100%": { transform: `translateX(5px)` },
+        },
       },
       animation: {
         "custom-ping": "custom-ping 6s ease-in-out infinite",
         reveal: "reveal 1s ease-in-out ",
+        "chat-bubble-move-up-down":
+          "chat-bubble-move-up-down 4s ease-in-out infinite",
+        "chat-bubble-move-left-right":
+          "chat-bubble-move-left-right 4s ease-in-out infinite",
       },
     },
   },
