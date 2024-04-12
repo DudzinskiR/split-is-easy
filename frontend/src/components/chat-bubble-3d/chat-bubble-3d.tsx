@@ -6,8 +6,6 @@ import {
   ChatBubble3DFront,
   ChatBubble3DSide,
 } from "./components";
-import { ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
 
 export interface ChatBubble3DProps {
   transform: Transform3D;
@@ -19,8 +17,6 @@ export interface ChatBubble3DProps {
   cornerNode?: number;
   backgroundColor?: string;
   side?: "LEFT" | "RIGHT";
-  icon?: ReactNode;
-  animationDirect?: "LEFT-RIGHT" | "UP-DOWN";
 }
 
 export const ChatBubble3D = ({
@@ -33,8 +29,6 @@ export const ChatBubble3D = ({
   cornerNode = 2,
   backgroundColor = "#ffffff",
   side,
-  icon,
-  animationDirect,
 }: ChatBubble3DProps) => {
   // return <></>;
   const getSizeMultiply = () => {
@@ -52,108 +46,96 @@ export const ChatBubble3D = ({
   };
 
   return (
-    <div
-      style={{ transformStyle: "preserve-3d" }}
-      className={twMerge(
-        animationDirect
-          ? animationDirect === "LEFT-RIGHT"
-            ? "animate-chat-bubble-move-left-right"
-            : "animate-chat-bubble-move-up-down"
-          : ""
-      )}
+    <ChatBubble3DContextProvider
+      value={{
+        transform,
+        text,
+        width,
+        height,
+        length,
+        radius,
+        cornerNode,
+        backgroundColor,
+        side,
+      }}
     >
-      <ChatBubble3DContextProvider
-        value={{
-          transform,
-          text,
-          width,
-          height,
-          length,
-          radius,
-          cornerNode,
-          backgroundColor,
-          side,
-          icon,
-        }}
-      >
-        <ChatBubble3DFront />
-        <ChatBubble3DBack />
+      <ChatBubble3DFront />
+      <ChatBubble3DBack />
 
-        {/*      */}
-        {/* SIDE */}
-        {/*      */}
+      {/*      */}
+      {/* SIDE */}
+      {/*      */}
 
-        {/* TOP */}
-        <ChatBubble3DSide
-          additionalTransform={new Transform3D()
-            .setRotate(90, 0, 0)
-            .setPosition(0, -height / 2, 0)}
-          size={new Vector2(length - radius * 2, width)}
-        />
+      {/* TOP */}
+      <ChatBubble3DSide
+        additionalTransform={new Transform3D()
+          .setRotate(90, 0, 0)
+          .setPosition(0, -height / 2, 0)}
+        size={new Vector2(length - radius * 2, width)}
+      />
 
-        {/* BOTTOM */}
-        <ChatBubble3DSide
-          additionalTransform={new Transform3D()
-            .setRotate(90, 0, 0)
-            .setPosition(0 + getSizeMultiply() * radius, height / 2, 0)}
-          size={
-            new Vector2(
-              length - radius * 2 + (side !== undefined ? radius * 2 : 0),
-              width
-            )
-          }
-        />
+      {/* BOTTOM */}
+      <ChatBubble3DSide
+        additionalTransform={new Transform3D()
+          .setRotate(90, 0, 0)
+          .setPosition(0 + getSizeMultiply() * radius, height / 2, 0)}
+        size={
+          new Vector2(
+            length - radius * 2 + (side !== undefined ? radius * 2 : 0),
+            width
+          )
+        }
+      />
 
-        {/* LEFT */}
-        <ChatBubble3DSide
-          additionalTransform={new Transform3D()
-            .setRotate(90, 0, 90)
-            .setPosition(-length / 2, 0, 0)}
-          size={new Vector2(height - radius * 2, width)}
-        />
+      {/* LEFT */}
+      <ChatBubble3DSide
+        additionalTransform={new Transform3D()
+          .setRotate(90, 0, 90)
+          .setPosition(-length / 2, 0, 0)}
+        size={new Vector2(height - radius * 2, width)}
+      />
 
-        {/* RIGHT */}
-        <ChatBubble3DSide
-          additionalTransform={new Transform3D()
-            .setRotate(90, 0, 90)
-            .setPosition(length / 2, 0, 0)}
-          size={new Vector2(height - radius * 2, width)}
-        />
+      {/* RIGHT */}
+      <ChatBubble3DSide
+        additionalTransform={new Transform3D()
+          .setRotate(90, 0, 90)
+          .setPosition(length / 2, 0, 0)}
+        size={new Vector2(height - radius * 2, width)}
+      />
 
-        {/*         */}
-        {/* CORNERS */}
-        {/*         */}
+      {/*         */}
+      {/* CORNERS */}
+      {/*         */}
 
-        {/* TOP LEFT */}
-        <ChatBubble3DCorner
-          additionalTransform={new Transform3D().setPosition(
-            -length / 2,
-            -height / 2,
-            0
-          )}
-        />
+      {/* TOP LEFT */}
+      <ChatBubble3DCorner
+        additionalTransform={new Transform3D().setPosition(
+          -length / 2,
+          -height / 2,
+          0
+        )}
+      />
 
-        {/* BOTTOM LEFT */}
-        <ChatBubble3DCorner
-          additionalTransform={new Transform3D()
-            .setPosition(-length / 2, height / 2 - radius * 2, 0)
-            .addRotation(0, 0, 270)}
-        />
+      {/* BOTTOM LEFT */}
+      <ChatBubble3DCorner
+        additionalTransform={new Transform3D()
+          .setPosition(-length / 2, height / 2 - radius * 2, 0)
+          .addRotation(0, 0, 270)}
+      />
 
-        {/* TOP RIGHT */}
-        <ChatBubble3DCorner
-          additionalTransform={new Transform3D()
-            .setPosition(length / 2 - radius * 2, -height / 2, 0)
-            .addRotation(180, 180, 270)}
-        />
+      {/* TOP RIGHT */}
+      <ChatBubble3DCorner
+        additionalTransform={new Transform3D()
+          .setPosition(length / 2 - radius * 2, -height / 2, 0)
+          .addRotation(180, 180, 270)}
+      />
 
-        {/* BOTTOM RIGHT */}
-        <ChatBubble3DCorner
-          additionalTransform={new Transform3D()
-            .setPosition(length / 2 - radius * 2, height / 2 - radius * 2, 0)
-            .addRotation(180, 0, 270)}
-        />
-      </ChatBubble3DContextProvider>
-    </div>
+      {/* BOTTOM RIGHT */}
+      <ChatBubble3DCorner
+        additionalTransform={new Transform3D()
+          .setPosition(length / 2 - radius * 2, height / 2 - radius * 2, 0)
+          .addRotation(180, 0, 270)}
+      />
+    </ChatBubble3DContextProvider>
   );
 };
