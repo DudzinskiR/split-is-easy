@@ -9,7 +9,6 @@ interface GridCursorOverlayProps {
   gridLineWidth?: number;
 }
 
-const previousMousePosition: Vector2 = new Vector2(-1000, -1000);
 let imageData: ImageData;
 let imageBuffer: Uint32Array;
 
@@ -76,7 +75,6 @@ export const GridCursorOverlay = React.memo(
           }
         }
       }
-      previousMousePosition.set(mousePosition);
       ctx.putImageData(imageData, 0, 0);
       // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [height, mousePosition, width]);
