@@ -1,7 +1,7 @@
 import { Transform3D } from "src/utils/math";
 import { PhoneBack, PhoneCorner, PhoneFront, PhoneSide } from "./components";
 import { Phone3DContextProvider } from "./context/phone-3D.context";
-import React from "react";
+import React, { Fragment, ReactNode } from "react";
 
 export interface Phone3DProps {
   width: number;
@@ -12,6 +12,7 @@ export interface Phone3DProps {
   perspective?: number;
   transform?: Transform3D;
   transitionDuration?: number;
+  additionalElements?: ReactNode[];
 }
 
 const Phone3D = React.memo(
@@ -22,6 +23,7 @@ const Phone3D = React.memo(
     radius,
     transform,
     perspective,
+    additionalElements,
     cornerNode = 3,
     transitionDuration = 3000,
   }: Phone3DProps) => {
@@ -50,6 +52,9 @@ const Phone3D = React.memo(
               transformOrigin: "center",
             }}
           >
+            {additionalElements?.map((item, index) => {
+              return <Fragment key={index}>{item}</Fragment>;
+            })}
             <PhoneFront />
             <PhoneBack />
             <>
