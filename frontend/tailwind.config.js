@@ -25,6 +25,10 @@ export default {
           "20%": { opacity: 0 },
           "100%": { opacity: 1, top: 0 },
         },
+        show: {
+          "0%": { transform: "scale(0.01)" },
+          "100%": { transform: "scale(0.99)" },
+        },
         "chat-bubble-move-up-down": {
           "0%": { transform: `translateY(5px)` },
           "50%": { transform: `translateY(-5px)` },
@@ -38,7 +42,8 @@ export default {
       },
       animation: {
         "custom-ping": "custom-ping 6s ease-in-out infinite",
-        reveal: "reveal 1s ease-in-out ",
+        reveal: "reveal 1s ease-in-out",
+        show: "show 1s ease-in-out",
         "chat-bubble-move-up-down":
           "chat-bubble-move-up-down 4s ease-in-out infinite",
         "chat-bubble-move-left-right":
