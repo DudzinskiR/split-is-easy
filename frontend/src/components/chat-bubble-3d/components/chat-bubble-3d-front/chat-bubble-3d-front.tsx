@@ -2,7 +2,7 @@ import { Transform3D } from "src/utils/math";
 import { useChatBubble3DContext } from "../../hook";
 
 export const ChatBubble3DFront = () => {
-  const { transform, height, length, text, width, radius, side, icon } =
+  const { transform, height, length, text, width, radius, side } =
     useChatBubble3DContext();
 
   const renderRightArrow = () => {
@@ -28,15 +28,6 @@ export const ChatBubble3DFront = () => {
               clipPath: "polygon(0% 0%, 0% 100%, 100% 100%)",
             }}
           ></div>
-          <div
-            className="absolute w-[60px]"
-            style={{
-              top: -30,
-              left: -100,
-            }}
-          >
-            {icon}
-          </div>
         </>
       );
     }
@@ -92,7 +83,7 @@ export const ChatBubble3DFront = () => {
           height: height,
         }}
       >
-        <div className="flex justify-center items-center h-full font-semibold text-xl ml-[50px]">
+        <div className="flex justify-center items-center h-full w-full font-semibold text-xl">
           {text}
         </div>
       </div>
