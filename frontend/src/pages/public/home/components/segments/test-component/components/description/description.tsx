@@ -23,10 +23,7 @@ export const Description = React.memo(({ delay }: DescriptionProps) => {
         text="Our app makes finances easy and enjoyable!"
         delay={delay + 1.5}
       />
-      <div
-        className="flex flex-row justify-around mt-10 text-xl animate-reveal opacity-0"
-        style={{ animationDelay: "4s", animationFillMode: "forwards" }}
-      >
+      <div className="flex flex-row justify-around mt-10 text-xl animate-reveal opacity-0 animation-fill-forwards animation-delay-4000">
         <Button
           color="bg-white hover:bg-slate-200 text-indigo-700"
           className="w-40"
