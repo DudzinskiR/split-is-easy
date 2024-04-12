@@ -41,7 +41,7 @@ const TestComponent = () => {
     >
       <GridCursorOverlay />
       <div className="relative max-w-7xl w-screen h-full">
-        <Description delay={2} />
+        <Description delay={3} />
         <div
           className="right-0 top-1/2 translate-y-[calc(-50%+50px)] scale-[0.85]"
           ref={phonesRef}
