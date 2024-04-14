@@ -29,7 +29,7 @@ export const useRotatePhones = () => {
         calcRotate(verticalCenter - mousePosition.y, 1000)
       )
     );
-  }, [mousePosition]);
+  }, [mousePosition, phonesRef]);
 
   const calcRotate = (x: number, z: number) => {
     const result = Math.atan(x / z) / (Math.PI / 2);
