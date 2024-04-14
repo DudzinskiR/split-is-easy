@@ -6,12 +6,6 @@ import TestComponent from "./components/segments/test-component/test-component.c
 const segments: { component: ReactNode; fullScreen?: boolean }[] = [
   { component: <TestComponent />, fullScreen: true },
   { component: <div className="h-[100px]"></div> },
-  // { component: <PublicHomeTitleSegment /> },
-  // { component: <PublicHomeCarousel />, fullScreen: true },
-  // { component: <PublicHomeForGroupSegment /> },
-  // { component: <PublicHomeStatisticSegment />, fullScreen: true },
-  // { component: <PublicHomeFAQSegment /> },
-  // { component: <PublicHomeFooterSegment /> },
 ];
 
 const PublicHomePage = () => {

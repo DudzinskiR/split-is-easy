@@ -44,15 +44,18 @@ export class Vector2 {
     }
   }
 
-  public add(vector: Vector2): void;
-  public add(x: number, y: number): void;
+  public add(vector: Vector2): Vector2;
+  public add(x: number, y: number): Vector2;
   public add(arg1: number | Vector2, y?: number) {
     if (arg1 instanceof Vector2) {
       this._x += arg1.x;
       this._y += arg1.y;
+      return this;
     } else if (typeof arg1 === "number" && typeof y === "number") {
       this._x += arg1;
       this._y += y;
+
+      return this;
     } else {
       throw new Error("Invalid arguments provided to add function");
     }

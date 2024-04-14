@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Button, RandomRevealText } from "src/components";
-import { useAccelerometer } from "src/hooks";
+
 import { twJoin } from "tailwind-merge";
 
 interface DescriptionProps {
@@ -8,12 +8,6 @@ interface DescriptionProps {
 }
 
 export const Description = React.memo(({ delay }: DescriptionProps) => {
-  const accelerometer = useAccelerometer();
-
-  useEffect(() => {
-    console.log(accelerometer?.toString());
-  }, [accelerometer]);
-
   return (
     <div
       className={twJoin(

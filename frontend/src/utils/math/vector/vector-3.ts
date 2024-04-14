@@ -1,3 +1,5 @@
+import { Vector2 } from "./vector-2";
+
 export class Vector3 {
   private _x: number;
   private _y: number;
@@ -90,6 +92,10 @@ export class Vector3 {
     } else {
       throw new Error("Invalid arguments provided to add function");
     }
+  }
+
+  public toVector2() {
+    return new Vector2(this._x, this._z);
   }
 
   public toString(fractionDigits?: number) {

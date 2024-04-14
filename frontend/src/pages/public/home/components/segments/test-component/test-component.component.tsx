@@ -62,12 +62,6 @@ const TestComponent = () => {
             height: 500 * multiply,
           }}
         >
-          {/* <div
-            className={twJoin(
-              "absolute w-[500px] h-[60px] bg-black/60 rounded-full blur-[50px] top-[625px] left-[-50px] scale-0",
-              "animate-show animation-delay-3000 animation-fill-forwards animation-duration-[250ms]"
-            )}
-          ></div> */}
           <div
             style={{
               transformStyle: "preserve-3d",

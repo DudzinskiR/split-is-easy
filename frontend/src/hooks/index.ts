@@ -1,4 +1,3 @@
-export * from "./accelerometer";
 export * from "./api";
 export * from "./click-outside";
 export * from "./currency-formatter";
