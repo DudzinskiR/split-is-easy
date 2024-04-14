@@ -9,9 +9,9 @@ export const startPhoneBTransform = new Transform3D()
   .setRotate(10, -800, 50);
 
 export const finishPhoneATransform = new Transform3D()
-  .setPosition(-75, 0, 0)
+  .setPosition(0, 0, 0)
   .setRotate(10, 20, 0);
 
 export const finishPhoneBTransform = new Transform3D()
-  .setPosition(150, 20, 40)
+  .setPosition(240, 20, 40)
   .setRotate(10, -20, 0);
