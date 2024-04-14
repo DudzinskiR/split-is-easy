@@ -1,12 +1,4 @@
 import { ReactNode } from "react";
-import {
-  PublicHomeCarousel,
-  PublicHomeFAQSegment,
-  PublicHomeFooterSegment,
-  PublicHomeForGroupSegment,
-  PublicHomeStatisticSegment,
-  PublicHomeTitleSegment,
-} from "./components/segments";
 
 import { PublicHomeSegmentTemplate } from "./components/segment-template/public-home-segment-template.component";
 import TestComponent from "./components/segments/test-component/test-component.component";
