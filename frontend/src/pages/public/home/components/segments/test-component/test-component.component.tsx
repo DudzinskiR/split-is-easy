@@ -35,7 +35,7 @@ const TestComponent = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full h-screen relative flex justify-center"
+      className="w-full h-screen min-h-[600px] 2xs:min-h-[800px] sm:min-h-[1000px] relative flex justify-center"
       style={{
         background:
           "linear-gradient(45deg, rgba(0,0,70,1) 0%, rgba(79,28,150,1) 33%, rgba(28,181,224,1) 100%)",
@@ -45,7 +45,15 @@ const TestComponent = () => {
       <div className="relative max-w-7xl w-screen h-full">
         <Description delay={3} />
         <div
-          className="right-0 top-1/2 translate-y-[calc(-50%+50px)] scale-[0.85]"
+          className={twJoin(
+            "transform-style-preserve-3d absolute w-[600px] h-[800px]",
+            "transform3D-[scale(0.35)_translate3d(calc(-50%-400px),calc(50%-100px),0px)] left-1/2",
+            "2xs:transform3D-[scale(0.6)_translate3d(calc(-50%-200px),calc(50%-100px),0px)] 2xs:left-1/2",
+            "sm:transform3D-[scale(0.6)_translate3d(calc(-50%-200px),calc(50%+100px),0px)] sm:left-1/2",
+            "md:transform3D-[scale(0.8)_translate3d(calc(-50%-100px),calc(calc(50%)),0px)] md:left-1/2",
+            "xl:transform3D-[scale(0.75)_translate3d(calc(50%-200px),-50%,0px)] xl:top-1/2 xl:left-1/2",
+            "2xl:transform3D-[scale(0.85)_translate3D(50%,-50%,0px)] 2xl:top-1/2 2xl:left-1/2 "
+          )}
           ref={phonesRef}
           style={{
             position: "absolute",
@@ -54,9 +62,13 @@ const TestComponent = () => {
             height: 500 * multiply,
           }}
         >
-          <div className="absolute w-[500px] h-[100px] bg-black/70 rounded-full blur-2xl top-[600px] left-[-50px]"></div>
+          {/* <div
+            className={twJoin(
+              "absolute w-[500px] h-[60px] bg-black/60 rounded-full blur-[50px] top-[625px] left-[-50px] scale-0",
+              "animate-show animation-delay-3000 animation-fill-forwards animation-duration-[250ms]"
+            )}
+          ></div> */}
           <div
-            className=""
             style={{
               transformStyle: "preserve-3d",
               width: 300 * multiply,
@@ -68,15 +80,17 @@ const TestComponent = () => {
               transformOrigin: "center",
             }}
           >
-            <Phones
-              transformA={phoneATransform}
-              transformB={phoneBTransform}
-              width={300}
-              height={30}
-              length={640}
-              radius={30}
-              transitionDuration={3000}
-            />
+            <div className={"transform-style-preserve-3d"}>
+              <Phones
+                transformA={phoneATransform}
+                transformB={phoneBTransform}
+                width={300}
+                height={30}
+                length={640}
+                radius={30}
+                transitionDuration={3000}
+              />
+            </div>
           </div>
         </div>
         <Pings />
