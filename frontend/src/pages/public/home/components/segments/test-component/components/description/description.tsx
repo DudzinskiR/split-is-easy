@@ -23,6 +23,7 @@ export const Description = React.memo(({ delay }: DescriptionProps) => {
     >
       <RandomRevealText
         className="text-center 2xl:text-6xl lg:text-5xl text-3xl font-bold text-white"
+        text={`Shared Bills x:${a?.x || "brak"}`}
         delay={delay}
       />
       <RandomRevealText
