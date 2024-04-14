@@ -9,12 +9,18 @@ export default {
     extend: {
       screens: {
         xs: "320px",
+        "2xs": "480px",
+        "2xl": "1408px",
         ...defaultTheme.screens,
       },
       colors: {
         slate: {
           150: "rgb(233,238,245)",
         },
+      },
+      maxWidth: {
+        "8xl": "88rem",
+        ...defaultTheme.maxWidth,
       },
       keyframes: {
         "custom-ping": {
