@@ -30,7 +30,7 @@ export const RandomRevealText = ({
       {characters.map((item, index) => (
         <span
           key={index}
-          className="relative animate-reveal opacity-0"
+          className="relative animate-reveal opacity-0 w-full"
           style={{
             top: item.posY * 100 - 50,
             animationDelay: `${item.delay * 2 + delay}s`,
