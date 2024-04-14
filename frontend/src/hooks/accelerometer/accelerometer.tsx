@@ -8,8 +8,6 @@ export const useAccelerometer = () => {
 
   useEffect(() => {
     const handleMotion = (event: DeviceOrientationEvent) => {
-      // const acceleration = event.accelerationIncludingGravity;
-      // console.log(acceleration);
       if (event && event.alpha && event.beta && event.gamma) {
         setAccelerometerData(new Vector3(event.alpha, event.beta, event.gamma));
       } else {
