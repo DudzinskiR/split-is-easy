@@ -67,4 +67,34 @@ export class Vector3 {
       throw new Error("Invalid arguments provided to add function");
     }
   }
+
+  public subtract(x: number, y: number, z: number): Vector3;
+  public subtract(vector: Vector3): Vector3;
+  public subtract(arg1: number | Vector3, y?: number, z?: number) {
+    if (arg1 instanceof Vector3) {
+      this._x -= arg1.x;
+      this._y -= arg1.y;
+      this._z -= arg1.z;
+
+      return this;
+    } else if (
+      typeof arg1 === "number" &&
+      typeof y === "number" &&
+      typeof z === "number"
+    ) {
+      this._x -= arg1;
+      this._y -= y;
+      this._z -= z;
+
+      return this;
+    } else {
+      throw new Error("Invalid arguments provided to add function");
+    }
+  }
+
+  public toString(fractionDigits?: number) {
+    return `Vector3(${this._x.toFixed(fractionDigits)}, ${this._y.toFixed(
+      fractionDigits
+    )}, ${this._z.toFixed(fractionDigits)})`;
+  }
 }
