@@ -1,6 +1,5 @@
 import React from "react";
 import { Button, RandomRevealText } from "src/components";
-import { useAccelerometer } from "src/hooks";
 import { twJoin } from "tailwind-merge";
 
 interface DescriptionProps {
@@ -8,8 +7,6 @@ interface DescriptionProps {
 }
 
 export const Description = React.memo(({ delay }: DescriptionProps) => {
-  const a = useAccelerometer();
-  console.log(a);
   return (
     <div
       className={twJoin(
@@ -23,7 +20,7 @@ export const Description = React.memo(({ delay }: DescriptionProps) => {
     >
       <RandomRevealText
         className="text-center 2xl:text-6xl lg:text-5xl text-3xl font-bold text-white"
-        text={`Shared Bills x:${a?.x || "brak"}`}
+        text="Shared Bills"
         delay={delay}
       />
       <RandomRevealText
