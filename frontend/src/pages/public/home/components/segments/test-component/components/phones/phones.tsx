@@ -11,7 +11,8 @@ const renderChatBubble = (
   transform: Transform3D,
   text: string,
   side: "RIGHT" | "LEFT",
-  animationDirect: "LEFT-RIGHT" | "UP-DOWN"
+  animationDirect: "LEFT-RIGHT" | "UP-DOWN",
+  length: number
 ) => {
   return (
     <div
@@ -37,7 +38,7 @@ const renderChatBubble = (
           text={text}
           width={30}
           height={60}
-          length={200}
+          length={length}
           radius={10}
           backgroundColor="rgb(129 140 248)"
           side={side}
@@ -57,16 +58,18 @@ export const Phones = React.memo(
           transform={transformA}
           additionalElements={[
             renderChatBubble(
-              new Transform3D().setPosition(-props.width / 2, 100, 0),
+              new Transform3D().setPosition(-props.width / 2 + 25, 100, 0),
               "FOR FAMILY",
               "RIGHT",
-              "LEFT-RIGHT"
+              "LEFT-RIGHT",
+              150
             ),
             renderChatBubble(
-              new Transform3D().setPosition(-150, 400, 0),
+              new Transform3D().setPosition(-150 + 25, 400, 0),
               "FOR STUDENTS",
               "RIGHT",
-              "UP-DOWN"
+              "UP-DOWN",
+              170
             ),
           ]}
         />
@@ -77,16 +80,18 @@ export const Phones = React.memo(
           transform={transformB}
           additionalElements={[
             renderChatBubble(
-              new Transform3D().addPosition(props.width * 1.5, 250, 0),
+              new Transform3D().addPosition(props.width * 1.5 - 53, 250, 0),
               "FOR TEAM",
               "LEFT",
-              "LEFT-RIGHT"
+              "LEFT-RIGHT",
+              130
             ),
             renderChatBubble(
-              new Transform3D().addPosition(props.width * 1.5, 550, 0),
+              new Transform3D().addPosition(props.width * 1.5 - 43, 550, 0),
               "FOR FRIENDS",
               "LEFT",
-              "UP-DOWN"
+              "UP-DOWN",
+              150
             ),
           ]}
         />
