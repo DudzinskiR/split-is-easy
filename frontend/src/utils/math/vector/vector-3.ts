@@ -34,6 +34,16 @@ export class Vector3 {
     return this._z;
   }
 
+  public set x(x: number) {
+    this._x = x;
+  }
+  public set y(y: number) {
+    this._y = y;
+  }
+  public set z(z: number) {
+    this._z = z;
+  }
+
   public static get zero() {
     return new Vector3(0, 0, 0);
   }
