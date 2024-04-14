@@ -61,14 +61,14 @@ export const useRotatePhones = () => {
       return;
     }
 
-    const top = phonesRef.current.getBoundingClientRect().top;
-    const height = phonesRef.current.getBoundingClientRect().height;
+    // const top = phonesRef.current.getBoundingClientRect().top;
+    // const height = phonesRef.current.getBoundingClientRect().height;
 
-    const left = phonesRef.current.getBoundingClientRect().left;
-    const width = phonesRef.current.getBoundingClientRect().width;
+    // const left = phonesRef.current.getBoundingClientRect().left;
+    // const width = phonesRef.current.getBoundingClientRect().width;
 
-    const verticalCenter = top + height / 2;
-    const horizontalCenter = left + width / 2;
+    // const verticalCenter = top + height / 2;
+    // const horizontalCenter = left + width / 2;
 
     // const b = new Vector3(accelerometer).subtract(temp);
     // setRotation(new Vector2())
@@ -80,10 +80,10 @@ export const useRotatePhones = () => {
     // );
   }, [mousePosition, phonesRef, accelerometer]);
 
-  const calcRotate = (x: number, z: number) => {
-    const result = Math.atan(x / z) / (Math.PI / 2);
-    return result;
-  };
+  // const calcRotate = (x: number, z: number) => {
+  //   const result = Math.atan(x / z) / (Math.PI / 2);
+  //   return result;
+  // };
 
   return { rotation, phonesRef, containerRef };
 };
