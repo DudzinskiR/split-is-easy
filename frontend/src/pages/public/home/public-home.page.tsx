@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 
 import { PublicHomeSegmentTemplate } from "./components/segment-template/public-home-segment-template.component";
-import TestComponent from "./components/segments/test-component/test-component.component";
+import { MainSegment } from "./components/segments";
 
 const segments: { component: ReactNode; fullScreen?: boolean }[] = [
-  { component: <TestComponent />, fullScreen: true },
+  { component: <MainSegment />, fullScreen: true },
   { component: <div className="h-[100px]"></div> },
 ];
 

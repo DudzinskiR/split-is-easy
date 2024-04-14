@@ -1,5 +1,7 @@
 import { useEffect, useState } from "react";
+import { GridCursorOverlay } from "src/components";
 import { useTimers } from "src/hooks";
+import { twJoin } from "tailwind-merge";
 
 import { Description, Pings } from "./components";
 import { Phones } from "./components/phones/phones";
@@ -10,12 +12,10 @@ import {
   startPhoneBTransform,
 } from "./const";
 import { useRotatePhones } from "./hooks";
-import { GridCursorOverlay } from "src/components";
-import { twJoin } from "tailwind-merge";
 
 const multiply = 1.5;
 
-const TestComponent = () => {
+export const MainSegment = () => {
   const [phoneATransform, setPhoneATransform] = useState(startPhoneATransform);
   const [phoneBTransform, setPhoneBTransform] = useState(startPhoneBTransform);
 
@@ -92,5 +92,3 @@ const TestComponent = () => {
     </div>
   );
 };
-
-export default TestComponent;
