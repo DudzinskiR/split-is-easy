@@ -35,11 +35,7 @@ export const MainSegment = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full h-screen min-h-[600px] 2xs:min-h-[800px] sm:min-h-[1000px] relative flex justify-center"
-      style={{
-        background:
-          "linear-gradient(45deg, rgba(0,0,70,1) 0%, rgba(79,28,150,1) 33%, rgba(28,181,224,1) 100%)",
-      }}
+      className="w-full h-screen min-h-[600px] 2xs:min-h-[800px] sm:min-h-[1000px] relative flex justify-center main-background-gradient"
     >
       <GridCursorOverlay />
       <div className="relative max-w-7xl w-screen h-full">
