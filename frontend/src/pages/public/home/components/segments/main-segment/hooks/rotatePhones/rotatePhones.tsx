@@ -26,11 +26,17 @@ export const useRotatePhones = () => {
 
     setRotation(
       new Vector2(
-        calcRotate(horizontalCenter - mousePosition.x, 1920),
-        calcRotate(verticalCenter - mousePosition.y, 1000)
+        calcRotate(
+          horizontalCenter - mousePosition.x,
+          containerRef.current?.getBoundingClientRect().width || 1920
+        ),
+        calcRotate(
+          verticalCenter - mousePosition.y,
+          containerRef.current?.getBoundingClientRect().height || 1080
+        )
       )
     );
-  }, [mousePosition, phonesRef]);
+  }, [containerRef, mousePosition, phonesRef]);
 
   const calcRotate = (x: number, z: number) => {
     const result = Math.atan(x / z) / (Math.PI / 2);
