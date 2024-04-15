@@ -12,6 +12,9 @@ export const FeatureSegment = () => {
       className="relative main-background-gradient w-full min-h-[700px] flex flex-row justify-center items-center"
       ref={containerRef}
     >
+      <div className="absolute absolute-center-x top-7 text-4xl text-white font-medium">
+        Feature
+      </div>
       <GridCursorOverlay />
       <div className="absolute absolute-center w-[800px] h-[800px] opacity-40 md:opacity-100">
         <Ping
