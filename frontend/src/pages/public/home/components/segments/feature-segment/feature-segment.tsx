@@ -53,7 +53,7 @@ export const FeatureSegment = () => {
           style={{
             transform: `translateX(0px) rotateY(${
               -rotation.x * 50
-            }deg) rotateX(${rotation.y * 50 + 5}deg)`,
+            }deg) rotateX(${rotation.y * 25}deg)`,
           }}
         >
           <Phone3D width={250} height={25} length={525} radius={30} />
