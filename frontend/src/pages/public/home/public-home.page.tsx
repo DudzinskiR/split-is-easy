@@ -4,6 +4,7 @@ import { PublicHomeSegmentTemplate } from "./components/segment-template/public-
 import {
   AboutSegment,
   FeatureSegment,
+  HowAppWorkSegment,
   MainSegment,
 } from "./components/segments";
 
@@ -11,6 +12,7 @@ const segments: { component: ReactNode; fullScreen?: boolean }[] = [
   { component: <MainSegment />, fullScreen: true },
   { component: <AboutSegment />, fullScreen: true },
   { component: <FeatureSegment />, fullScreen: true },
+  { component: <HowAppWorkSegment />, fullScreen: true },
   { component: <div className="h-[500px]"></div> },
 ];
 
