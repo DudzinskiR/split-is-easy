@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { Button } from "src/components";
-import { ButtonColor } from "src/enums";
 import PublicRoutes from "src/routes/public/public.route";
 import { PROJECT_NAME } from "src/utils/const";
 import { twJoin, twMerge } from "tailwind-merge";
