@@ -6,3 +6,4 @@ export * from "./statistics";
 export * from "./title";
 
 export * from "./main-segment";
+export * from "./feature-segment";
