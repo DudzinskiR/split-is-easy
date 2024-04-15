@@ -1,11 +1,17 @@
 import { ReactNode } from "react";
 
 import { PublicHomeSegmentTemplate } from "./components/segment-template/public-home-segment-template.component";
-import { MainSegment } from "./components/segments";
+import {
+  AboutSegment,
+  FeatureSegment,
+  MainSegment,
+} from "./components/segments";
 
 const segments: { component: ReactNode; fullScreen?: boolean }[] = [
   { component: <MainSegment />, fullScreen: true },
-  { component: <div className="h-[100px]"></div> },
+  { component: <AboutSegment />, fullScreen: true },
+  { component: <FeatureSegment />, fullScreen: true },
+  { component: <div className="h-[500px]"></div> },
 ];
 
 const PublicHomePage = () => {
