@@ -1,14 +1,14 @@
 import plugin from "tailwindcss/plugin";
 import { PluginAPI } from "tailwindcss/types/config";
-import { transformStyle, transformString, perspective } from "./plugins";
+import { absoluteCenter, absoluteCenterX, absoluteCenterY } from "./plugins";
 
 const plugins: ((api: PluginAPI) => void)[] = [
-  transformStyle,
-  transformString,
-  perspective,
+  absoluteCenter,
+  absoluteCenterX,
+  absoluteCenterY,
 ];
 
-export const transform = plugin((api) => {
+export const position = plugin((api) => {
   for (const item of plugins) {
     item(api);
   }

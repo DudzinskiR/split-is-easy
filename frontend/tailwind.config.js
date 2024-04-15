@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 import vitePluginRequire from "vite-plugin-require";
 import { animation, transform } from "./tailwind";
+import { position } from "./tailwind/position/position";
 const defaultTheme = vitePluginRequire("tailwindcss/defaultTheme");
 
 export default {
@@ -58,5 +59,10 @@ export default {
       },
     },
   },
-  plugins: [vitePluginRequire("@tailwindcss/forms"), animation, transform],
+  plugins: [
+    vitePluginRequire("@tailwindcss/forms"),
+    animation,
+    transform,
+    position,
+  ],
 };
