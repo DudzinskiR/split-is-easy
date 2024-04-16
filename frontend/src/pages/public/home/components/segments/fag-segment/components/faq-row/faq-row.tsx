@@ -28,7 +28,7 @@ export const FaqRow = ({ question, answer, isOpen = false }: FaqRowProps) => {
       </div>
       <div
         className={`overflow-hidden duration-300 h-full text-lg  ${
-          isLocalOpen ? "max-h-[150px]" : "max-h-0"
+          isLocalOpen ? "max-h-[200px]" : "max-h-0"
         }`}
       >
         <div className="p-3 text-black">{answer}</div>
