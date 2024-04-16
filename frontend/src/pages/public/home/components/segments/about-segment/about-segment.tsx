@@ -4,6 +4,7 @@ import CustomSplit from "src/assets/custom-split.svg?react";
 import HistoryIcon from "src/assets/history-icon.svg?react";
 import SplitIcon from "src/assets/split-icon.svg?react";
 import { PROJECT_NAME } from "src/utils/const";
+import screenshots from "src/assets/screenshots.png";
 
 export const AboutSegment = () => {
   const renderCategory = (text: string, icon: ReactNode) => {
@@ -20,35 +21,38 @@ export const AboutSegment = () => {
   };
 
   return (
-    <div className="py-10 w-full bg-white flex flex-col justify-center items-center">
-      <div className="max-w-7xl w-full flex flex-col justify-center items-center ">
-        <div className="text-4xl flex justify-center font-semibold text-indigo-700 text-center">
-          About {PROJECT_NAME}
-        </div>
-        <div className="w-full sm:w-3/4 lg:w-2/3 mt-10">
-          <div className="w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4">
-            {renderCategory(
-              "Quick split",
-              <SplitIcon className="size-[50px]" />
-            )}
-            {renderCategory(
-              "Payment history",
-              <HistoryIcon className="size-[50px]" />
-            )}
-            {renderCategory(
-              "Custom split",
-              <CustomSplit className="size-[50px]" />
-            )}
-            {renderCategory(
-              "Bill management",
-              <BillManagement className="size-[50px]" />
-            )}
+    <div className="flex flex-col w-full bg-white">
+      <div className="pt-10 w-full flex flex-col justify-center items-center overflow-hidden">
+        <div className="max-w-7xl w-full flex flex-col justify-center items-center ">
+          <div className="text-4xl flex justify-center font-semibold text-indigo-700 text-center">
+            About {PROJECT_NAME}
           </div>
-          <hr className="h-[10px] mt-3 border-b-2 border-0" />
-          <div className="text-center text-2xl mt-5 text-slate-700">
-            We help you share your bills
+          <div className="w-full sm:w-3/4 lg:w-2/3 mt-10">
+            <div className="w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4">
+              {renderCategory(
+                "Quick split",
+                <SplitIcon className="size-[50px]" />
+              )}
+              {renderCategory(
+                "Payment history",
+                <HistoryIcon className="size-[50px]" />
+              )}
+              {renderCategory(
+                "Custom split",
+                <CustomSplit className="size-[50px]" />
+              )}
+              {renderCategory(
+                "Bill management",
+                <BillManagement className="size-[50px]" />
+              )}
+            </div>
+            <hr className="h-[10px] mt-3 border-b-2 border-0" />
+            <div className="text-center text-2xl mt-5 text-slate-700">
+              We help you share your bills
+            </div>
           </div>
         </div>
+        <img src={screenshots} />
       </div>
     </div>
   );
