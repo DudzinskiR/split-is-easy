@@ -1,10 +1,12 @@
 import { ReactNode } from "react";
-import BillManagement from "src/assets/bill-management.svg?react";
-import CustomSplit from "src/assets/custom-split.svg?react";
-import HistoryIcon from "src/assets/history-icon.svg?react";
-import SplitIcon from "src/assets/split-icon.svg?react";
+import {
+  BillManagement,
+  CustomSplit,
+  HistoryIcon,
+  ScreenshotGroup,
+  SplitIcon,
+} from "src/assets/landing-page";
 import { PROJECT_NAME } from "src/utils/const";
-import screenshots from "src/assets/screenshots.png";
 
 export const AboutSegment = () => {
   const renderCategory = (text: string, icon: ReactNode) => {
@@ -52,7 +54,7 @@ export const AboutSegment = () => {
             </div>
           </div>
         </div>
-        <img src={screenshots} />
+        <img src={ScreenshotGroup} />
       </div>
     </div>
   );
