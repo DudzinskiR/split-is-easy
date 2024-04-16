@@ -1,35 +1,49 @@
-import { ReactNode } from "react";
+import { ReactNode, useRef } from "react";
 
-import { PublicHomeSegmentTemplate } from "./components/segment-template/public-home-segment-template.component";
 import {
   AboutSegment,
+  FaqSegment,
   FeatureSegment,
+  FooterSegment,
   HowAppWorkSegment,
   MainSegment,
 } from "./components/segments";
+import { PublicNavbar } from "./components";
 
-const segments: { component: ReactNode; fullScreen?: boolean }[] = [
-  { component: <MainSegment />, fullScreen: true },
-  { component: <AboutSegment />, fullScreen: true },
-  { component: <FeatureSegment />, fullScreen: true },
-  { component: <HowAppWorkSegment />, fullScreen: true },
-  { component: <div className="h-[500px]"></div> },
+export type NavbarElement = {
+  component: ReactNode;
+  name?: string;
+};
+
+const segments: NavbarElement[] = [
+  { component: <MainSegment />, name: "Home" },
+  { component: <AboutSegment />, name: "About" },
+  { component: <FeatureSegment />, name: "Feature" },
+  { component: <HowAppWorkSegment />, name: "HOW IT WORK" },
+  { component: <FaqSegment />, name: "FAQ" },
+  { component: <FooterSegment /> },
 ];
 
 const PublicHomePage = () => {
+  const segmentsRef = useRef<HTMLDivElement[]>([]);
+
   return (
-    <div className="flex flex-col w-full">
-      {/* <TestComponent /> */}
-      {segments.map((item, index) => (
-        <PublicHomeSegmentTemplate
-          whiteBackground={index % 2 == 0}
-          key={index}
-          fullScreen={item.fullScreen}
-        >
-          {item.component}
-        </PublicHomeSegmentTemplate>
-      ))}
-    </div>
+    <>
+      <PublicNavbar elements={segments} segmentsRef={segmentsRef} />
+      <div className="flex flex-col w-full">
+        {segments.map((item, index) => (
+          <div
+            key={index}
+            ref={(element) => {
+              if (element) segmentsRef.current[index] = element;
+              return segmentsRef;
+            }}
+          >
+            {item.component}
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
