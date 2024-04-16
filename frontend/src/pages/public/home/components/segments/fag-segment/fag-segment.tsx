@@ -17,7 +17,7 @@ export const FaqSegment = () => {
         <div className="text-white text-center text-4xl my-5 font-semibold">
           FAQ
         </div>
-        <div className="flex flex-col gap-5 mx-16 mb-5">
+        <div className="flex flex-col gap-5 mx-5 lg:mx-16 mb-5">
           {questions.map((item, index) => (
             <div key={index} className="lg:w-[700px] w-full relative">
               <FaqRow
