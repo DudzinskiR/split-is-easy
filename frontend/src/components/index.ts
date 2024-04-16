@@ -3,7 +3,6 @@ export * from "./button";
 export * from "./chat-bubble-3d";
 export * from "./expandable-bar";
 export * from "./fade-in-out";
-export * from "./faq";
 export * from "./grid-cursor-overlay";
 export * from "./line-break";
 export * from "./navbar";
