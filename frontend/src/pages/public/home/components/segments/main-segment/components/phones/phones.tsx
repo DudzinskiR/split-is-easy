@@ -2,6 +2,10 @@ import { ChatBubble3D, Phone3D, Phone3DProps } from "src/components";
 import { Transform3D } from "src/utils/math";
 import React from "react";
 import { twMerge } from "tailwind-merge";
+import {
+  LoadingPageScreenshot1,
+  LoadingPageScreenshot6,
+} from "src/assets/landing-page";
 interface PhonesProps extends Phone3DProps {
   transformA: Transform3D;
   transformB: Transform3D;
@@ -56,6 +60,7 @@ export const Phones = React.memo(
           {...props}
           transitionDuration={props.transitionDuration}
           transform={transformA}
+          img={LoadingPageScreenshot6}
           additionalElements={[
             renderChatBubble(
               new Transform3D().setPosition(-props.width / 2 + 25, 100, 0),
@@ -78,6 +83,7 @@ export const Phones = React.memo(
           {...props}
           transitionDuration={props.transitionDuration}
           transform={transformB}
+          img={LoadingPageScreenshot1}
           additionalElements={[
             renderChatBubble(
               new Transform3D().addPosition(props.width * 1.5 - 53, 250, 0),
