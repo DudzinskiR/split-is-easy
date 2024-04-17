@@ -11,5 +11,6 @@ export * from "./phone-3D";
 export * from "./pie-chart";
 export * from "./ping";
 export * from "./random-reveal-text";
+export * from "./scroll-to-button";
 export * from "./virtual-list";
 export * from "./visible-count-up";
