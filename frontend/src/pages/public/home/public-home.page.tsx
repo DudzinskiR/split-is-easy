@@ -1,37 +1,82 @@
-import { ReactNode } from "react";
+import { ReactNode, useEffect, useRef, useState } from "react";
+
 import {
-  PublicHomeCarousel,
-  PublicHomeFAQSegment,
-  PublicHomeFooterSegment,
-  PublicHomeForGroupSegment,
-  PublicHomeStatisticSegment,
-  PublicHomeTitleSegment,
+  AboutSegment,
+  FaqSegment,
+  FeatureSegment,
+  FooterSegment,
+  HowAppWorkSegment,
+  MainSegment,
 } from "./components/segments";
+import { PublicNavbar } from "./components";
+import { ScrollToButton } from "src/components/scroll-to-button";
+import { FaArrowDown, FaArrowUp } from "react-icons/fa";
+import { twJoin } from "tailwind-merge";
 
-import { PublicHomeSegmentTemplate } from "./components/segment-template/public-home-segment-template.component";
+export type NavbarElement = {
+  component: ReactNode;
+  name?: string;
+};
 
-const segments: { component: ReactNode; fullScreen?: boolean }[] = [
-  { component: <PublicHomeTitleSegment /> },
-  { component: <PublicHomeCarousel />, fullScreen: true },
-  { component: <PublicHomeForGroupSegment /> },
-  { component: <PublicHomeStatisticSegment />, fullScreen: true },
-  { component: <PublicHomeFAQSegment /> },
-  { component: <PublicHomeFooterSegment /> },
+const segments: NavbarElement[] = [
+  { component: <MainSegment />, name: "Home" },
+  { component: <AboutSegment />, name: "About" },
+  { component: <FeatureSegment />, name: "Feature" },
+  { component: <HowAppWorkSegment />, name: "HOW IT WORK" },
+  { component: <FaqSegment />, name: "FAQ" },
+  { component: <FooterSegment /> },
 ];
 
 const PublicHomePage = () => {
+  const segmentsRef = useRef<HTMLDivElement[]>([]);
+  const [isScrollToTopButtonShow, setScrollToTopButtonShow] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      setScrollToTopButtonShow(scrollTop > window.screenY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
-    <div className="flex flex-col w-full">
-      {segments.map((item, index) => (
-        <PublicHomeSegmentTemplate
-          whiteBackground={index % 2 == 0}
-          key={index}
-          fullScreen={item.fullScreen}
-        >
-          {item.component}
-        </PublicHomeSegmentTemplate>
-      ))}
-    </div>
+    <>
+      <PublicNavbar elements={segments} segmentsRef={segmentsRef} height={60} />
+      <ScrollToButton
+        positionToScroll={
+          (segmentsRef.current[1]?.getBoundingClientRect().top || 0) +
+          window.scrollY -
+          60
+        }
+        className="absolute absolute-center-x top-[85vh] z-10 animate-bounce"
+        icon={<FaArrowDown />}
+      />
+      <ScrollToButton
+        positionToScroll={0}
+        className={twJoin(
+          "fixed right-[50px] top-[85vh] z-10",
+          isScrollToTopButtonShow ? "opacity-100" : "opacity-0"
+        )}
+        icon={<FaArrowUp />}
+      />
+      <div className="flex flex-col w-full">
+        {segments.map((item, index) => (
+          <div
+            key={index}
+            ref={(element) => {
+              if (element) segmentsRef.current[index] = element;
+              return segmentsRef;
+            }}
+          >
+            {item.component}
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
