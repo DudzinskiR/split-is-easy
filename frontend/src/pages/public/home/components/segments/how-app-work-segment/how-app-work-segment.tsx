@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { FiLogIn } from "react-icons/fi";
 import { FaMoneyBillWave } from "react-icons/fa";
 import { RiMailSendLine } from "react-icons/ri";
+import { HomeTitle } from "../../home-title";
 export const HowAppWorkSegment = () => {
   const renderBox = (title: string, subtitle: string, icon: ReactNode) => {
     return (
@@ -24,9 +25,9 @@ export const HowAppWorkSegment = () => {
 
   return (
     <div className="w-full bg-white py-10 flex justify-center">
-      <div className="max-w-7xl w-full">
-        <div className="text-4xl font-semibold text-indigo-700 text-center">
-          How it Work
+      <div className="max-w-7xl w-full flex flex-col justify-center items-center">
+        <div className="w-">
+          <HomeTitle color={"COLOR"} text={"How it work"} />
         </div>
         <div className="text-center text-2xl mt-5 text-slate-700">
           These three steps are enough to share your expenses without

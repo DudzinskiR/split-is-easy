@@ -3,6 +3,7 @@ import { useRotatePhones } from "../main-segment/hooks";
 import { Vector2 } from "src/utils/math";
 import { FeatureSegmentTimeline } from "./components";
 import { timelineNodesA, timelineNodesB } from "./feature-segment.const";
+import { HomeTitle } from "../../home-title";
 
 export const FeatureSegment = () => {
   const { rotation, phonesRef, containerRef } = useRotatePhones();
@@ -12,8 +13,8 @@ export const FeatureSegment = () => {
       className="relative main-background-gradient w-full min-h-[700px] flex flex-row justify-center items-center"
       ref={containerRef}
     >
-      <div className="absolute absolute-center-x top-7 text-4xl text-white font-medium">
-        Feature
+      <div className="absolute top-7 z-10">
+        <HomeTitle color={"WHITE"} text={"Feature"} />
       </div>
       <GridCursorOverlay />
       <div className="absolute absolute-center w-[800px] h-[800px] opacity-40 md:opacity-100">

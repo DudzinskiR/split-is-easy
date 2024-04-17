@@ -3,6 +3,7 @@ import { FaqRow } from "./components";
 import { questions } from "./const";
 import { useRotatePhones } from "../main-segment/hooks";
 import { Vector2 } from "src/utils/math";
+import { HomeTitle } from "../../home-title";
 
 export const FaqSegment = () => {
   const { rotation, phonesRef, containerRef } = useRotatePhones();
@@ -16,6 +17,9 @@ export const FaqSegment = () => {
       <div className="relative max-w-7xl w-full">
         <div className="text-white text-center text-4xl my-5 font-semibold">
           FAQ
+      <div className="relative max-w-7xl w-full flex flex-col justify-center items-center">
+        <div className="my-8">
+          <HomeTitle color={"WHITE"} text={"FAQ"} />
         </div>
         <div className="flex flex-col gap-5 mx-5 lg:mx-16 mb-5">
           {questions.map((item, index) => (

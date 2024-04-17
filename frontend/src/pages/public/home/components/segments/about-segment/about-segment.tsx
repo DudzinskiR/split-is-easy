@@ -7,6 +7,7 @@ import {
   SplitIcon,
 } from "src/assets/landing-page";
 import { PROJECT_NAME } from "src/utils/const";
+import { HomeTitle } from "../../home-title";
 
 export const AboutSegment = () => {
   const renderCategory = (text: string, icon: ReactNode) => {
@@ -26,9 +27,7 @@ export const AboutSegment = () => {
     <div className="flex flex-col w-full bg-white">
       <div className="pt-10 w-full flex flex-col justify-center items-center overflow-hidden">
         <div className="max-w-7xl w-full flex flex-col justify-center items-center ">
-          <div className="text-4xl flex justify-center font-semibold text-indigo-700 text-center">
-            About {PROJECT_NAME}
-          </div>
+          <HomeTitle color={"COLOR"} text={`About ${PROJECT_NAME}`} />
           <div className="w-full sm:w-3/4 lg:w-2/3 mt-10">
             <div className="w-full grid grid-cols-1 xs:grid-cols-2 md:grid-cols-4">
               {renderCategory(
