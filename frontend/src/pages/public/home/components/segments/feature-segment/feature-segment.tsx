@@ -11,7 +11,7 @@ export const FeatureSegment = () => {
 
   return (
     <div
-      className="relative main-background-gradient w-full min-h-[700px] flex flex-row justify-center items-center"
+      className="relative main-background-gradient w-full min-h-[800px] flex flex-row justify-center items-center"
       ref={containerRef}
     >
       <div className="absolute top-7 z-10">
