@@ -3,6 +3,7 @@ import { useRotatePhones } from "../main-segment/hooks";
 import { Vector2 } from "src/utils/math";
 import { FeatureSegmentTimeline } from "./components";
 import { timelineNodesA, timelineNodesB } from "./feature-segment.const";
+import { LoadingPageScreenshot1 } from "src/assets/landing-page";
 import { HomeTitle } from "../../home-title";
 
 export const FeatureSegment = () => {
@@ -60,7 +61,13 @@ export const FeatureSegment = () => {
             }deg) rotateX(${rotation.y * 25}deg)`,
           }}
         >
-          <Phone3D width={250} height={25} length={525} radius={30} />
+          <Phone3D
+            width={250}
+            height={25}
+            length={525}
+            radius={30}
+            img={LoadingPageScreenshot1}
+          />
         </div>
       </div>
     </div>

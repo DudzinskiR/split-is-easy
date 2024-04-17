@@ -13,6 +13,7 @@ export interface Phone3DProps {
   transform?: Transform3D;
   transitionDuration?: number;
   additionalElements?: ReactNode[];
+  img?: string;
 }
 
 const Phone3D = React.memo(
@@ -26,6 +27,7 @@ const Phone3D = React.memo(
     additionalElements,
     cornerNode = 3,
     transitionDuration = 3000,
+    img,
   }: Phone3DProps) => {
     return (
       <Phone3DContextProvider
@@ -36,6 +38,7 @@ const Phone3D = React.memo(
           radius,
           cornerNode,
           perspective,
+          img,
         }}
       >
         <div
