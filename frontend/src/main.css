@@ -7,18 +7,6 @@
 @tailwind utilities;
 
 @layer components {
-  .absolute-center {
-    @apply left-1/2 top-1/2 translate-x-[-50%] translate-y-[-50%];
-  }
-
-  .absolute-center-x {
-    @apply left-1/2 translate-x-[-50%];
-  }
-
-  .absolute-center-y {
-    @apply top-1/2 translate-y-[-50%];
-  }
-
   .main-background-gradient {
     background: linear-gradient(
       45deg,

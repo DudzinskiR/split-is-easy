@@ -11,7 +11,10 @@ export const FaqRow = ({ question, answer, isOpen = false }: FaqRowProps) => {
   const [isLocalOpen, setLocalOpen] = useState(isOpen);
 
   return (
-    <div className="w-full bg-white rounded-lg cursor-pointer">
+    <div
+      className="w-full bg-white rounded-lg cursor-pointer"
+      onClick={() => setLocalOpen((prev) => !prev)}
+    >
       <div
         className={twJoin(
           "flex py-3 items-center pl-5 duration-100 text-lg font-medium",
@@ -19,7 +22,6 @@ export const FaqRow = ({ question, answer, isOpen = false }: FaqRowProps) => {
             ? "border-b-2 border-slate-300 text-indigo-500"
             : " text-slate-700"
         )}
-        onClick={() => setLocalOpen((prev) => !prev)}
       >
         {question}
         <div className="absolute right-4 top-5">
