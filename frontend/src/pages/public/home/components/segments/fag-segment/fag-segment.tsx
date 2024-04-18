@@ -23,7 +23,7 @@ export const FaqSegment = () => {
             </div>
           ))}
         </div>
-        <div className="lg:block hidden">
+        <div className="lg:block hidden pointer-events-none">
           <div className="absolute absolute-center size-[500px]">
             <Ping
               position={new Vector2(-400, 0)}
