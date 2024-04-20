@@ -34,7 +34,10 @@ const splitTypeOption: SelectedOption[] = Object.entries(SplitType).map(
   })
 );
 
-export const NewPaymentModal = ({ ...wrapperProps }: NewPaymentModalProps) => {
+export const NewPaymentModal = ({
+  isOpen,
+  ...wrapperProps
+}: NewPaymentModalProps) => {
   const [state, dispatch] = useReducer(NewPaymentReducer, newPaymentInitValues);
   const { billID } = useParams();
   const { getBillData } = useBillsHook();
@@ -50,6 +53,10 @@ export const NewPaymentModal = ({ ...wrapperProps }: NewPaymentModalProps) => {
 
   useEffect(() => {
     if (billID) {
+      if (!isOpen) {
+        dispatch({ type: "RESET" });
+        return;
+      }
       const bill = getBillData(billID);
       if (bill) {
         dispatch({
@@ -61,7 +68,7 @@ export const NewPaymentModal = ({ ...wrapperProps }: NewPaymentModalProps) => {
       }
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [billID, getBillData(billID)]);
+  }, [billID, getBillData(billID), isOpen]);
 
   const sendPayment = () => {
     post({
@@ -83,6 +90,7 @@ export const NewPaymentModal = ({ ...wrapperProps }: NewPaymentModalProps) => {
 
   return (
     <ModalWrapper
+      isOpen={isOpen}
       {...wrapperProps}
       className="flex flex-col items-center gap-5"
     >
