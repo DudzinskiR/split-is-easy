@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { RequestStatus } from "src/types";
 import { API } from "src/utils/api";
@@ -8,6 +8,7 @@ import {
   InvitationPendingApproval,
   InvitationRequestPossible,
 } from "./box";
+import { useAccountHook } from "src/features";
 
 const InvitationPage = () => {
   const [invitation, setInvitation] = useState<RequestStatus>({
@@ -15,12 +16,25 @@ const InvitationPage = () => {
   });
   const { invID } = useParams();
   const navigate = useNavigate();
+  const billIDRef = useRef<string | null>(null);
+  const { getBillsList } = useAccountHook();
+
+  useEffect(() => {
+    for (const item of getBillsList()) {
+      if (item.billID === billIDRef.current) {
+        navigate(`/bill/${item.billID}`);
+      }
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [getBillsList()]);
 
   useEffect(() => {
     const fetchInvitation = async () => {
       const result = await API.get<RequestStatus>(`/inv/${invID}`);
-
       if (!result) return;
+      if (result.status !== "IDLE") {
+        billIDRef.current = result.billID;
+      }
 
       if (result.status === "JOINED") {
         navigate(`/bill/${result.billID}`);
