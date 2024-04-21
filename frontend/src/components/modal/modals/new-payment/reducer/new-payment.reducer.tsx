@@ -1,8 +1,10 @@
 import { SplitType } from "src/enums";
 import { UserSplitInfo } from "src/types";
 import { NewPaymentState } from "../interface/new-payment.interface";
+import { newPaymentInitValues } from "../const/new-payment-init-value";
 
 export type NewPaymentAction =
+  | { type: "RESET" }
   | { type: "TITLE"; payload: string }
   | { type: "PARTICIPANTS"; payload: string[] }
   | { type: "PAID_BY"; payload: string | undefined }
@@ -40,6 +42,9 @@ export const NewPaymentReducer = (
   action: NewPaymentAction
 ): NewPaymentState => {
   switch (action.type) {
+    case "RESET": {
+      return newPaymentInitValues;
+    }
     case "SET_USERS":
       return {
         ...state,
