@@ -28,6 +28,7 @@ export const AddVirtualUserModal = ({
       url: `bill/${billID}/admin/virtual`,
       body: { username: virtualUsername },
       onSuccess: () => {
+        setVirtualUsername("");
         setSending(false);
         setOpen(false);
       },
