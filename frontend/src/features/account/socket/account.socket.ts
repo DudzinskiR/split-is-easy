@@ -1,6 +1,8 @@
 import { useDispatch } from "react-redux";
 import { SocketData, UserBalance } from "src/types";
 import {
+  acceptAccountRequest,
+  addBill,
   addRequest,
   cancelRequest,
   updateAccountBalance,
@@ -11,6 +13,22 @@ import {
 export const useAccountSocket = () => {
   const dispatch = useDispatch();
   const globalAccountSockets: SocketData[] = [
+    {
+      name: "ACCOUNT/BILL/NEW",
+      listener: (payload: {
+        billName: string;
+        billID: string;
+        currency: string;
+      }) => {
+        dispatch(
+          addBill({
+            billID: payload.billID,
+            billName: payload.billName,
+            currency: payload.currency,
+          })
+        );
+      },
+    },
     {
       name: "ACCOUNT/REQUEST/NEW",
       listener: (payload: { billName: string; billID: string }) => {
@@ -23,6 +41,24 @@ export const useAccountSocket = () => {
       name: "ACCOUNT/REQUEST/CANCEL",
       listener: (payload: { billID: string }) => {
         dispatch(cancelRequest({ billID: payload.billID }));
+      },
+    },
+    {
+      name: "ACCOUNT/REQUEST/ACCEPT",
+      listener: (payload: {
+        billID: string;
+        name: string;
+        userCount: number;
+        currency: string;
+      }) => {
+        dispatch(
+          acceptAccountRequest({
+            billID: payload.billID,
+            name: payload.name,
+            userCount: payload.userCount,
+            currency: payload.currency,
+          })
+        );
       },
     },
     {

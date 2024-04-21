@@ -89,6 +89,13 @@ export class BillIDAdminService {
       userCount: bill.users.length + bill.virtualUsers.length,
     });
 
+    sendToSockets(user.id, "ACCOUNT/REQUEST/ACCEPT", {
+      billID: bill.id,
+      name: bill.name,
+      userCount: bill.users.length + bill.virtualUsers.length,
+      currency: bill.currency,
+    });
+
     return { status: "ok" };
   }
 

@@ -41,6 +41,45 @@ export const accountSlice = createSlice({
           (item) => item.billID !== action.payload.billID
         );
     },
+    acceptAccountRequest: (
+      state,
+      action: PayloadAction<{
+        billID: string;
+        name: string;
+        userCount: number;
+        currency: string;
+      }>
+    ) => {
+      if (state.requests) {
+        state.requests = state.requests.filter(
+          (item) => item.billID !== action.payload.billID
+        );
+      }
+
+      state.bills?.push({
+        billID: action.payload.billID,
+        name: action.payload.name,
+        balance: 0,
+        currencyCode: action.payload.currency,
+        userCount: action.payload.userCount,
+      });
+    },
+    addBill: (
+      state,
+      action: PayloadAction<{
+        billID: string;
+        billName: string;
+        currency: string;
+      }>
+    ) => {
+      state.bills?.push({
+        billID: action.payload.billID,
+        name: action.payload.billName,
+        balance: 0,
+        currencyCode: action.payload.currency,
+        userCount: 1,
+      });
+    },
     addRequest: (
       state,
       action: PayloadAction<{ billID: string; billName: string }>
@@ -97,7 +136,9 @@ export const {
   setAccountBill,
   setRequestList,
   cancelRequest,
+  acceptAccountRequest,
   addRequest,
+  addBill,
   updateAccountBalance,
   updateBillNameInAccount,
   updateUserCountInBill,
