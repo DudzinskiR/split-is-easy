@@ -2,6 +2,7 @@ import { BillDocument, UserDocument } from "src/interfaces";
 import { BillModel, UserModel } from "src/models";
 import { BillName, CurrencyCode } from "src/types";
 import { getNewInvitationCode } from "src/utils/helpers";
+import { sendToSockets } from "src/utils/socket";
 
 export class BillService {
   static async createNewBill(
@@ -30,6 +31,12 @@ export class BillService {
 
     user.bills.push(newBill._id);
     if (user.save) user.save();
+
+    sendToSockets(user.id, "ACCOUNT/BILL/NEW", {
+      billID: newBill.id,
+      billName: newBill.name,
+      currencyCode: newBill.currency,
+    });
 
     return { id: newBill._id };
   }
