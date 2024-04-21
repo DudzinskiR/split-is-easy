@@ -18,6 +18,7 @@ interface MergeVirtualUserModalProps extends ModalWrapperProps {
 export const MergeVirtualUserModal = ({
   virtualUserID,
   setOpen,
+  onRejected,
   ...wrapperProps
 }: MergeVirtualUserModalProps) => {
   const [userID, setUserID] = useState<string | undefined>("");
@@ -47,6 +48,10 @@ export const MergeVirtualUserModal = ({
   return (
     <>
       <ModalWrapper
+        onRejected={() => {
+          setUserID(undefined);
+          if (onRejected) onRejected();
+        }}
         {...wrapperProps}
         className="flex flex-col gap-5 items-center"
       >
@@ -89,6 +94,7 @@ export const MergeVirtualUserModal = ({
             body: { userID: userID },
             onFinally: () => {
               confirmModal.setOpen(false);
+              setUserID(undefined);
               setOpen(false);
             },
           });
