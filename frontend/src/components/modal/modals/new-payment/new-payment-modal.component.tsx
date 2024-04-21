@@ -36,6 +36,7 @@ const splitTypeOption: SelectedOption[] = Object.entries(SplitType).map(
 
 export const NewPaymentModal = ({
   isOpen,
+  onRejected,
   ...wrapperProps
 }: NewPaymentModalProps) => {
   const [state, dispatch] = useReducer(NewPaymentReducer, newPaymentInitValues);
@@ -55,6 +56,7 @@ export const NewPaymentModal = ({
     if (billID) {
       if (!isOpen) {
         dispatch({ type: "RESET" });
+        dispatch({ type: "PAID_BY", payload: getAccountID() });
         return;
       }
       const bill = getBillData(billID);
@@ -70,14 +72,16 @@ export const NewPaymentModal = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [billID, getBillData(billID), isOpen]);
 
-  const sendPayment = () => {
-    post({
+  const sendPayment = async () => {
+    await post({
       url: "/payment",
       body: preparePaymentToSend(
         state,
         getCurrency(state.currencyCode)?.decimalDigits || 0
       ),
     });
+
+    if (onRejected) onRejected();
   };
 
   const getUsersFromBill = () => {
@@ -90,6 +94,7 @@ export const NewPaymentModal = ({
 
   return (
     <ModalWrapper
+      onRejected={onRejected}
       isOpen={isOpen}
       {...wrapperProps}
       className="flex flex-col items-center gap-5"
