@@ -17,6 +17,7 @@ export interface NewBillModalProps extends ModalWrapperProps {
 
 export const NewBillModal = ({
   setOpen,
+  onRejected,
   ...wrapperProps
 }: NewBillModalProps) => {
   const [currenciesOption, setCurrenciesOption] = useState<SelectedOption[]>(
@@ -67,12 +68,21 @@ export const NewBillModal = ({
       },
       onFinally: () => {
         setOpen(false);
+        setSelectedCurrency("USD");
+        setBillName("");
       },
     });
   };
 
   return (
-    <ModalWrapper {...wrapperProps}>
+    <ModalWrapper
+      onRejected={() => {
+        setSelectedCurrency("USD");
+        setBillName("");
+        if (onRejected) onRejected();
+      }}
+      {...wrapperProps}
+    >
       <div className="flex flex-col gap-5 items-center">
         <h2 className="text-center text-3xl font-semibold">Create new bill</h2>
         <InputText
