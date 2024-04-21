@@ -14,6 +14,7 @@ interface AddVirtualUserModalProps extends ModalWrapperProps {
 
 export const AddVirtualUserModal = ({
   setOpen,
+  onRejected,
   ...wrapperProps
 }: AddVirtualUserModalProps) => {
   const [virtualUsername, setVirtualUsername] = useState("");
@@ -36,6 +37,11 @@ export const AddVirtualUserModal = ({
   return (
     <ModalWrapper
       {...wrapperProps}
+      onRejected={() => {
+        setVirtualUsername("");
+        setOpen(false);
+        if (onRejected) onRejected();
+      }}
       className="flex flex-col items-center gap-5"
     >
       <div className="text-2xl text-center font-semibold">
