@@ -1,4 +1,4 @@
-![git-logo](https://github.com/DudzinskiR/Easy-Split/assets/130515506/b78abead-6bb2-42e3-8095-76355c4b9a82)
+![git-logo](https://github.com/DudzinskiR/split-is-easy/assets/130515506/c5fa1ab9-c9a8-4be2-9092-c8cf37bd1a37)
 [Live demo](https://split-is-easy.vercel.app)
 
 ## Introduction
