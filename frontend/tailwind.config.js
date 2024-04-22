@@ -47,6 +47,16 @@ export default {
           "50%": { transform: `translateX(-5px)` },
           "100%": { transform: `translateX(5px)` },
         },
+        "rotate-phone-15": {
+          "0%": { transform: "rotateY(15deg)" },
+          "50%": { transform: "rotateY(-15deg)" },
+          "100%": { transform: "rotateY(15deg)" },
+        },
+        "rotate-phone-8": {
+          "0%": { transform: "rotateY(8deg)" },
+          "50%": { transform: "rotateY(-8deg)" },
+          "100%": { transform: "rotateY(8deg)" },
+        },
       },
       animation: {
         "custom-ping": "custom-ping 6s ease-in-out infinite",
@@ -56,6 +66,8 @@ export default {
           "chat-bubble-move-up-down 4s ease-in-out infinite",
         "chat-bubble-move-left-right":
           "chat-bubble-move-left-right 4s ease-in-out infinite",
+        "rotate-phone-15": "rotate-phone-15 10s ease-in-out infinite",
+        "rotate-phone-8": "rotate-phone-8 10s ease-in-out infinite",
       },
     },
   },

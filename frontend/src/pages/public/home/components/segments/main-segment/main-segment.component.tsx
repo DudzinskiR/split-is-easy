@@ -35,7 +35,7 @@ export const MainSegment = () => {
   return (
     <div
       ref={containerRef}
-      className="w-full h-screen min-h-[600px] 2xs:min-h-[800px] sm:min-h-[1000px] relative flex justify-center main-background-gradient"
+      className="w-full h-screen min-h-[600px] 2xs:min-h-[800px] sm:min-h-[1000px] relative flex justify-center main-background-gradient group"
     >
       <GridCursorOverlay />
       <div className="relative max-w-7xl w-screen h-full">
@@ -59,6 +59,7 @@ export const MainSegment = () => {
           }}
         >
           <div
+            className="animate-rotate-phone-8 group-hover:animate-none"
             style={{
               transformStyle: "preserve-3d",
               width: 300 * multiply,

@@ -11,7 +11,7 @@ export const FeatureSegment = () => {
 
   return (
     <div
-      className="relative main-background-gradient w-full min-h-[800px] flex flex-row justify-center items-center"
+      className="relative main-background-gradient w-full min-h-[800px] flex flex-row justify-center items-center group"
       ref={containerRef}
     >
       <div className="absolute top-7 z-10">
@@ -53,7 +53,7 @@ export const FeatureSegment = () => {
       </div>
       <div className="transform-style-preserve-3d perspective-2000 w-[250px] h-[525px] scale-[0.75] lg:scale-100 hidden md:block">
         <div
-          className="transform-style-preserve-3d w-[250px] h-[640px] "
+          className="transform-style-preserve-3d w-[250px] h-[640px] animate-rotate-phone-15 group-hover:animate-none"
           ref={phonesRef}
           style={{
             transform: `translateX(0px) rotateY(${
