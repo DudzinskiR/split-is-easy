@@ -1,22 +1,37 @@
 ![git-logo](https://github.com/DudzinskiR/split-is-easy/assets/130515506/c5fa1ab9-c9a8-4be2-9092-c8cf37bd1a37)
 [Live demo](https://split-is-easy.vercel.app)
 
-## Introduction
+## 🎉 Introduction
 
 Split is Easy is an innovative tool for efficient management of shared bills. At any time, you can easily create a new account and invite your friends to collectively settle expenses.
 
 With Split is Easy, not only will you avoid the confusion associated with splitting bills, but you will also gain control over shared finances. The user-friendly interface allows for quick addition of expenses, and the friend-inviting feature makes group settlement easy and convenient.
 
-### Key features:
+## 🖥️ Tech Stack
+
+### 🌐 Frontend
+![ReactBadges](https://img.shields.io/badge/React-61DAFB.svg?style=for-the-badge&logo=React&logoColor=black) ![ReduxBadges](https://img.shields.io/badge/Redux-764ABC.svg?style=for-the-badge&logo=Redux&logoColor=white) ![TailwindBadges](https://img.shields.io/badge/Tailwind%20CSS-06B6D4.svg?style=for-the-badge&logo=Tailwind-CSS&logoColor=white) ![ReactRouter](https://img.shields.io/badge/React%20Router-CA4245.svg?style=for-the-badge&logo=React-Router&logoColor=white) ![TypeScriptBadges](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+
+### 🖥️ Backend
+![NodeJSBadges](https://img.shields.io/badge/Node.js-5FA04E.svg?style=for-the-badge&logo=nodedotjs&logoColor=white) 
+![ExpressBadges](https://img.shields.io/badge/Express-000000.svg?style=for-the-badge&logo=Express&logoColor=white) 
+![MongoDBBadges](https://img.shields.io/badge/MongoDB-47A248.svg?style=for-the-badge&logo=MongoDB&logoColor=white)
+![FirebaseBadges](https://img.shields.io/badge/Firebase-FFCA28.svg?style=for-the-badge&logo=Firebase&logoColor=black)
+![TypeScriptBadges](https://img.shields.io/badge/TypeScript-3178C6.svg?style=for-the-badge&logo=TypeScript&logoColor=white)
+
+### 💬 Realtime Communication
+![SocketIOBadges](https://img.shields.io/badge/Socket.io-010101.svg?style=for-the-badge&logo=socketdotio&logoColor=white)
+
+## ✨Key features:
 
 - Create new accounts with a single click
 - Invite friends to settle bills together
 - Add expenses and track balances
 - Intuitive user interface for easy operation
 
-## Deployment
+## 🚀 Deployment
 
-### Backend
+### 🖥️ Backend
 
 Open your terminal and navigate to the backend
 
@@ -56,7 +71,7 @@ Start the backend server in development mode:
     npm run dev
 ```
 
-### Frontend
+### 🌐 Frontend
 
 Open your terminal and navigate to the frontend directory
 
