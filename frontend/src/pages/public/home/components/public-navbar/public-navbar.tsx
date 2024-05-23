@@ -1,5 +1,5 @@
-import { useState, useEffect, MutableRefObject } from "react";
-import { twMerge, twJoin } from "tailwind-merge";
+import { MutableRefObject } from "react";
+import { twJoin } from "tailwind-merge";
 import { NavbarElement } from "../../public-home.page";
 import { PROJECT_NAME } from "src/utils/const";
 
@@ -34,14 +34,8 @@ export const PublicNavbar = ({
     >
       <div
         className={twJoin(
-          "absolute w-screen h-screen -z-10",
-          isScrolled ? "" : "hidden"
+          "absolute w-screen h-screen -z-10 bg-clip-padding backdrop-filter backdrop-blur-sm bg-[#0e1129] bg-opacity-50 duration-300"
         )}
-        style={{
-          background:
-            "linear-gradient(45deg, rgba(0,0,70,1) 0%, rgba(79,28,150,1) 33%, rgba(28,181,224,1) 100%)",
-          backgroundAttachment: "scroll",
-        }}
       ></div>
       <div className="flex flex-row justify-around w-full">
         <div
