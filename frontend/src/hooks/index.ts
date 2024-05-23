@@ -2,6 +2,7 @@ export * from "./api";
 export * from "./click-outside";
 export * from "./currency-formatter";
 export * from "./document-title";
+export * from "./element-position";
 export * from "./extra-height";
 export * from "./fetch";
 export * from "./firebase-auth";
