@@ -6,3 +6,4 @@ export * from "./lerp";
 export * from "./rgba-to-hex";
 export * from "./round-to-places";
 export * from "./to-radians";
+export * from "./to-radians3";
