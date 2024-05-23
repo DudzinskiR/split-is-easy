@@ -58,7 +58,7 @@ export const PublicNavbar = ({
           backgroundAttachment: "scroll",
         }}
       ></div>
-      <div className="flex flex-row justify-around w-full b">
+      <div className="flex flex-row justify-around w-full">
         <div
           className="flex justify-center items-center text-2xl font-medium text-white/90 uppercase cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
