@@ -80,13 +80,6 @@ export const PublicNavbar = ({
           })}
         </div>
       </div>
-      {/* <div className="flex flex-row justify-around items-center max-w-7xl w-screen">
-        <Link to="/">
-          <div className={twMerge("text-2xl font-semibold", "text-white")}>
-            {PROJECT_NAME}
-          </div>
-        </Link>
-      </div> */}
     </header>
   );
 };
