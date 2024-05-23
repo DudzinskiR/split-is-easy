@@ -14,26 +14,12 @@ export const PublicNavbar = ({
   segmentsRef,
   height = 64,
 }: PublicNavbarProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > height);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [height]);
-
   const scrollToTarget = (index: number) => {
     const targetRef = segmentsRef.current[index];
     if (targetRef) {
       const rect = targetRef.getBoundingClientRect();
       window.scrollTo({
-        top: window.scrollY + rect.top - height,
+        top: window.scrollY + rect.top,
         behavior: "smooth",
       });
     }
@@ -41,9 +27,8 @@ export const PublicNavbar = ({
 
   return (
     <header
-      className={twMerge(
-        "fixed w-full flex justify-center bg-transparent z-[100] duration-500 overflow-hidden",
-        isScrolled ? "shadow-lg" : ""
+      className={twJoin(
+        "fixed w-full flex justify-center bg-transparent z-[100] duration-500 overflow-hidden shadow-lg"
       )}
       style={{ height: height }}
     >
