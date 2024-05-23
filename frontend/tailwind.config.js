@@ -37,6 +37,15 @@ export default {
           "0%": { transform: "scale(0.01)" },
           "100%": { transform: "scale(0.99)" },
         },
+        "scroll-dot": {
+          "0%": { opacity: 0, top: "5%" },
+          "5%": { opacity: 1, top: "5%" },
+          "15%": { opacity: 1, top: "5%" },
+          "35%": { opacity: 1, top: "70%" },
+          "45%": { opacity: 0, top: "70%" },
+          "50%": { opacity: 0, top: "5%" },
+          "100%": { opacity: 0, top: "5%" },
+        },
         "chat-bubble-move-up-down": {
           "0%": { transform: `translateY(5px)` },
           "50%": { transform: `translateY(-5px)` },
@@ -62,6 +71,7 @@ export default {
         "custom-ping": "custom-ping 6s ease-in-out infinite",
         reveal: "reveal 1s ease-in-out",
         show: "show 1s ease-in-out",
+        "scroll-dot": "scroll-dot 5s ease-in-out infinite",
         "chat-bubble-move-up-down":
           "chat-bubble-move-up-down 4s ease-in-out infinite",
         "chat-bubble-move-left-right":
