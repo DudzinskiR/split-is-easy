@@ -9,6 +9,8 @@ import { Environment } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
 
 import { Phone } from "./components";
+import { Ping } from "src/components";
+import { Vector2 } from "src/utils/math";
 
 export const ScreenshotsSection = () => {
   const [screenshotIndex, setScreenshotIndex] = useState(0);
@@ -41,7 +43,10 @@ export const ScreenshotsSection = () => {
   );
 
   return (
-    <div className="bg-[#0e1129] h-screen max-h-[1000px] relative" ref={ref}>
+    <div
+      className="bg-[#0e1129] h-screen max-h-[1000px] w-full relative"
+      ref={ref}
+    >
       <Background2
         className="absolute bottom-0"
         style={{
@@ -62,6 +67,15 @@ export const ScreenshotsSection = () => {
           }px`,
         }}
       />
+      <div className="absolute absolute-center w-[800px] h-[800px]">
+        <Ping
+          position={new Vector2(0, 0)}
+          size={800}
+          number={5}
+          delay={3000}
+          background={"#ffffff10"}
+        />
+      </div>
 
       <div className="h-full">
         <Canvas linear>
