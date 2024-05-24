@@ -1,10 +1,13 @@
-import { Canvas } from "@react-three/fiber";
-import { Environment } from "@react-three/drei";
-import { Phones } from "./phones";
-import { useRotatePhones } from "../../segments/main-segment/hooks";
-import { Ping, RandomRevealText } from "src/components";
 import { Background1 } from "src/assets/landing-page/background";
+import { Button, Ping, RandomRevealText } from "src/components";
+import { useRotatePhones } from "src/hooks";
 import { Vector2 } from "src/utils/math";
+import { twJoin } from "tailwind-merge";
+
+import { Environment } from "@react-three/drei";
+import { Canvas } from "@react-three/fiber";
+
+import { Phones } from "./phones";
 
 export const HeroSection = () => {
   const { rotation, containerRef, phonesRef } = useRotatePhones();
@@ -12,7 +15,7 @@ export const HeroSection = () => {
   return (
     <>
       <div
-        className="relative flex justify-center h-[850px] w-screen bg-[#0e1129]"
+        className="relative flex justify-center h-[850px] max-h-[100vh] w-screen bg-[#0e1129]"
         ref={containerRef}
       >
         <Background1 className="absolute right-0 top-0" />
@@ -24,7 +27,7 @@ export const HeroSection = () => {
           background={"#ffffff05"}
         />
         <div className="relative max-w-7xl w-full h-full">
-          <div className="absolute absolute-center-y text-center">
+          <div className="absolute lg:ml-[50px] lg:absolute-center-y w-full lg:w-[650px] top-[100px] text-center flex flex-col items-center">
             <RandomRevealText
               text={"Shared Bills"}
               className="text-center 2xl:text-6xl lg:text-5xl text-3xl font-bold text-white"
