@@ -2,7 +2,7 @@ import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { GroupProps } from "@react-three/fiber";
-import { useEffect } from "react";
+import { ReactNode, useEffect } from "react";
 
 type GLTFResult = GLTF & {
   nodes: {
@@ -33,9 +33,10 @@ type GLTFResult = GLTF & {
 
 interface PhoneModelProps extends GroupProps {
   screenshot?: THREE.Texture;
+  screen?: ReactNode;
 }
 
-export function PhoneModel({ screenshot, ...props }: PhoneModelProps) {
+export function PhoneModel({ screenshot, screen, ...props }: PhoneModelProps) {
   const { nodes, materials } = useGLTF("/models/untitled.glb") as GLTFResult;
 
   useEffect(() => {
@@ -47,6 +48,7 @@ export function PhoneModel({ screenshot, ...props }: PhoneModelProps) {
 
   return (
     <group {...props} dispose={null}>
+      {screen}
       <group rotation={[0, 0, 0]} scale={[1.837, 5, 1.773]}>
         <mesh
           castShadow
