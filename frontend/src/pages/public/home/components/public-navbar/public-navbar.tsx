@@ -1,5 +1,5 @@
-import { useState, useEffect, MutableRefObject } from "react";
-import { twMerge, twJoin } from "tailwind-merge";
+import { MutableRefObject } from "react";
+import { twJoin } from "tailwind-merge";
 import { NavbarElement } from "../../public-home.page";
 import { PROJECT_NAME } from "src/utils/const";
 
@@ -14,26 +14,12 @@ export const PublicNavbar = ({
   segmentsRef,
   height = 64,
 }: PublicNavbarProps) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      setIsScrolled(scrollTop > height);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [height]);
-
   const scrollToTarget = (index: number) => {
     const targetRef = segmentsRef.current[index];
     if (targetRef) {
       const rect = targetRef.getBoundingClientRect();
       window.scrollTo({
-        top: window.scrollY + rect.top - height,
+        top: window.scrollY + rect.top,
         behavior: "smooth",
       });
     }
@@ -41,24 +27,17 @@ export const PublicNavbar = ({
 
   return (
     <header
-      className={twMerge(
-        "fixed w-full flex justify-center bg-transparent z-[100] duration-500 overflow-hidden",
-        isScrolled ? "shadow-lg" : ""
+      className={twJoin(
+        "fixed w-full flex justify-center bg-transparent z-[100] duration-500 shadow-lg"
       )}
       style={{ height: height }}
     >
       <div
         className={twJoin(
-          "absolute w-screen h-screen -z-10",
-          isScrolled ? "" : "hidden"
+          "absolute w-full h-full -z-10 bg-clip-padding backdrop-filter backdrop-blur-sm bg-[#0e1129] bg-opacity-50 duration-300"
         )}
-        style={{
-          background:
-            "linear-gradient(45deg, rgba(0,0,70,1) 0%, rgba(79,28,150,1) 33%, rgba(28,181,224,1) 100%)",
-          backgroundAttachment: "scroll",
-        }}
       ></div>
-      <div className="flex flex-row justify-around w-full b">
+      <div className="flex flex-row justify-around max-w-7xl w-full">
         <div
           className="flex justify-center items-center text-2xl font-medium text-white/90 uppercase cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
@@ -80,13 +59,6 @@ export const PublicNavbar = ({
           })}
         </div>
       </div>
-      {/* <div className="flex flex-row justify-around items-center max-w-7xl w-screen">
-        <Link to="/">
-          <div className={twMerge("text-2xl font-semibold", "text-white")}>
-            {PROJECT_NAME}
-          </div>
-        </Link>
-      </div> */}
     </header>
   );
 };

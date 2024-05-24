@@ -1,26 +1,23 @@
-import { useSearchParams } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { PublicLoginBox } from "./login-box/public-login-box.component";
 import { PublicSignUpBox } from "./sign-up-box/public-sign-up-box.component";
 import { PROJECT_NAME } from "src/utils/const";
+import { Background1 } from "src/assets/landing-page/background";
 
 export const PublicLoginPage = () => {
   const [searchParams] = useSearchParams();
   const viewType = searchParams.get("t") === "sign-up" ? "SIGN_UP" : "LOGIN";
 
   return (
-    <div className="w-full flex justify-center">
-      <header className="fixed w-full flex justify-center bg-transparent z-[100] h-[60px] duration-500 overflow-hidden">
-        <div
-          className="absolute w-screen h-screen -z-10"
-          style={{
-            background:
-              "linear-gradient(45deg, rgba(0,0,70,1) 0%, rgba(79,28,150,1) 33%, rgba(28,181,224,1) 100%)",
-            backgroundAttachment: "scroll",
-          }}
-        >
-          <div className="flex justify-center items-center h-[60px] text-2xl font-medium text-white/90 uppercase cursor-pointer">
-            {PROJECT_NAME}
-          </div>
+    <div className="flex justify-center bg-[#0e1129] h-screen w-screen">
+      <div className="blur-lg w-full absolute h-full">
+        <Background1 className="absolute left-0 top-0 scale-x-[-1]" />
+        <Background1 className="absolute right-0 bottom-0 scale-y-[-1]" />
+      </div>
+
+      <header className="fixed w-full flex justify-center z-[100] h-[60px] duration-500 overflow-hidden bg-clip-padding backdrop-filter backdrop-blur bg-[#04050e] bg-opacity-70">
+        <div className="flex justify-center items-center h-[60px] text-2xl font-medium text-white/90 uppercase cursor-pointer">
+          <Link to={"/"}>{PROJECT_NAME}</Link>
         </div>
       </header>
       <div className="max-w-7xl mt-20 w-screen mb-5 flex justify-center">

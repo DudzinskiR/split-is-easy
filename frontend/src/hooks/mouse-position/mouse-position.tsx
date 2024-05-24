@@ -28,9 +28,16 @@ export const useMousePosition = () => {
         setMousePosition(new Vector2(event.clientX, event.clientY));
       }
     };
+
+    const mouseLeave = () => {
+      setMousePosition(null);
+    };
+
     window.addEventListener("mousemove", updateMousePosition);
+    window.addEventListener("mouseout", mouseLeave);
     return () => {
       window.removeEventListener("mousemove", updateMousePosition);
+      window.removeEventListener("mouseout", mouseLeave);
     };
   }, []);
 

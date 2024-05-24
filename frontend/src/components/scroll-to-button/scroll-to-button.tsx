@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
 import { twMerge } from "tailwind-merge";
-
+import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 interface ScrollToButtonProps {
   positionToScroll?: number;
   className?: string;
@@ -10,7 +10,6 @@ interface ScrollToButtonProps {
 export const ScrollToButton = ({
   className,
   positionToScroll,
-  icon,
 }: ScrollToButtonProps) => {
   const scrollToPosition = () => {
     window.scrollTo({ top: positionToScroll, behavior: "smooth" });
@@ -19,14 +18,15 @@ export const ScrollToButton = ({
   return (
     <button
       className={twMerge(
-        "absolute size-[60px]  rounded-full flex justify-center items-center shadow-lg cursor-pointer  duration-300",
-        "bg-gradient-to-r from-sky-600 to-blue-700 hover:saturate-[1.5]",
-        "text-3xl text-white",
+        "border-[4px] h-[80px] w-[30px] rounded-full relative border-zinc-300",
         className
       )}
       onClick={scrollToPosition}
     >
-      {icon}
+      <MdOutlineKeyboardArrowDown className="text-white/20 absolute absolute-center-x size-[30px] top-[5%]" />
+      <MdOutlineKeyboardArrowDown className="text-white/20 absolute absolute-center-x size-[30px] top-[30%]" />
+      <MdOutlineKeyboardArrowDown className="text-white/20 absolute absolute-center-x size-[30px] top-[55%]" />
+      <div className="bg-zinc-300 size-[18px] rounded-full absolute-center-x absolute animate-scroll-dot"></div>
     </button>
   );
 };

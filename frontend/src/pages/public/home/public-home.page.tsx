@@ -1,17 +1,15 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
-
-import {
-  AboutSegment,
-  FaqSegment,
-  FeatureSegment,
-  FooterSegment,
-  HowAppWorkSegment,
-  MainSegment,
-} from "./components/segments";
-import { PublicNavbar } from "./components";
 import { ScrollToButton } from "src/components/scroll-to-button";
-import { FaArrowDown, FaArrowUp } from "react-icons/fa";
 import { twJoin } from "tailwind-merge";
+import {
+  FaqSection,
+  FeaturesSection,
+  FooterSection,
+  HeroSection,
+  PublicNavbar,
+  ScreenshotsSection,
+  WorkSection,
+} from "./components";
 
 export type NavbarElement = {
   component: ReactNode;
@@ -19,12 +17,12 @@ export type NavbarElement = {
 };
 
 const segments: NavbarElement[] = [
-  { component: <MainSegment />, name: "Home" },
-  { component: <AboutSegment />, name: "About" },
-  { component: <FeatureSegment />, name: "Feature" },
-  { component: <HowAppWorkSegment />, name: "HOW IT WORK" },
-  { component: <FaqSegment />, name: "FAQ" },
-  { component: <FooterSegment /> },
+  { component: <HeroSection />, name: "home" },
+  { component: <WorkSection /> },
+  { component: <ScreenshotsSection />, name: "screenshots" },
+  { component: <FeaturesSection />, name: "features" },
+  { component: <FaqSection />, name: "FAQ" },
+  { component: <FooterSection /> },
 ];
 
 const PublicHomePage = () => {
@@ -52,16 +50,10 @@ const PublicHomePage = () => {
           window.scrollY -
           60
         }
-        className="absolute absolute-center-x top-[85vh] z-10 animate-bounce"
-        icon={<FaArrowDown />}
-      />
-      <ScrollToButton
-        positionToScroll={0}
         className={twJoin(
-          "fixed right-[50px] top-[85vh] z-10",
-          isScrollToTopButtonShow ? "opacity-100" : "opacity-0"
+          "absolute top-[80vh] z-10 absolute-center-x duration-500",
+          isScrollToTopButtonShow ? "opacity-0" : "opacity-100"
         )}
-        icon={<FaArrowUp />}
       />
       <div className="flex flex-col w-full">
         {segments.map((item, index) => (
