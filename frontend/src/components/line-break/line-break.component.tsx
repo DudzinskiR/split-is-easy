@@ -24,11 +24,7 @@ export const LineBreak = ({
       <div
         className={twMerge("w-full border-b-4 border-slate-500", lineClassName)}
       ></div>
-      {text && (
-        <div className="mx-4 text-2xl italic text-slate-700 font-semibold">
-          {text}
-        </div>
-      )}
+      {text && <div className="mx-4 text-2xl italic font-semibold">{text}</div>}
       {children}
       <div
         className={twMerge("w-full border-b-4 border-slate-500", lineClassName)}
