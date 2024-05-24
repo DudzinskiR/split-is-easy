@@ -3,6 +3,9 @@ import { useFirebaseAuth } from "./hooks";
 import { RootState } from "./features";
 import { Suspense, lazy, useEffect } from "react";
 import { socket } from "./utils/socket";
+import { PublicLoadingScreen } from "./pages/loading/public-loading-screen/public-loading-screen";
+import { UserLoadingScreen } from "./pages/loading/user-loading-screen/user-loading-screen";
+
 const PublicLayout = lazy(() => import("./layouts/public/public.layout"));
 const UserLayout = lazy(() => import("./layouts/user/user.layout"));
 
@@ -30,7 +33,7 @@ function App() {
 
   if (userStatus === "UNKNOWN" && !localStorage.getItem("LOGGED")) {
     return (
-      <Suspense>
+      <Suspense fallback={<UserLoadingScreen />}>
         <PublicLayout />
       </Suspense>
     );
@@ -39,22 +42,18 @@ function App() {
   switch (userStatus) {
     case "LOGGED":
       return (
-        <Suspense>
+        <Suspense fallback={<UserLoadingScreen />}>
           <UserLayout />
         </Suspense>
       );
     case "NOT_LOGGED":
       return (
-        <Suspense>
+        <Suspense fallback={<PublicLoadingScreen />}>
           <PublicLayout />
         </Suspense>
       );
     case "UNKNOWN":
-      return (
-        <div className="h-screen w-screen flex justify-center items-center text-4xl text-slate-700 font-medium">
-          Loading...
-        </div>
-      );
+      return <UserLoadingScreen />;
   }
 }
 
