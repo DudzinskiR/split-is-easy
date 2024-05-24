@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
 import { useFirebaseAuth } from "./hooks";
 import { RootState } from "./features";
-import { useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { socket } from "./utils/socket";
-import PublicLayout from "./layouts/public/public.layout";
-import UserLayout from "./layouts/user/user.layout";
+const PublicLayout = lazy(() => import("./layouts/public/public.layout"));
+const UserLayout = lazy(() => import("./layouts/user/user.layout"));
 
 function App() {
   useFirebaseAuth();
@@ -29,14 +29,26 @@ function App() {
   }, [userStatus]);
 
   if (userStatus === "UNKNOWN" && !localStorage.getItem("LOGGED")) {
-    return <PublicLayout />;
+    return (
+      <Suspense>
+        <PublicLayout />
+      </Suspense>
+    );
   }
 
   switch (userStatus) {
     case "LOGGED":
-      return <UserLayout />;
+      return (
+        <Suspense>
+          <UserLayout />
+        </Suspense>
+      );
     case "NOT_LOGGED":
-      return <PublicLayout />;
+      return (
+        <Suspense>
+          <PublicLayout />
+        </Suspense>
+      );
     case "UNKNOWN":
       return (
         <div className="h-screen w-screen flex justify-center items-center text-4xl text-slate-700 font-medium">
