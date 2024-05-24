@@ -1,3 +1,3 @@
 export * from "./public-navbar";
-export * from "./segments";
+export * from "./sections";
 export * from "./home-title";
