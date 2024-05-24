@@ -41,16 +41,15 @@ export const HeroSection = () => {
               delay={1.5}
             />
           </div>
-          <div className="h-full w-full absolute left-[30%]" ref={phonesRef}>
-            <Canvas
-              linear
-              // onCreated={({ gl }) => {
-              //   gl.outputEncoding = THREE.sRGBEncoding;
-              // }}
-            >
-              {/* <ambientLight intensity={0.3} /> */}
-              {/* <ambientLight intensity={0.5} /> */}
-              {/* <pointLight position={[10, 10, 10]} intensity={1} /> */}
+          <div
+            className={twJoin(
+              "absolute right-[50%] translate-x-[50%] md:size-[600px]",
+              "size-[90vw] top-[300px]",
+              "lg:top-[50px] lg:size-[700px] lg:right-[-80px] lg:translate-x-0"
+            )}
+            ref={phonesRef}
+          >
+            <Canvas>
               <Phones rotation={rotation} />
               <Environment preset="warehouse" />
             </Canvas>
