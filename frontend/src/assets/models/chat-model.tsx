@@ -1,5 +1,5 @@
 import * as THREE from "three";
-import { Center, Text3D, useGLTF } from "@react-three/drei";
+import { Text3D, useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { GroupProps } from "@react-three/fiber";
 
