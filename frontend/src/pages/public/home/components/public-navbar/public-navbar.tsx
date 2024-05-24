@@ -28,16 +28,16 @@ export const PublicNavbar = ({
   return (
     <header
       className={twJoin(
-        "fixed w-full flex justify-center bg-transparent z-[100] duration-500 overflow-hidden shadow-lg"
+        "fixed w-full flex justify-center bg-transparent z-[100] duration-500 shadow-lg"
       )}
       style={{ height: height }}
     >
       <div
         className={twJoin(
-          "absolute w-screen h-screen -z-10 bg-clip-padding backdrop-filter backdrop-blur-sm bg-[#0e1129] bg-opacity-50 duration-300"
+          "absolute w-full h-full -z-10 bg-clip-padding backdrop-filter backdrop-blur-sm bg-[#0e1129] bg-opacity-50 duration-300"
         )}
       ></div>
-      <div className="flex flex-row justify-around w-full">
+      <div className="flex flex-row justify-around max-w-7xl w-full">
         <div
           className="flex justify-center items-center text-2xl font-medium text-white/90 uppercase cursor-pointer"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
