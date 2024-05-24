@@ -5,7 +5,7 @@ import { PhoneModel } from "src/assets/models";
 import { toRadians3 } from "src/utils/helpers/to-radians3/to-radians3";
 import { Vector3 } from "src/utils/math";
 import { Group } from "three";
-import { lerp } from "three/src/math/MathUtils.js";
+import { lerp } from "src/utils/helpers";
 
 let timeFromStart = 0;
 
@@ -35,9 +35,9 @@ export const Phone = ({ index, screenshots }: PhoneProps) => {
     if (!phone.current) return;
 
     phone.current.rotation.set(
-      lerp(phone.current.rotation.x, groupLocalRotation.current.x, 0.03),
-      lerp(phone.current.rotation.y, groupLocalRotation.current.y, 0.03),
-      lerp(phone.current.rotation.z, groupLocalRotation.current.z, 0.03)
+      lerp(phone.current.rotation.x, groupLocalRotation.current.x, 4 * delta),
+      lerp(phone.current.rotation.y, groupLocalRotation.current.y, 4 * delta),
+      lerp(phone.current.rotation.z, groupLocalRotation.current.z, 4 * delta)
     );
 
     phone.current.position.set(0, Math.sin(timeFromStart * 1.2) * 0.1 - 0.5, 0);
@@ -54,7 +54,6 @@ export const Phone = ({ index, screenshots }: PhoneProps) => {
     return index % screenshots.length;
   };
 
-  console.log();
   return (
     <group ref={phone}>
       <group rotation={[...toRadians3(90, 90, 0)]} scale={[0.7, 0.7, 0.7]}>
