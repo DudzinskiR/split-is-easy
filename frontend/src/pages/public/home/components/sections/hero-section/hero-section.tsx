@@ -40,6 +40,14 @@ export const HeroSection = () => {
               className="text-center 2xl:text-3xl lg:text-2xl text-lg font-bold text-white lg:mt-10 mt-2"
               delay={1.5}
             />
+            <div className="w-[200px] mt-10 animate-reveal animation-fill-forwards animation-delay-4000 opacity-0">
+              <Button
+                color="bg-white hover:bg-slate-200 text-slate-900 text-2xl"
+                className="lg:w-40 w-[100px]"
+                text="Login"
+                to="/login"
+              />
+            </div>
           </div>
           <div
             className={twJoin(
