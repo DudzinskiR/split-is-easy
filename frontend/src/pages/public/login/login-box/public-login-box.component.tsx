@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, LineBreak } from "src/components";
+import { Button, LineBreak } from "src/components";
 import { InputText } from "src/components/inputs";
-import { ButtonColor } from "src/enums";
 import {
   getFirebaseErrorDescription,
   signInWithEmail,
@@ -34,7 +33,10 @@ export const PublicLoginBox = () => {
 
   return (
     <div className="lg:w-1/3 md:w-1/2 w-11/12 duration-150">
-      <Box title="Login">
+      <div className="bg-clip-padding backdrop-filter backdrop-blur bg-[#04050e] bg-opacity-70 z-10 mt-20">
+        <div className="text-white text-center text-3xl py-5 font-bold">
+          Login
+        </div>
         <div className="text-center text-lg text-red-700 font-semibold">
           {error}
         </div>
@@ -51,32 +53,41 @@ export const PublicLoginBox = () => {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               autoComplete="off"
+              className="bg-white focus:bg-white"
             />
             <InputText
               label="password"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="bg-white focus:bg-white"
             />
-            <Button text="Login" />
+            <Button
+              text="Login"
+              color="bg-white hover:bg-slate-200 text-slate-900 text-2xl"
+            />
           </form>
-          <LineBreak text="Or" className="w-11/12" lineClassName="border-b-2" />
+          <LineBreak
+            text="Or"
+            className="w-11/12 text-slate-200"
+            lineClassName="border-b-2 border-slate-200 "
+          />
           <div className="w-full flex flex-col items-center gap-5 my-5">
             <Button
               text="Google"
-              color={ButtonColor.GREEN}
               className="w-3/4"
+              color="bg-white hover:bg-slate-200 text-slate-900 text-xl"
               onClick={loginWithGoogle}
             />
             <Button
               text="Sign Up"
-              color={ButtonColor.PURPLE}
               className="w-3/4"
+              color="bg-white hover:bg-slate-200 text-slate-900 text-xl"
               to="/login?t=sign-up"
             />
           </div>
         </div>
-      </Box>
+      </div>
     </div>
   );
 };

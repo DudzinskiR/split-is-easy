@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Box, Button, LineBreak } from "src/components";
+import { Button, LineBreak } from "src/components";
 import { InputText } from "src/components/inputs";
-import { ButtonColor } from "src/enums";
 import {
   getFirebaseErrorDescription,
   signInWithGoogle,
@@ -32,7 +31,10 @@ export const PublicSignUpBox = () => {
 
   return (
     <div className="lg:w-1/3 md:w-1/2 w-11/12 duration-150">
-      <Box title="Sign Up">
+      <div className="bg-clip-padding backdrop-filter backdrop-blur bg-[#04050e] bg-opacity-70 z-10 mt-20">
+        <div className="text-white text-center text-3xl py-5 font-bold">
+          Login
+        </div>
         <div className="text-center text-lg text-red-700 font-semibold">
           {error}
         </div>
@@ -48,6 +50,7 @@ export const PublicSignUpBox = () => {
               label="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="bg-white focus:bg-white"
               autoComplete="off"
             />
             <InputText
@@ -55,32 +58,42 @@ export const PublicSignUpBox = () => {
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              className="bg-white focus:bg-white"
             />
             <InputText
               label="confirm password"
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
+              className="bg-white focus:bg-white"
             />
-            <Button text="Sign up" disabled={confirmPassword !== password} />
+            <Button
+              text="Sign up"
+              disabled={confirmPassword !== password}
+              color="bg-white hover:bg-slate-200 text-slate-900 text-2xl"
+            />
           </form>
-          <LineBreak text="Or" className="w-11/12" lineClassName="border-b-2" />
+          <LineBreak
+            text="Or"
+            className="w-11/12 text-slate-200"
+            lineClassName="border-b-2 border-slate-200"
+          />
           <div className="w-full flex flex-col items-center gap-5 my-5">
             <Button
               text="Google"
-              color={ButtonColor.GREEN}
+              color="bg-white hover:bg-slate-200 text-slate-900 text-xl"
               className="w-3/4"
               onClick={loginWithGoogle}
             />
             <Button
               text="Login"
-              color={ButtonColor.PURPLE}
+              color="bg-white hover:bg-slate-200 text-slate-900 text-xl"
               className="w-3/4"
               to="/login"
             />
           </div>
         </div>
-      </Box>
+      </div>
     </div>
   );
 };
