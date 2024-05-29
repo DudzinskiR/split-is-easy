@@ -1,10 +1,8 @@
-import {
-  User,
-  BillAdminData,
-  BillPayment,
-  TransactionBetweenUsers,
-  UserBalance,
-} from "src/types";
+import { User } from "../user/user.type";
+import { BillAdminData } from "./bill-admin-data.type";
+import { BillPayment } from "./bill-payment.type";
+import { TransactionBetweenUsers } from "./transaction-between-users.type";
+import { UserBalance } from "./user-balance.type";
 
 export type Bill = {
   id: string;

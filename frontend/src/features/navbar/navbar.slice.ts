@@ -1,5 +1,7 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { NavbarCategory } from "src/types";
+import { NavbarCategory } from "src/types/navbar/navbar-category.type";
+
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { revertAll } from "../revert-all";
 
 interface State {

@@ -2,11 +2,13 @@ import { AiOutlineArrowRight, AiOutlineUser } from "react-icons/ai";
 import { BiPlusCircle } from "react-icons/bi";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Button } from "src/components";
-import { ButtonColor } from "src/enums";
-import { RootState, setNavbarOpen } from "src/features";
-import { useUsersHook } from "src/features/users/hook";
-import { useClickOutside, useSignOut } from "src/hooks";
+import { Button } from "src/components/button/button.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { setNavbarOpen } from "src/features/navbar/navbar.slice";
+import { RootState } from "src/features/store";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { useClickOutside } from "src/hooks/click-outside/click-outside.hook";
+import { useSignOut } from "src/hooks/sign-out/sign-out.hook";
 
 import { SmallNavbarList } from "../list/small-navbar-list.component";
 

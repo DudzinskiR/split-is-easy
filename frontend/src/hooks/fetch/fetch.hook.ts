@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { RequestStatus } from "src/enums";
-import { API } from "src/utils/api";
+import { RequestStatus } from "src/enums/api/request-status";
+import { API } from "src/utils/api/api";
 
 interface ApiConfig<T> {
   endpoint: string;

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from "react";
-import { useMousePosition } from "src/hooks";
-import { Vector2 } from "src/utils/math";
+import { Vector2 } from "src/utils/math/vector/vector-2";
+import { useMousePosition } from "../mouse-position/mouse-position";
 
 export const useRotatePhones = () => {
   const [rotation, setRotation] = useState<Vector2>(Vector2.zero);

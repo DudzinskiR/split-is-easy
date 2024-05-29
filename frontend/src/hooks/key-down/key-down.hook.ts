@@ -1,5 +1,8 @@
 import { useEffect } from "react";
-import { KeyboardInputCode, KeyboardInputCodeName } from "src/types";
+import {
+  KeyboardInputCode,
+  KeyboardInputCodeName,
+} from "src/types/keyboard-key/keyboard-key.type";
 
 export interface KeyDownInfo {
   key: KeyboardTypes;

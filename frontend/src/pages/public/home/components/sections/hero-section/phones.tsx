@@ -1,10 +1,19 @@
-import { useFrame } from "@react-three/fiber";
 import { useRef } from "react";
-import { Front1Model, Front2Model, PhoneModel } from "src/assets/models";
-import { lerp, toRadians } from "src/utils/helpers";
+import { Front1Model } from "src/assets/models/front1-model";
+import { Front2Model } from "src/assets/models/front2-model";
+import { PhoneModel } from "src/assets/models/phone-model";
+import { lerp } from "src/utils/helpers/lerp/lerp";
+import { toRadians } from "src/utils/helpers/to-radians/to-radians";
 import { toRadians3 } from "src/utils/helpers/to-radians3/to-radians3";
-import { Transform3D, Vector2, Vector3 } from "src/utils/math";
-import { Group } from "three";
+import { Transform3D } from "src/utils/math/transform/transform-3d";
+import { Vector2 } from "src/utils/math/vector/vector-2";
+import { Vector3 } from "src/utils/math/vector/vector-3";
+// import { Group } from "three";
+
+import { useFrame } from "@react-three/fiber";
+import { Group } from "three/src/Three.js";
+
+// const Front1Model = lazy(() => import("src/assets/models/front1-model"));
 
 const phoneA = new Transform3D(
   new Vector3(-1.8, 0, -0.5),

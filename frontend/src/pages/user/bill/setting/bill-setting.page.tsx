@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { Box, Button } from "src/components";
-import { InputText } from "src/components/inputs";
-import { ConfirmModal } from "src/components/modal";
-import { ButtonColor } from "src/enums";
-import { useAccountHook, useBillsHook } from "src/features";
-import {
-  useAPI,
-  useDocumentTitle,
-  useNavbarList,
-  useVisibilityToggle,
-} from "src/hooks";
-import { billPageNavbarData } from "src/utils/navbar-list";
-import { isValidBillName } from "src/utils/validators";
+import { Box } from "src/components/box/box.component";
+import { Button } from "src/components/button/button.component";
+import { InputText } from "src/components/inputs/input-text/input-text.component";
+import { ConfirmModal } from "src/components/modal/modals/confirm-modal/confirm-modal.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { useAccountHook } from "src/features/account/hook/account.hook";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useAPI } from "src/hooks/api/api.hook";
+import { useDocumentTitle } from "src/hooks/document-title/document-title.hook";
+import { useNavbarList } from "src/hooks/navbar-list/navbar-list.hook";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+import { billPageNavbarData } from "src/utils/navbar-list/bill-page-navbar-data/bill-page-navbar-data";
+import { isValidBillName } from "src/utils/validators/bill-name/bill-name.validator";
 
 export const BillSettingPage = () => {
   const { billID } = useParams();

@@ -1,7 +1,7 @@
 import { MutableRefObject } from "react";
 import { twJoin } from "tailwind-merge";
 import { NavbarElement } from "../../public-home.page";
-import { PROJECT_NAME } from "src/utils/const";
+import { PROJECT_NAME } from "src/utils/const/text-const";
 
 interface PublicNavbarProps {
   elements: NavbarElement[];

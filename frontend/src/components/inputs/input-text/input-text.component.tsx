@@ -5,7 +5,7 @@ import {
   useId,
   useState,
 } from "react";
-import { InputTextState } from "src/enums";
+import { InputTextState } from "src/enums/input-text-state/input-text-state.enum";
 import { twMerge } from "tailwind-merge";
 
 export interface InputTextProps extends InputHTMLAttributes<HTMLInputElement> {

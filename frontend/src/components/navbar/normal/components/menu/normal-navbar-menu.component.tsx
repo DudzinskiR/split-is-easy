@@ -2,10 +2,15 @@ import { AiOutlineUser } from "react-icons/ai";
 import { BiLogOut } from "react-icons/bi";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
 import { useDispatch } from "react-redux";
-import { FadeInOut } from "src/components";
-import { setNavbarOpen, toggleNavbarOpen, useAccountHook } from "src/features";
-import { useUsersHook } from "src/features/users/hook";
-import { useClickOutside, useSignOut } from "src/hooks";
+import { FadeInOut } from "src/components/fade-in-out/fade-in-out.component";
+import { useAccountHook } from "src/features/account/hook/account.hook";
+import {
+  setNavbarOpen,
+  toggleNavbarOpen,
+} from "src/features/navbar/navbar.slice";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { useClickOutside } from "src/hooks/click-outside/click-outside.hook";
+import { useSignOut } from "src/hooks/sign-out/sign-out.hook";
 
 import { UserMenuButton } from "./normal-navbar-menu-button.component";
 

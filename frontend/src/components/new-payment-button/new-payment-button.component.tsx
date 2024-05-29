@@ -2,9 +2,9 @@ import { ButtonHTMLAttributes } from "react";
 import { FaPlus } from "react-icons/fa";
 import { IoArrowRedo } from "react-icons/io5";
 import { useParams } from "react-router-dom";
-import { ButtonColor } from "src/enums";
-import { useBillsHook } from "src/features";
-import { useGlobalFlagContext } from "src/hooks";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useGlobalFlagContext } from "src/hooks/global-flag/global-flag.hook";
 import { twJoin } from "tailwind-merge";
 
 interface NewPaymentButtonProps

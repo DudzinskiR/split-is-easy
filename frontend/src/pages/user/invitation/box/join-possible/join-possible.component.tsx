@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { useAPI } from "src/hooks";
-import { InvitationBoxTemplate } from "../template";
+import { useAPI } from "src/hooks/api/api.hook";
+import { InvitationBoxTemplate } from "../template/invitation-box-template.component";
 
 interface InvitationJoinPossibleProps {
   billName: string;

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { PROJECT_NAME } from "src/utils/const";
+import { PROJECT_NAME } from "src/utils/const/text-const";
 
 export const useDocumentTitle = (
   documentTitle: string,

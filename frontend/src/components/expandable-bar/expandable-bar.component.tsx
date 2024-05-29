@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { useTimers } from "src/hooks";
+import { useTimers } from "src/hooks/timers/timers.hook";
 import { twMerge } from "tailwind-merge";
-import { Button } from "src/components/button";
+import { Button } from "../button/button.component";
 
 interface ExpandableBarProps extends React.HTMLAttributes<HTMLElement> {
   children?: React.ReactNode;

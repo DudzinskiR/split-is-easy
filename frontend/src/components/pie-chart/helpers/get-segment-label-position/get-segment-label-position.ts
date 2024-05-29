@@ -1,4 +1,4 @@
-import { toRadians } from "src/utils/helpers";
+import { toRadians } from "src/utils/helpers/to-radians/to-radians";
 
 export const getSegmentLabelPosition = (
   angle: number,

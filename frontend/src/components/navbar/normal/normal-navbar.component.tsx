@@ -1,15 +1,15 @@
 import { BiPlusCircle } from "react-icons/bi";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Button } from "src/components";
-import { RootState } from "src/features";
-import { PROJECT_NAME } from "src/utils/const";
 
 import { NormalNavbarList } from "./components/list/normal-navbar-list.component";
 import {
   UserMenu,
   UserMenuProps,
 } from "./components/menu/normal-navbar-menu.component";
+import { RootState } from "src/features/store";
+import { PROJECT_NAME } from "src/utils/const/text-const";
+import { Button } from "src/components/button/button.component";
 
 export interface NormalNavbarProps extends UserMenuProps {
   openNewBillModal: () => void;

@@ -1,12 +1,18 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Button, ExpandableBar } from "src/components";
-import { SettleData, SettleModal } from "src/components/modal";
-import { ButtonColor } from "src/enums";
-import { useAccountHook, useBillsHook } from "src/features";
-import { useUsersHook } from "src/features/users/hook";
-import { useCurrencyFormatter, useVisibilityToggle } from "src/hooks";
-import { TransactionBetweenUsers } from "src/types";
+import { Button } from "src/components/button/button.component";
+import { ExpandableBar } from "src/components/expandable-bar/expandable-bar.component";
+import {
+  SettleData,
+  SettleModal,
+} from "src/components/modal/modals/settle-modal/settle-modal.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { useAccountHook } from "src/features/account/hook/account.hook";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { useCurrencyFormatter } from "src/hooks/currency-formatter/currency-formatter.hook";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+import { TransactionBetweenUsers } from "src/types/bill/transaction-between-users.type";
 
 interface SummaryBoxReceivablesProps {
   transactions: TransactionBetweenUsers[];

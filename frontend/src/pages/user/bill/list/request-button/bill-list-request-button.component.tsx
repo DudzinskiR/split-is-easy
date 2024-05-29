@@ -1,5 +1,5 @@
-import { Button } from "src/components";
-import { ButtonColor } from "src/enums";
+import { Button } from "src/components/button/button.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
 import { twJoin } from "tailwind-merge";
 
 interface BillListRequestButtonProps {

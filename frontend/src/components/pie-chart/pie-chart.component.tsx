@@ -2,11 +2,12 @@ import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { PieChartProps } from "./interface/pie-chart.interface";
 import { SegmentData } from "./interface/segment-data.interface";
-import { getSegmentColor, prepareChartData } from "./helpers";
 import PieChartContextProvider from "./context/pie-chart.context";
 import { PieChartShadow } from "./components/shadow/pie-chart-shadow.component";
 import PieChartSegment from "./components/segment/pie-chart-segment.component";
 import PieChartCenterLabel from "./components/center-label/pie-chart-center-label.component";
+import { prepareChartData } from "./helpers/prepare-chart-data/prepare-chart-data.helper";
+import { getSegmentColor } from "./helpers/get-segment-color/get-segment-color.helper";
 
 const PieChart = ({
   data,

@@ -1,8 +1,8 @@
 import { Link, useSearchParams } from "react-router-dom";
 import { PublicLoginBox } from "./login-box/public-login-box.component";
 import { PublicSignUpBox } from "./sign-up-box/public-sign-up-box.component";
-import { PROJECT_NAME } from "src/utils/const";
 import { Background1 } from "src/assets/landing-page/background";
+import { PROJECT_NAME } from "src/utils/const/text-const";
 
 export const PublicLoginPage = () => {
   const [searchParams] = useSearchParams();

@@ -1,10 +1,10 @@
 import { useSelector } from "react-redux";
-import { useFirebaseAuth } from "./hooks";
-import { RootState } from "./features";
 import { Suspense, lazy, useEffect } from "react";
-import { socket } from "./utils/socket";
 import { PublicLoadingScreen } from "./pages/loading/public-loading-screen/public-loading-screen";
 import { UserLoadingScreen } from "./pages/loading/user-loading-screen/user-loading-screen";
+import { useFirebaseAuth } from "./hooks/firebase-auth/firebase-auth.hook";
+import { RootState } from "./features/store";
+import { socket } from "./utils/socket/socket";
 
 const PublicLayout = lazy(() => import("./layouts/public/public.layout"));
 const UserLayout = lazy(() => import("./layouts/user/user.layout"));

@@ -1,11 +1,16 @@
 import { useEffect, useReducer } from "react";
-import { useVisibilityToggle } from "src/hooks";
-import { BillPayment, SelectedOption } from "src/types";
-import { HistoryBoxFilterReducer } from "./reducer/history-box-filter.reducer";
-import { HistoryBoxReducerInitValues } from "./init-value/history-box-filter-init-value";
-import { useUsersHook } from "src/features/users/hook";
-import { useBillsHook, useCurrencyHook } from "src/features";
+import { BsFilterSquare } from "react-icons/bs";
 import { useParams } from "react-router-dom";
+import { FadeInOut } from "src/components/fade-in-out/fade-in-out.component";
+import { InputText } from "src/components/inputs/input-text/input-text.component";
+import { MultiSelect } from "src/components/inputs/multi-select/multi-select.component";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useCurrencyHook } from "src/features/currency/hook/currency.hook";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+import { BillPayment } from "src/types/bill/bill-payment.type";
+import { SelectedOption } from "src/types/other/selected-option.type";
+
 import {
   filterByAmount,
   filterByPayers,
@@ -13,9 +18,8 @@ import {
   filterByTitle,
   filterPayments,
 } from "./helper/history-box-filter.helper";
-import { BsFilterSquare } from "react-icons/bs";
-import { FadeInOut } from "src/components";
-import { InputText, MultiSelect } from "src/components/inputs";
+import { HistoryBoxReducerInitValues } from "./init-value/history-box-filter-init-value";
+import { HistoryBoxFilterReducer } from "./reducer/history-box-filter.reducer";
 
 interface HistoryBoxFilterProps {
   payments: BillPayment[];

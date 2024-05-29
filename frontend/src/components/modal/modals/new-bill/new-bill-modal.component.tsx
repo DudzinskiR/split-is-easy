@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Checkbox, InputText, SingleSelect } from "src/components/inputs";
-import { useCurrencyHook } from "src/features";
-import { useAPI } from "src/hooks";
-import { ModalWrapperProps } from "src/interfaces";
-import { SelectedOption } from "src/types";
+import { Button } from "src/components/button/button.component";
+import { Checkbox } from "src/components/inputs/checkbox/checkbox.component";
+import { InputText } from "src/components/inputs/input-text/input-text.component";
+import { SingleSelect } from "src/components/inputs/single-select/single-select.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { useCurrencyHook } from "src/features/currency/hook/currency.hook";
+import { useAPI } from "src/hooks/api/api.hook";
+import { ModalWrapperProps } from "src/interfaces/modal/modal-wrapper-props.interface";
+import { SelectedOption } from "src/types/other/selected-option.type";
+import { isValidBillName } from "src/utils/validators/bill-name/bill-name.validator";
 import { twJoin } from "tailwind-merge";
-import { ModalWrapper } from "src/components/modal";
-import { isValidBillName } from "src/utils/validators";
-import { ButtonColor } from "src/enums";
-import { Button } from "src/components";
+
+import { ModalWrapper } from "../../modal-wrapper.component";
 
 export interface NewBillModalProps extends ModalWrapperProps {
   setOpen: (val: boolean) => void;

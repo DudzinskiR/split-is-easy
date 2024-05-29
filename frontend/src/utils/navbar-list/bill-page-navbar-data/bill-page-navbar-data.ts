@@ -1,4 +1,4 @@
-import { NavbarCategory } from "src/types/navbar";
+import { NavbarCategory } from "src/types/navbar/navbar-category.type";
 
 export const billPageNavbarData: NavbarCategory[] = [
   {

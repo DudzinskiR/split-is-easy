@@ -1,4 +1,4 @@
-import { SelectedOption } from "src/types";
+import { SelectedOption } from "src/types/other/selected-option.type";
 
 export const filterByPrefix =
   (searchText: string) => (option: SelectedOption) => {

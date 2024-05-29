@@ -1,5 +1,4 @@
 import { useDispatch } from "react-redux";
-import { SocketData, UserBalance } from "src/types";
 import {
   acceptAccountRequest,
   addBill,
@@ -9,6 +8,8 @@ import {
   updateBillNameInAccount,
   updateUserCountInBill,
 } from "../account.slice";
+import { SocketData } from "src/types/socket/socket-data.type";
+import { UserBalance } from "src/types/bill/user-balance.type";
 
 export const useAccountSocket = () => {
   const dispatch = useDispatch();

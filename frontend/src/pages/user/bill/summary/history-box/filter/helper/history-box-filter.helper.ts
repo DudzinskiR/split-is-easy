@@ -1,4 +1,4 @@
-import { BillPayment } from "src/types";
+import { BillPayment } from "src/types/bill/bill-payment.type";
 
 export const filterPayments =
   (...callbacks: ((payment: BillPayment[]) => BillPayment[])[]) =>

@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
 import { SegmentData } from "../../interface/segment-data.interface";
 import { usePieChartContext } from "../../hook/pie-chart.hook";
-import { useCurrencyFormatter } from "src/hooks";
-import { getSegmentLabelPosition, getSegmentLabelStyle } from "../../helpers";
+import { useCurrencyFormatter } from "src/hooks/currency-formatter/currency-formatter.hook";
+import { getSegmentLabelPosition } from "../../helpers/get-segment-label-position/get-segment-label-position";
+import { getSegmentLabelStyle } from "../../helpers/get-segment-label-style/get-segment-label-style";
 
 export interface PieChartSegmentLabelProps {
   data: SegmentData;

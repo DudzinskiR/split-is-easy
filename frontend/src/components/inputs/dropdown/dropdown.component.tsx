@@ -6,12 +6,14 @@ import {
   useState,
 } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
-import { Button, ButtonProps, FadeInOut } from "src/components";
-import { useClickOutside, useVisibilityToggle } from "src/hooks";
-import { SelectedOption } from "src/types";
 import { containsSubstring, filterByPrefix } from "./helper/dropdown.helper";
 import DropdownContextProvider from "./context/dropdown.context";
 import { DropdownList } from "./component/list/dropdown-list.component";
+import { SelectedOption } from "src/types/other/selected-option.type";
+import { Button, ButtonProps } from "src/components/button/button.component";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+import { useClickOutside } from "src/hooks/click-outside/click-outside.hook";
+import { FadeInOut } from "src/components/fade-in-out/fade-in-out.component";
 
 export interface DropdownProps {
   inputText?: InputHTMLAttributes<HTMLInputElement>;

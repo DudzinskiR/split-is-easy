@@ -1,9 +1,10 @@
 import { useEffect } from "react";
-import { useUsersHook } from "src/features/users/hook";
-import { useCurrencyFormatter } from "src/hooks";
-import { PaymentParticipants } from "src/types";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { useCurrencyFormatter } from "src/hooks/currency-formatter/currency-formatter.hook";
+import { PaymentParticipants } from "src/types/bill/bill-payment.type";
+import { DateFormatter } from "src/utils/helpers/date-formatter/date-formatter";
+
 import HistoryBoxBarText from "./text/history-box-bar-text.component";
-import { DateFormatter } from "src/utils/helpers";
 
 export interface HistoryBoxBarBodyProps {
   title: string;

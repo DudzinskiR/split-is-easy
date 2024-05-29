@@ -1,10 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "src/features";
-import { useGlobalFlagContext } from "src/hooks";
-import { API } from "src/utils/api";
+import { accountSlice } from "src/features/account/account.slice";
+import { RootState } from "src/features/store";
+import { useGlobalFlagContext } from "src/hooks/global-flag/global-flag.hook";
+import { API } from "src/utils/api/api";
+import { capitalizeFirstLetter } from "src/utils/helpers/capitalize-first-letter/capitalize-first-letter";
+
 import { setUsername } from "../user.slice";
-import { accountSlice } from "src/features/account";
-import { capitalizeFirstLetter } from "src/utils/helpers";
 
 export const useUsersHook = () => {
   const users = useSelector((state: RootState) => state.users.users);

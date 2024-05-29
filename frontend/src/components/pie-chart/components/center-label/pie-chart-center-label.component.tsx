@@ -1,7 +1,7 @@
 import { twJoin } from "tailwind-merge";
 import { useEffect } from "react";
 import { usePieChartContext } from "../../hook/pie-chart.hook";
-import { useCurrencyFormatter } from "src/hooks";
+import { useCurrencyFormatter } from "src/hooks/currency-formatter/currency-formatter.hook";
 
 interface PieChartCenterLabelProps {
   sum: number;

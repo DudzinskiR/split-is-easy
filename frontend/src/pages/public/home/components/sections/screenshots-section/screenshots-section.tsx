@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Background2, Background3 } from "src/assets/landing-page/background";
-import { useElementPosition, useOffsetScrollY, useWindowSize } from "src/hooks";
-import { smoothStep } from "src/utils/helpers";
+import { Ping } from "src/components/ping/ping.component";
+import { useElementPosition } from "src/hooks/element-position/element-position";
+import { useOffsetScrollY } from "src/hooks/offset-scroll-y/offset-scroll-y";
+import { useWindowSize } from "src/hooks/window-size/window-size.hook";
+import { smoothStep } from "src/utils/helpers/smooth-step/smooth-step";
 import * as THREE from "three";
 
 import { Environment } from "@react-three/drei";
 import { Canvas, useLoader } from "@react-three/fiber";
 
 import { Phone } from "./components";
-import { Ping } from "src/components";
-import { Vector2 } from "src/utils/math";
+import { Vector2 } from "src/utils/math/vector/vector-2";
 
 export const ScreenshotsSection = () => {
   const [screenshotIndex, setScreenshotIndex] = useState(0);

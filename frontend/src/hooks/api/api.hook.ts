@@ -1,4 +1,4 @@
-import { API } from "src/utils/api";
+import { API } from "src/utils/api/api";
 
 interface APIConfig<T> {
   url: string;

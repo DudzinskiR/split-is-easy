@@ -1,6 +1,8 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import { User } from "src/types/user/user.type";
+
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { revertAll } from "../revert-all";
-import { User } from "src/types";
 
 const initialState = {
   users: {} as Record<string, string>,

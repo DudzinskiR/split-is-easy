@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Vector2 } from "src/utils/math";
+import { Vector2 } from "src/utils/math/vector/vector-2";
 
 export const useMousePosition = () => {
   const [mousePosition, setMousePosition] = useState<Vector2 | null>(null);

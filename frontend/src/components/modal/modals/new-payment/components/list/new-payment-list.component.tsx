@@ -1,6 +1,6 @@
 import { CSSProperties, ReactNode } from "react";
 import { useNewPaymentContext } from "../../hook/new-payment.hook";
-import { VirtualList } from "src/components";
+import { VirtualList } from "src/components/virtual-list/virtual-list.component";
 
 interface NewPaymentSplitterListProps {
   rowElement: (index: number, style: CSSProperties) => ReactNode;

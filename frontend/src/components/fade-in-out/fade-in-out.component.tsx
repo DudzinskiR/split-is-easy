@@ -1,5 +1,6 @@
 import { CSSProperties, ReactNode, useEffect, useState } from "react";
-import { useRefHeight, useTimers } from "src/hooks";
+import { useRefHeight } from "src/hooks/ref-height/ref-height.hook";
+import { useTimers } from "src/hooks/timers/timers.hook";
 import { twMerge } from "tailwind-merge";
 
 interface FadeInOutProps extends React.HTMLAttributes<HTMLElement> {

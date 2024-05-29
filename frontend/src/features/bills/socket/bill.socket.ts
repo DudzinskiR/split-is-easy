@@ -1,10 +1,9 @@
 import { useDispatch } from "react-redux";
-import {
-  BillPayment,
-  SocketData,
-  TransactionBetweenUsers,
-  UserBalance,
-} from "src/types";
+import { BillPayment } from "src/types/bill/bill-payment.type";
+import { TransactionBetweenUsers } from "src/types/bill/transaction-between-users.type";
+import { UserBalance } from "src/types/bill/user-balance.type";
+import { SocketData } from "src/types/socket/socket-data.type";
+
 import {
   acceptRequest,
   addNewPayment,

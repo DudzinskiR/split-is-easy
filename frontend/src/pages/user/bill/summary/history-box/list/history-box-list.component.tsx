@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useBillsHook } from "src/features";
-import { useCurrencyFormatter, useExtraHight } from "src/hooks";
-import { BillPayment } from "src/types";
+import { ExpandableBar } from "src/components/expandable-bar/expandable-bar.component";
+import { VirtualList } from "src/components/virtual-list/virtual-list.component";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useCurrencyFormatter } from "src/hooks/currency-formatter/currency-formatter.hook";
+import { useExtraHight } from "src/hooks/extra-height/extra-height.hook";
+import { BillPayment } from "src/types/bill/bill-payment.type";
+
 import HistoryBoxBarBody from "./bar/history-box-bar-body.component";
-import { ExpandableBar, VirtualList } from "src/components";
 
 interface HistoryBoxListProps {
   payments: BillPayment[];

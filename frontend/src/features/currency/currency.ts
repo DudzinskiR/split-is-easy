@@ -1,5 +1,7 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { Currency } from "src/types";
+import { Currency } from "src/types/currency/currency.type";
+
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+
 import { revertAll } from "../revert-all";
 
 const initialState = {

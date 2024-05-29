@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { LineBreak } from "src/components";
-import { cancelRequest, useAccountHook } from "src/features";
-import { useAPI, useNavbarList, useVisibilityToggle } from "src/hooks";
-import { AccountRequest } from "src/types";
+import { LineBreak } from "src/components/line-break/line-break.component";
+import { cancelRequest } from "src/features/account/account.slice";
+import { useAccountHook } from "src/features/account/hook/account.hook";
+import { useAPI } from "src/hooks/api/api.hook";
+import { useNavbarList } from "src/hooks/navbar-list/navbar-list.hook";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+import { AccountRequest } from "src/types/account/account-request.type";
+import { API } from "src/utils/api/api";
+
 import BillListButton from "./button/bill-list-button.component";
 import BillListRequestButton from "./request-button/bill-list-request-button.component";
-import { ConfirmModal } from "src/components/modal";
-import { API } from "src/utils/api";
+import { ConfirmModal } from "src/components/modal/modals/confirm-modal/confirm-modal.component";
 
 export const BillListPage = () => {
   const { getBillsList, getRequestList } = useAccountHook();

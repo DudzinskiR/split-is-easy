@@ -1,5 +1,4 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
-import { ScrollToButton } from "src/components/scroll-to-button";
 import { twJoin } from "tailwind-merge";
 import {
   FaqSection,
@@ -10,6 +9,7 @@ import {
   ScreenshotsSection,
   WorkSection,
 } from "./components";
+import { ScrollToButton } from "src/components/scroll-to-button/scroll-to-button";
 
 export type NavbarElement = {
   component: ReactNode;

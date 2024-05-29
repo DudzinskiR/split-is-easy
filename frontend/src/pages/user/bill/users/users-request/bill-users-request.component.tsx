@@ -1,11 +1,14 @@
-import { Box, Button } from "src/components";
-import { Checkbox } from "src/components/inputs";
-import { useBillsHook } from "src/features";
-import { useAPI, useVisibilityToggle } from "src/hooks";
+import { Box } from "src/components/box/box.component";
+import { Button } from "src/components/button/button.component";
+import { Checkbox } from "src/components/inputs/checkbox/checkbox.component";
+import { ConfirmModal } from "src/components/modal/modals/confirm-modal/confirm-modal.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useAPI } from "src/hooks/api/api.hook";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+
 import BillUsersRequestLink from "./link/bill-users-request-link.component";
-import { ButtonColor } from "src/enums";
 import BillUsersRequestList from "./list/bill-user-request-list.component";
-import { ConfirmModal } from "src/components/modal";
 
 interface BillUsersRequestProps {
   billID: string;

@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GlobalFlagContext } from "src/contexts";
+import { GlobalFlagContext } from "src/contexts/global-flag/global-flag";
 
 export const useGlobalFlagContext = () => {
   const context = useContext(GlobalFlagContext);

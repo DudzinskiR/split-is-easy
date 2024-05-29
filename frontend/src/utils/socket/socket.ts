@@ -1,5 +1,5 @@
 import { io } from "socket.io-client";
-import { firebaseAuth, getToken } from "src/utils/firebase";
+import { firebaseAuth, getToken } from "../firebase/firebase-helper";
 
 const URL = import.meta.env.VITE_API_ROOT;
 

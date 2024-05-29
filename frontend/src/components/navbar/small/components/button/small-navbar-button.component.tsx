@@ -1,7 +1,7 @@
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { setNavbarOpen } from "src/features";
-import { NavbarButton } from "src/types/navbar";
+import { setNavbarOpen } from "src/features/navbar/navbar.slice";
+import { NavbarButton } from "src/types/navbar/navbar-button.type";
 import { twMerge } from "tailwind-merge";
 
 interface SmallNavbarButtonProps {

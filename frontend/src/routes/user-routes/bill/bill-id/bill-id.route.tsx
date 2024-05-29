@@ -1,6 +1,6 @@
 import { Route } from "react-router-dom";
-import { BillSettingPage } from "src/pages/user/bill/setting";
-import { BillSummaryPage } from "src/pages/user/bill/summary";
+import { BillSettingPage } from "src/pages/user/bill/setting/bill-setting.page";
+import { BillSummaryPage } from "src/pages/user/bill/summary/bill-summary.page";
 import { BillUsersPage } from "src/pages/user/bill/users/bill-users.page";
 
 const BillIDRoutes = () => {

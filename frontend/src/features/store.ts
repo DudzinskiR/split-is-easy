@@ -1,10 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import { accountSlice } from "./account";
-import { billsSlice } from "./bills";
-import { currencySlice } from "./currency";
-import { navbarSlice } from "./navbar";
-import { usersSlice } from "./users";
-import { visibilitySlice } from "./visibility";
+import { accountSlice } from "./account/account.slice";
+import { billsSlice } from "./bills/bill.slice";
+import { currencySlice } from "./currency/currency";
+import { navbarSlice } from "./navbar/navbar.slice";
+import { usersSlice } from "./users/user.slice";
+import { visibilitySlice } from "./visibility/visibility.slice";
 
 const rootReducer = combineReducers({
   account: accountSlice.reducer,

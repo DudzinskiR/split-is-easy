@@ -1,6 +1,6 @@
 import { CSSProperties, ReactNode, useCallback, useState } from "react";
-import { useExtraHight } from "src/hooks";
-import { ExtraHeight } from "src/types";
+import { useExtraHight } from "src/hooks/extra-height/extra-height.hook";
+import { ExtraHeight } from "src/types/other/extra-height.type";
 import { twMerge } from "tailwind-merge";
 
 export interface VirtualListProps {

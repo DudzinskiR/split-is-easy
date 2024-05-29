@@ -1,5 +1,5 @@
-import { SplitType } from "src/enums";
-import { UserSplitInfo } from "src/types";
+import { SplitType } from "src/enums/split-type/split-type";
+import { UserSplitInfo } from "src/types/user/user-split-info.type";
 
 export interface NewPaymentState {
   paymentTitle: string;

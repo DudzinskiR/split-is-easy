@@ -1,7 +1,7 @@
 import { twMerge } from "tailwind-merge";
 import { HTMLAttributes } from "react";
 import { useDropdownContext } from "../../hook/dropdown.hook";
-import { Checkbox } from "src/components/inputs";
+import { Checkbox } from "src/components/inputs/checkbox/checkbox.component";
 export interface DropdownButtonProps extends HTMLAttributes<HTMLElement> {
   text: string;
   isChecked: boolean;

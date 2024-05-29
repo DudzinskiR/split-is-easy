@@ -1,8 +1,8 @@
 import { ReactNode, useEffect, useState } from "react";
-import { useTimers } from "src/hooks";
+import { useTimers } from "src/hooks/timers/timers.hook";
+import { ModalWrapperProps } from "src/interfaces/modal/modal-wrapper-props.interface";
 import { twMerge } from "tailwind-merge";
-import { FadeInOut } from "src/components";
-import { ModalWrapperProps } from "src/interfaces";
+import { FadeInOut } from "../fade-in-out/fade-in-out.component";
 
 export const ModalWrapper = ({
   children,

@@ -1,4 +1,4 @@
-import { SplitType } from "src/enums";
+import { SplitType } from "src/enums/split-type/split-type";
 
 export type BillPayment = {
   id: string;

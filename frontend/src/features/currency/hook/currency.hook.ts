@@ -1,9 +1,10 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "src/features";
-import { useGlobalFlagContext } from "src/hooks";
-import { Currency } from "src/types";
-import { API } from "src/utils/api";
+import { RootState } from "src/features/store";
+import { useGlobalFlagContext } from "src/hooks/global-flag/global-flag.hook";
+import { Currency } from "src/types/currency/currency.type";
+import { API } from "src/utils/api/api";
+
 import { setCurrencies } from "../currency";
 
 export const useCurrencyHook = () => {

@@ -1,8 +1,11 @@
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { RootState, useBillsHook } from "src/features";
-import { useDocumentTitle, useNavbarList } from "src/hooks";
-import { billPageNavbarData } from "src/utils/navbar-list";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { RootState } from "src/features/store";
+import { useDocumentTitle } from "src/hooks/document-title/document-title.hook";
+import { useNavbarList } from "src/hooks/navbar-list/navbar-list.hook";
+import { billPageNavbarData } from "src/utils/navbar-list/bill-page-navbar-data/bill-page-navbar-data";
+
 import { BillUsersList } from "./users-list/bill-users-list-box.component";
 import BillUsersRequest from "./users-request/bill-users-request.component";
 

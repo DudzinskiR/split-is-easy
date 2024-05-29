@@ -1,13 +1,17 @@
+import { Suspense } from "react";
 import { Background1 } from "src/assets/landing-page/background";
-import { Button, Ping, RandomRevealText } from "src/components";
-import { useRotatePhones } from "src/hooks";
-import { Vector2 } from "src/utils/math";
+import { Button } from "src/components/button/button.component";
+import { Ping } from "src/components/ping/ping.component";
+import { RandomRevealText } from "src/components/random-reveal-text/random-reveal-text";
+import { Phones } from "./phones";
+import { useRotatePhones } from "src/hooks/rotatePhones/rotatePhones";
+import { Vector2 } from "src/utils/math/vector/vector-2";
 import { twJoin } from "tailwind-merge";
 
 import { Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 
-import { Phones } from "./phones";
+// const Phones = lazy(() => import("./phones"));
 
 export const HeroSection = () => {
   const { rotation, containerRef, phonesRef } = useRotatePhones();
@@ -61,7 +65,9 @@ export const HeroSection = () => {
             ref={phonesRef}
           >
             <Canvas>
-              <Phones rotation={rotation} />
+              <Suspense>
+                <Phones rotation={rotation} />
+              </Suspense>
               <Environment preset="warehouse" />
             </Canvas>
           </div>
