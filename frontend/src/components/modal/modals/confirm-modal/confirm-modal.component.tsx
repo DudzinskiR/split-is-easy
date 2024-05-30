@@ -1,9 +1,10 @@
 import { Fragment, ReactNode } from "react";
-import { Button, ButtonProps } from "src/components";
-import { ModalWrapper } from "src/components/modal";
-import { ButtonColor } from "src/enums";
-import { ModalWrapperProps, ModalWrapperStyles } from "src/interfaces";
+import { Button, ButtonProps } from "src/components/button/button.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { ModalWrapperProps } from "src/interfaces/modal/modal-wrapper-props.interface";
+import { ModalWrapperStyles } from "src/interfaces/modal/modal-wrapper-styles.interface";
 import { twMerge } from "tailwind-merge";
+import { ModalWrapper } from "../../modal-wrapper.component";
 
 interface ConfirmModalProps extends ModalWrapperProps {
   data?: ConfirmModalData;

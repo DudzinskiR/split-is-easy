@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { setNavbarList } from "src/features";
-import { NavbarCategory, UpdateValue } from "src/types";
-import { getNavbarCategory } from "src/utils/navbar-list";
+import { setNavbarList } from "src/features/navbar/navbar.slice";
+import { NavbarCategory } from "src/types/navbar/navbar-category.type";
+import { UpdateValue } from "src/types/navbar/navbar-update-value.type";
+import { getNavbarCategory } from "src/utils/navbar-list/get-navbar-list";
 
 /**
  * Custom React Hook for updating the Navbar List in the Redux store based on the provided categories,

@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ExtraHeight } from "src/types";
+import { ExtraHeight } from "src/types/other/extra-height.type";
 
 export const useExtraHight = (extra?: ExtraHeight[]) => {
   const [extraHeights, setExtraHeights] = useState<ExtraHeight[]>([]);

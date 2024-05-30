@@ -1,9 +1,11 @@
 import { useParams } from "react-router-dom";
-import { useDocumentTitle, useNavbarList } from "src/hooks";
-import { billPageNavbarData } from "src/utils/navbar-list";
-import NewPayment from "./new-payment.component";
-import { useBillsHook } from "src/features";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useDocumentTitle } from "src/hooks/document-title/document-title.hook";
+import { useNavbarList } from "src/hooks/navbar-list/navbar-list.hook";
+import { billPageNavbarData } from "src/utils/navbar-list/bill-page-navbar-data/bill-page-navbar-data";
+
 import HistoryBox from "./history-box/history-box";
+import NewPayment from "./new-payment.component";
 import SummaryBox from "./summary-box/summary-box.component";
 
 export const BillSummaryPage = () => {

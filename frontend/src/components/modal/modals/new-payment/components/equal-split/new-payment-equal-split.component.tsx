@@ -1,10 +1,10 @@
 import { useEffect } from "react";
-import { useCurrencyHook } from "src/features";
-import { UserSplitInfo } from "src/types";
-import { roundToPlaces } from "src/utils/helpers";
 
 import { splitAmount } from "../../helpers/new-payment.helper";
 import { useNewPaymentContext } from "../../hook/new-payment.hook";
+import { useCurrencyHook } from "src/features/currency/hook/currency.hook";
+import { UserSplitInfo } from "src/types/user/user-split-info.type";
+import { roundToPlaces } from "src/utils/helpers/round-to-places/round-to-places";
 
 export const NewPaymentEqualSplit = () => {
   const { state, dispatch } = useNewPaymentContext();

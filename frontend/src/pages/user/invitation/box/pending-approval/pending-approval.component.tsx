@@ -1,8 +1,10 @@
+import { ConfirmModal } from "src/components/modal/modals/confirm-modal/confirm-modal.component";
 import { ButtonColor } from "src/enums/button-color/button-color";
-import { useAPI, useVisibilityToggle } from "src/hooks";
-import { API } from "src/utils/api";
-import { InvitationBoxTemplate } from "../template";
-import { ConfirmModal } from "src/components/modal";
+import { useAPI } from "src/hooks/api/api.hook";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+import { API } from "src/utils/api/api";
+
+import { InvitationBoxTemplate } from "../template/invitation-box-template.component";
 
 interface InvitationPendingApprovalProps {
   billName: string;

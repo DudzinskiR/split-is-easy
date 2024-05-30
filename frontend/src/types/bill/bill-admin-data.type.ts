@@ -1,4 +1,4 @@
-import { BillRequest } from "src/types";
+import { BillRequest } from "./bill-request.type";
 
 export type BillAdminData = {
   invitationCode: string;

@@ -1,13 +1,14 @@
 import { useDispatch, useSelector } from "react-redux";
-import { RootState } from "src/features";
-import { useGlobalFlagContext } from "src/hooks";
-import { API } from "src/utils/api";
 import {
   setAccountBill,
   setAccountData,
   setRequestList,
 } from "../account.slice";
-import { AccountBill, AccountRequest } from "src/types";
+import { RootState } from "src/features/store";
+import { useGlobalFlagContext } from "src/hooks/global-flag/global-flag.hook";
+import { API } from "src/utils/api/api";
+import { AccountBill } from "src/types/account/account-bill.type";
+import { AccountRequest } from "src/types/account/account-request.type";
 
 export const useAccountHook = () => {
   const dispatch = useDispatch();

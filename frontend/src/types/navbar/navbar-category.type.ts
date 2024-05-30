@@ -1,4 +1,4 @@
-import { NavbarButton } from "src/types";
+import { NavbarButton } from "./navbar-button.type";
 
 export interface NavbarCategory {
   buttons: NavbarButton[];

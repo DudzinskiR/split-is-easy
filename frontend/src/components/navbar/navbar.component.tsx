@@ -1,10 +1,12 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState, setNavbarOpen } from "src/features";
-import { useVisibilityToggle } from "src/hooks";
-import { SmallNavbar } from "./small/small-navbar.component";
+import { setNavbarOpen } from "src/features/navbar/navbar.slice";
+import { RootState } from "src/features/store";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+
+import { NewBillModal } from "../modal/modals/new-bill/new-bill-modal.component";
 import { NormalNavbar } from "./normal/normal-navbar.component";
-import { NewBillModal } from "../modal";
+import { SmallNavbar } from "./small/small-navbar.component";
 
 export const Navbar = () => {
   const isNavbarOpen = useSelector(

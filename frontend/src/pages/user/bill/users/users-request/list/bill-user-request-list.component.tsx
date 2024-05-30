@@ -1,14 +1,17 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import { VirtualList } from "src/components";
-import { acceptRequest, rejectRequest } from "src/features";
-import { useUsersHook } from "src/features/users/hook";
-import { useAPI, useExtraHight, useVisibilityToggle } from "src/hooks";
-import { BillRequest } from "src/types";
-import { API } from "src/utils/api";
+import { ConfirmModal } from "src/components/modal/modals/confirm-modal/confirm-modal.component";
+import { VirtualList } from "src/components/virtual-list/virtual-list.component";
+import { acceptRequest, rejectRequest } from "src/features/bills/bill.slice";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { useAPI } from "src/hooks/api/api.hook";
+import { useExtraHight } from "src/hooks/extra-height/extra-height.hook";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+import { BillRequest } from "src/types/bill/bill-request.type";
+import { API } from "src/utils/api/api";
+
 import { BillUsersRequestRow } from "./row/bill-user-request-row.component";
-import { ConfirmModal } from "src/components/modal";
 
 interface BillUsersRequestListProps {
   requests: BillRequest[] | undefined;

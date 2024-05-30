@@ -1,17 +1,18 @@
-import { auth } from "./firebase-config";
 import { FirebaseError } from "firebase/app";
-import { FirebaseAuthResponse } from "src/enums";
-import { findValue } from "src/utils/helpers";
 import {
-  GoogleAuthProvider,
+  createUserWithEmailAndPassword,
   getAuth,
   getIdToken,
-  signInWithEmailAndPassword,
+  GoogleAuthProvider,
   sendPasswordResetEmail,
-  updatePassword,
-  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
   signInWithPopup,
+  updatePassword,
 } from "firebase/auth";
+import { FirebaseAuthResponse } from "src/enums/firebase/firebase-auth-response";
+
+import { findValue } from "../helpers/find-value/find-value";
+import { auth } from "./firebase-config";
 
 const provider = new GoogleAuthProvider();
 

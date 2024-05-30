@@ -1,6 +1,7 @@
-import { Navbar } from "src/components";
-import { useAccountSocket, useBillSocket } from "src/features";
-import { useSocket } from "src/hooks";
+import { Navbar } from "src/components/navbar/navbar.component";
+import { useAccountSocket } from "src/features/account/socket/account.socket";
+import { useBillSocket } from "src/features/bills/socket/bill.socket";
+import { useSocket } from "src/hooks/socket/socket.hook";
 import UserRoutes from "src/routes/user-routes/user.route";
 
 const UserLayout = () => {

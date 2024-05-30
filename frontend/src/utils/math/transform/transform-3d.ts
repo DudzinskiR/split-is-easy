@@ -1,4 +1,4 @@
-import { Vector3 } from "src/utils/math";
+import { Vector3 } from "../vector/vector-3";
 
 export class Transform3D {
   private _position: Vector3;

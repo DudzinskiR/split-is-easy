@@ -1,5 +1,5 @@
-import { Button, ButtonProps } from "src/components";
-import { ButtonColor } from "src/enums";
+import { Button, ButtonProps } from "src/components/button/button.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
 import { twMerge } from "tailwind-merge";
 
 export interface InvitationTemplateProps {

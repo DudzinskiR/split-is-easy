@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Button, LineBreak } from "src/components";
-import { InputText } from "src/components/inputs";
+import { Button } from "src/components/button/button.component";
+import { InputText } from "src/components/inputs/input-text/input-text.component";
+import { LineBreak } from "src/components/line-break/line-break.component";
+import { getFirebaseErrorDescription } from "src/utils/firebase/firebase-error-description";
 import {
-  getFirebaseErrorDescription,
   signInWithEmail,
   signInWithGoogle,
-} from "src/utils/firebase";
+} from "src/utils/firebase/firebase-helper";
 
 export const PublicLoginBox = () => {
   const [error, setError] = useState("");

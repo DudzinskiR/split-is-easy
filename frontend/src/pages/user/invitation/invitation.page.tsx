@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { RequestStatus } from "src/types";
-import { API } from "src/utils/api";
-import { Box } from "src/components";
-import {
-  InvitationJoinPossible,
-  InvitationPendingApproval,
-  InvitationRequestPossible,
-} from "./box";
-import { useAccountHook } from "src/features";
+import { Box } from "src/components/box/box.component";
+import { useAccountHook } from "src/features/account/hook/account.hook";
+import { API } from "src/utils/api/api";
+import { InvitationJoinPossible } from "./box/join-possible/join-possible.component";
+import { InvitationPendingApproval } from "./box/pending-approval/pending-approval.component";
+import { InvitationRequestPossible } from "./box/request-possible/request-possible.component";
+import { RequestStatus } from "src/types/invitation/request-status";
 
 const InvitationPage = () => {
   const [invitation, setInvitation] = useState<RequestStatus>({

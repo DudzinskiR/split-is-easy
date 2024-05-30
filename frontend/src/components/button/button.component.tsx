@@ -1,6 +1,6 @@
 import { ButtonHTMLAttributes, ReactNode } from "react";
 import { Link } from "react-router-dom";
-import { ButtonColor } from "src/enums";
+import { ButtonColor } from "src/enums/button-color/button-color";
 import { twMerge } from "tailwind-merge";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {

@@ -1,4 +1,4 @@
-import { FirebaseAuthResponse } from "src/enums";
+import { FirebaseAuthResponse } from "src/enums/firebase/firebase-auth-response";
 
 export const getFirebaseErrorDescription = (errorCode: string) => {
   return (

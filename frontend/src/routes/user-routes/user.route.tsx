@@ -1,8 +1,9 @@
 import { Route, Routes } from "react-router-dom";
+import { BillListPage } from "src/pages/user/bill/list/bill-list.page";
+import { NoAccessPage } from "src/pages/user/common/no-access/no-access.page";
+
 import UserBillRoutes from "./bill/user-bill.route";
 import InvitationRoutes from "./invitation/invitation.route";
-import { BillListPage } from "src/pages/user/bill/list";
-import { NoAccessPage } from "src/pages/user";
 
 const UserRoutes = () => {
   return (

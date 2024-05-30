@@ -1,9 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { FirebaseProviderID, UserStatus } from "src/enums";
-import { setAccountStatus, setProviderID } from "src/features";
-import { firebaseAuth } from "src/utils/firebase";
-import { findValue } from "src/utils/helpers";
+import { FirebaseProviderID } from "src/enums/firebase/firebase-provider-id";
+import { UserStatus } from "src/enums/firebase/user-status";
+import {
+  setAccountStatus,
+  setProviderID,
+} from "src/features/account/account.slice";
+import { firebaseAuth } from "src/utils/firebase/firebase-helper";
+import { findValue } from "src/utils/helpers/find-value/find-value";
 
 export const useFirebaseAuth = () => {
   const dispatch = useDispatch();

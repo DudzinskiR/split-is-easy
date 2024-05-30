@@ -1,6 +1,6 @@
-import { SelectedOption } from "src/types";
 import { twMerge } from "tailwind-merge";
 import HorizontalListButton from "./button/horizontal-list-button.component";
+import { SelectedOption } from "src/types/other/selected-option.type";
 
 interface HorizontalListProps {
   options: SelectedOption[];

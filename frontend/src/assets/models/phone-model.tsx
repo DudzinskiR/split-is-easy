@@ -1,38 +1,44 @@
-import * as THREE from "three";
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
 import { GroupProps } from "@react-three/fiber";
 import { ReactNode, useEffect } from "react";
+import {
+  Mesh,
+  MeshPhysicalMaterial,
+  MeshStandardMaterial,
+  SRGBColorSpace,
+  Texture,
+} from "three";
 
 type GLTFResult = GLTF & {
   nodes: {
-    Cube: THREE.Mesh;
-    Cube_1: THREE.Mesh;
-    Cube_2: THREE.Mesh;
-    Cube_3: THREE.Mesh;
-    Cube_4: THREE.Mesh;
-    Cube_5: THREE.Mesh;
-    Cube_6: THREE.Mesh;
-    Cube_7: THREE.Mesh;
-    Cube_8: THREE.Mesh;
-    Cube_9: THREE.Mesh;
+    Cube: Mesh;
+    Cube_1: Mesh;
+    Cube_2: Mesh;
+    Cube_3: Mesh;
+    Cube_4: Mesh;
+    Cube_5: Mesh;
+    Cube_6: Mesh;
+    Cube_7: Mesh;
+    Cube_8: Mesh;
+    Cube_9: Mesh;
   };
   materials: {
-    PhoneBody: THREE.MeshStandardMaterial;
-    Glass: THREE.MeshPhysicalMaterial;
-    MetalMaterial: THREE.MeshStandardMaterial;
-    Black: THREE.MeshStandardMaterial;
-    ScreenFrame: THREE.MeshStandardMaterial;
-    TextMetal: THREE.MeshStandardMaterial;
-    ["Matrix.001"]: THREE.MeshStandardMaterial;
-    FrameMetal: THREE.MeshStandardMaterial;
-    MatFrame: THREE.MeshStandardMaterial;
-    ["Screen.001"]: THREE.MeshStandardMaterial;
+    PhoneBody: MeshStandardMaterial;
+    Glass: MeshPhysicalMaterial;
+    MetalMaterial: MeshStandardMaterial;
+    Black: MeshStandardMaterial;
+    ScreenFrame: MeshStandardMaterial;
+    TextMetal: MeshStandardMaterial;
+    ["Matrix.001"]: MeshStandardMaterial;
+    FrameMetal: MeshStandardMaterial;
+    MatFrame: MeshStandardMaterial;
+    ["Screen.001"]: MeshStandardMaterial;
   };
 };
 
 interface PhoneModelProps extends GroupProps {
-  screenshot?: THREE.Texture;
+  screenshot?: Texture;
   screen?: ReactNode;
 }
 
@@ -43,7 +49,7 @@ export function PhoneModel({ screenshot, screen, ...props }: PhoneModelProps) {
     if (!screenshot) return;
 
     screenshot.flipY = false;
-    screenshot.colorSpace = THREE.SRGBColorSpace;
+    screenshot.colorSpace = SRGBColorSpace;
   }, [screenshot]);
 
   return (

@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Box } from "src/components";
+import { Box } from "src/components/box/box.component";
 import { PieChartData } from "src/components/pie-chart/interface/pie-chart-data.interface";
 import PieChart from "src/components/pie-chart/pie-chart.component";
-import { useAccountHook, useBillsHook, useCurrencyHook } from "src/features";
-import { useUsersHook } from "src/features/users/hook";
-import { useGlobalFlagContext } from "src/hooks";
+import { useAccountHook } from "src/features/account/hook/account.hook";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useCurrencyHook } from "src/features/currency/hook/currency.hook";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { useGlobalFlagContext } from "src/hooks/global-flag/global-flag.hook";
+
 import { SummaryBoxReceivables } from "./receivables/summary-box-receivables.component";
 
 export const SummaryBox = () => {

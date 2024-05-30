@@ -1,12 +1,13 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Button } from "src/components";
-import { InputText } from "src/components/inputs";
-import { ModalWrapper } from "src/components/modal";
-import { ButtonColor } from "src/enums";
-import { useAPI } from "src/hooks";
-import { ModalWrapperProps } from "src/interfaces";
-import { isValidUsername } from "src/utils/validators";
+import { Button } from "src/components/button/button.component";
+import { InputText } from "src/components/inputs/input-text/input-text.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { useAPI } from "src/hooks/api/api.hook";
+import { ModalWrapperProps } from "src/interfaces/modal/modal-wrapper-props.interface";
+import { isValidUsername } from "src/utils/validators/username/username.validator";
+
+import { ModalWrapper } from "../../modal-wrapper.component";
 
 interface AddVirtualUserModalProps extends ModalWrapperProps {
   setOpen: (val: boolean) => void;

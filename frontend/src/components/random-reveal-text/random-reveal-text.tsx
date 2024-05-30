@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { CharToReveal } from "./types";
+import { CharToReveal } from "./types/char-to-reveal.type";
 
 interface RandomRevealTextProps {
   text: string;

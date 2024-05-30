@@ -1,6 +1,6 @@
 import { ChangeEvent, InputHTMLAttributes, useId, useState } from "react";
-import { ButtonColor } from "src/enums";
-import { decimalRegex } from "src/utils/regex";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { decimalRegex } from "src/utils/regex/decimal/decimal-regex";
 import { twJoin } from "tailwind-merge";
 
 export interface InputNumberProps

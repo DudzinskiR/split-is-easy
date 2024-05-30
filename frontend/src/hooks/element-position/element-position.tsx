@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { Vector2 } from "src/utils/math";
+import { Vector2 } from "src/utils/math/vector/vector-2";
 
 export const useElementPosition = () => {
   const [position, setPosition] = useState<Vector2>(Vector2.zero);

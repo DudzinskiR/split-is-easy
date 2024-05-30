@@ -1,16 +1,19 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { Box, Button, VirtualList } from "src/components";
-import { useBillsHook } from "src/features";
-import { useUsersHook } from "src/features/users/hook";
-import { useAPI, useExtraHight, useVisibilityToggle } from "src/hooks";
+import { Box } from "src/components/box/box.component";
+import { Button } from "src/components/button/button.component";
+import { AddVirtualUserModal } from "src/components/modal/modals/add-virtual-user/add-virtual-user-modal.component";
+import { ConfirmModal } from "src/components/modal/modals/confirm-modal/confirm-modal.component";
+import { MergeVirtualUserModal } from "src/components/modal/modals/merge-virtual-user/merge-virtual-user-modal.component";
+import { VirtualList } from "src/components/virtual-list/virtual-list.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { useAPI } from "src/hooks/api/api.hook";
+import { useExtraHight } from "src/hooks/extra-height/extra-height.hook";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+
 import BillUsersListRow from "./row/bill-user-list-row.component";
-import {
-  AddVirtualUserModal,
-  ConfirmModal,
-  MergeVirtualUserModal,
-} from "src/components/modal";
-import { ButtonColor } from "src/enums";
 
 interface BillUsersListProps {
   isAdmin: boolean;

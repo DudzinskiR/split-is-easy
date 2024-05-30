@@ -1,5 +1,6 @@
-import { useAPI } from "src/hooks";
-import { InvitationBoxTemplate } from "../template";
+import { useAPI } from "src/hooks/api/api.hook";
+
+import { InvitationBoxTemplate } from "../template/invitation-box-template.component";
 
 interface InvitationRequestPossibleProps {
   invitationCode: string;

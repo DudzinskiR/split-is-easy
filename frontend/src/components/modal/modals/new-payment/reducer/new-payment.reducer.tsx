@@ -1,7 +1,8 @@
-import { SplitType } from "src/enums";
-import { UserSplitInfo } from "src/types";
-import { NewPaymentState } from "../interface/new-payment.interface";
+import { SplitType } from "src/enums/split-type/split-type";
+import { UserSplitInfo } from "src/types/user/user-split-info.type";
+
 import { newPaymentInitValues } from "../const/new-payment-init-value";
+import { NewPaymentState } from "../interface/new-payment.interface";
 
 export type NewPaymentAction =
   | { type: "RESET" }

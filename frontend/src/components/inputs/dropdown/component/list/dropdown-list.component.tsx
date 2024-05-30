@@ -1,14 +1,15 @@
 import { CSSProperties } from "react";
-import { SelectedOption } from "src/types";
-import { useDropdownContext } from "../../hook/dropdown.hook";
+import { VirtualList } from "src/components/virtual-list/virtual-list.component";
+import { SelectedOption } from "src/types/other/selected-option.type";
+
 import {
   checkAllFilteredAreSelected,
   getListBoxHeight,
   setAllFilteredOptions,
   toggleValue,
 } from "../../helper/dropdown.helper";
+import { useDropdownContext } from "../../hook/dropdown.hook";
 import { DropdownButton } from "../button/dropdown-button.component";
-import { VirtualList } from "src/components";
 
 interface DropdownListProps {
   filteredOptions: SelectedOption[];

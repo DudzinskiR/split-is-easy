@@ -1,14 +1,15 @@
 import { AxiosError } from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { RootState } from "src/features";
-import { setUsernames } from "src/features/users";
-import { useGlobalFlagContext } from "src/hooks";
-import { Bill, BillAdminData, BillPayment, Exception } from "src/types";
-import { API } from "src/utils/api";
-
 import { setBillAdminData, setBillData, setPayments } from "../bill.slice";
-
+import { RootState } from "src/features/store";
+import { useGlobalFlagContext } from "src/hooks/global-flag/global-flag.hook";
+import { Bill } from "src/types/bill/bill.type";
+import { setUsernames } from "src/features/users/user.slice";
+import { API } from "src/utils/api/api";
+import { Exception } from "src/types/exception/exception.type";
+import { BillPayment } from "src/types/bill/bill-payment.type";
+import { BillAdminData } from "src/types/bill/bill-admin-data.type";
 export const useBillsHook = () => {
   const bills = useSelector((state: RootState) => state.bills.bills);
   const { setFlag, getFlag } = useGlobalFlagContext();

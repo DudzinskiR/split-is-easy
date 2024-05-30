@@ -1,17 +1,16 @@
-import * as THREE from "three";
 import { useFrame } from "@react-three/fiber";
 import { useRef, useState } from "react";
-import { PhoneModel } from "src/assets/models";
 import { toRadians3 } from "src/utils/helpers/to-radians3/to-radians3";
-import { Vector3 } from "src/utils/math";
-import { Group } from "three";
-import { lerp } from "src/utils/helpers";
+import { Group, Texture } from "three";
+import { Vector3 } from "src/utils/math/vector/vector-3";
+import { lerp } from "src/utils/helpers/lerp/lerp";
+import { PhoneModel } from "src/assets/models/phone-model";
 
 let timeFromStart = 0;
 
 interface PhoneProps {
   index: number;
-  screenshots: THREE.Texture[];
+  screenshots: Texture[];
 }
 
 export const Phone = ({ index, screenshots }: PhoneProps) => {

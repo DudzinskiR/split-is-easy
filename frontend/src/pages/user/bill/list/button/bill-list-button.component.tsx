@@ -2,8 +2,9 @@ import { GoPeople } from "react-icons/go";
 import { Link } from "react-router-dom";
 import { twJoin } from "tailwind-merge";
 import { useEffect } from "react";
-import { ButtonColor } from "src/enums";
-import { useCurrencyFormatter } from "src/hooks";
+import { useCurrencyFormatter } from "src/hooks/currency-formatter/currency-formatter.hook";
+import { ButtonColor } from "src/enums/button-color/button-color";
+
 interface BillListButtonProps {
   billName: string;
   usersNumber: number;

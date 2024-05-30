@@ -1,46 +1,23 @@
-import { useState } from "react";
+import { lazy, Suspense, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Background2, Background3 } from "src/assets/landing-page/background";
-import { useElementPosition, useOffsetScrollY, useWindowSize } from "src/hooks";
-import { smoothStep } from "src/utils/helpers";
-import * as THREE from "three";
+import { Ping } from "src/components/ping/ping.component";
+import { useElementPosition } from "src/hooks/element-position/element-position";
+import { useOffsetScrollY } from "src/hooks/offset-scroll-y/offset-scroll-y";
+import { useWindowSize } from "src/hooks/window-size/window-size.hook";
+import { smoothStep } from "src/utils/helpers/smooth-step/smooth-step";
+import { Vector2 } from "src/utils/math/vector/vector-2";
 
-import { Environment } from "@react-three/drei";
-import { Canvas, useLoader } from "@react-three/fiber";
-
-import { Phone } from "./components";
-import { Ping } from "src/components";
-import { Vector2 } from "src/utils/math";
-
+const PhoneCanvas = lazy(() =>
+  import("./components/phone-canvas").then((module) => ({
+    default: module.PhoneCanvas,
+  }))
+);
 export const ScreenshotsSection = () => {
   const [screenshotIndex, setScreenshotIndex] = useState(0);
   const { offsetScrollY } = useOffsetScrollY();
   const { ref, position } = useElementPosition();
   const { height } = useWindowSize();
-  const screenshot1 = useLoader(
-    THREE.TextureLoader,
-    "/screenshots/screenshot0.png"
-  );
-  const screenshot2 = useLoader(
-    THREE.TextureLoader,
-    "/screenshots/screenshot1.png"
-  );
-  const screenshot3 = useLoader(
-    THREE.TextureLoader,
-    "/screenshots/screenshot2.png"
-  );
-  const screenshot4 = useLoader(
-    THREE.TextureLoader,
-    "/screenshots/screenshot3.png"
-  );
-  const screenshot5 = useLoader(
-    THREE.TextureLoader,
-    "/screenshots/screenshot4.png"
-  );
-  const screenshot6 = useLoader(
-    THREE.TextureLoader,
-    "/screenshots/screenshot5.png"
-  );
 
   return (
     <div
@@ -78,20 +55,9 @@ export const ScreenshotsSection = () => {
       </div>
 
       <div className="h-full">
-        <Canvas linear>
-          <Phone
-            index={screenshotIndex}
-            screenshots={[
-              screenshot1,
-              screenshot2,
-              screenshot3,
-              screenshot4,
-              screenshot5,
-              screenshot6,
-            ]}
-          />
-          <Environment preset="warehouse" />
-        </Canvas>
+        <Suspense>
+          <PhoneCanvas screenshotIndex={screenshotIndex} />
+        </Suspense>
       </div>
       <div className="text-white absolute absolute-center-x top-[80px] text-5xl p-5 bg-clip-padding backdrop-filter backdrop-blur bg-[#04050e] bg-opacity-30 rounded-lg border-2 border-slate-700">
         Screenshots

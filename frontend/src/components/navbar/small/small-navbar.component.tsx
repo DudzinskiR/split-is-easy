@@ -1,10 +1,11 @@
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { FadeInOut } from "src/components";
-import { RootState, setNavbarOpen } from "src/features";
-import { PROJECT_NAME } from "src/utils/const";
 import { SmallNavbarMenu } from "./components/menu/small-navbar-menu.component";
+import { RootState } from "src/features/store";
+import { FadeInOut } from "src/components/fade-in-out/fade-in-out.component";
+import { setNavbarOpen } from "src/features/navbar/navbar.slice";
+import { PROJECT_NAME } from "src/utils/const/text-const";
 
 export interface SmallNavbar {
   isNavbarOpen: boolean;

@@ -1,5 +1,5 @@
-import { useNavbarList } from "src/hooks";
 import gandalf from "src/assets/You_Shall_Not_Pass.jpg";
+import { useNavbarList } from "src/hooks/navbar-list/navbar-list.hook";
 
 export const NoAccessPage = () => {
   useNavbarList([]);

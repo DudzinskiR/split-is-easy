@@ -1,20 +1,5 @@
 import { useEffect, useReducer } from "react";
 import { useParams } from "react-router-dom";
-import { Button } from "src/components";
-import {
-  HorizontalList,
-  InputNumber,
-  InputText,
-  MultiSelect,
-  SingleSelect,
-} from "src/components/inputs";
-import { ModalWrapper } from "src/components/modal";
-import { ButtonColor, SplitType } from "src/enums";
-import { useAccountHook, useBillsHook, useCurrencyHook } from "src/features";
-import { useUsersHook } from "src/features/users/hook";
-import { useAPI } from "src/hooks";
-import { ModalWrapperProps } from "src/interfaces";
-import { SelectedOption } from "src/types";
 
 import { NewPaymentSwitch } from "./components/switch/new-payment-switch.component";
 import { newPaymentInitValues } from "./const/new-payment-init-value";
@@ -24,6 +9,22 @@ import {
   validateNewPayment,
 } from "./helpers/new-payment.helper";
 import { NewPaymentReducer } from "./reducer/new-payment.reducer";
+import { Button } from "src/components/button/button.component";
+import { HorizontalList } from "src/components/inputs/horizontal-list/horizontal-list.component";
+import { InputNumber } from "src/components/inputs/input-number/input-number.component";
+import { InputText } from "src/components/inputs/input-text/input-text.component";
+import { MultiSelect } from "src/components/inputs/multi-select/multi-select.component";
+import { SingleSelect } from "src/components/inputs/single-select/single-select.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { SplitType } from "src/enums/split-type/split-type";
+import { useAccountHook } from "src/features/account/hook/account.hook";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useCurrencyHook } from "src/features/currency/hook/currency.hook";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { useAPI } from "src/hooks/api/api.hook";
+import { ModalWrapperProps } from "src/interfaces/modal/modal-wrapper-props.interface";
+import { SelectedOption } from "src/types/other/selected-option.type";
+import { ModalWrapper } from "../../modal-wrapper.component";
 
 interface NewPaymentModalProps extends ModalWrapperProps {}
 

@@ -1,4 +1,5 @@
-import { NavbarCategory } from "src/types/navbar";
+import { NavbarCategory } from "src/types/navbar/navbar-category.type";
+
 import { NormalNavbarButton } from "../button/normal-navbar-button.component";
 
 interface CategoriesListProps {

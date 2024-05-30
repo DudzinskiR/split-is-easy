@@ -1,12 +1,15 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { Button } from "src/components";
-import { InputNumber, InputText } from "src/components/inputs";
-import { ModalWrapper } from "src/components/modal";
-import { ButtonColor } from "src/enums";
-import { useAccountHook, useCurrencyHook } from "src/features";
-import { useAPI, useCurrencyFormatter } from "src/hooks";
-import { ModalWrapperProps } from "src/interfaces";
+import { useAccountHook } from "src/features/account/hook/account.hook";
+import { useCurrencyHook } from "src/features/currency/hook/currency.hook";
+import { useAPI } from "src/hooks/api/api.hook";
+import { useCurrencyFormatter } from "src/hooks/currency-formatter/currency-formatter.hook";
+import { ModalWrapperProps } from "src/interfaces/modal/modal-wrapper-props.interface";
+import { ModalWrapper } from "../../modal-wrapper.component";
+import { InputText } from "src/components/inputs/input-text/input-text.component";
+import { InputNumber } from "src/components/inputs/input-number/input-number.component";
+import { Button } from "src/components/button/button.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
 
 export type SettleData = {
   currency: string;

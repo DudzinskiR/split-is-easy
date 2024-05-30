@@ -1,4 +1,4 @@
-import { Vector2 } from "src/utils/math";
+import { Vector2 } from "src/utils/math/vector/vector-2";
 
 interface PingProps {
   position: Vector2;

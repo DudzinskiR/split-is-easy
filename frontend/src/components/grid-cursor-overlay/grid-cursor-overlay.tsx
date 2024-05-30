@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import { useMousePosition, useRefHeight } from "src/hooks";
-import { rgbaToHex } from "src/utils/helpers";
-import { Vector2 } from "src/utils/math";
+import { useMousePosition } from "src/hooks/mouse-position/mouse-position";
+import { useRefHeight } from "src/hooks/ref-height/ref-height.hook";
+import { rgbaToHex } from "src/utils/helpers/rgba-to-hex/rgba-to-hex";
+import { Vector2 } from "src/utils/math/vector/vector-2";
 
 interface GridCursorOverlayProps {
   radius?: number;

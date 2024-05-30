@@ -1,9 +1,10 @@
 import { CSSProperties } from "react";
-import { Button, ExpandableBar } from "src/components";
-import { ButtonColor } from "src/enums";
-import { useUsersHook } from "src/features/users/hook";
-import { BillRequest } from "src/types";
-import { DateFormatter } from "src/utils/helpers";
+import { Button } from "src/components/button/button.component";
+import { ExpandableBar } from "src/components/expandable-bar/expandable-bar.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { BillRequest } from "src/types/bill/bill-request.type";
+import { DateFormatter } from "src/utils/helpers/date-formatter/date-formatter";
 
 interface BillUsersRequestRowProps {
   // userID: string;

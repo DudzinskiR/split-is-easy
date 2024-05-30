@@ -1,7 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { RootState, addNewID, removeID, removeNewest } from "src/features";
+import { RootState } from "src/features/store";
+import {
+  addNewID,
+  removeID,
+  removeNewest,
+} from "src/features/visibility/visibility.slice";
 import { v4 as uuidv4 } from "uuid";
+
 interface visibilityToggleConfig {
   onShow?: () => void;
   onHide?: () => void;

@@ -1,5 +1,6 @@
-import { UserSplitInfo } from "src/types";
-import { checkIsWithinErrorMargin } from "src/utils/helpers";
+import { UserSplitInfo } from "src/types/user/user-split-info.type";
+import { checkIsWithinErrorMargin } from "src/utils/helpers/check-is-within-error-margin/check-is-within-error-margin";
+
 import { NewPaymentState } from "../interface/new-payment.interface";
 
 export const splitAmount = (userSplitInfo: UserSplitInfo, amount: string) => {

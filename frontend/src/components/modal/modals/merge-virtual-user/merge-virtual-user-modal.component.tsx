@@ -1,14 +1,17 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { useBillsHook } from "src/features";
-import { useUsersHook } from "src/features/users/hook";
-import { useAPI, useVisibilityToggle } from "src/hooks";
-import { ModalWrapperProps } from "src/interfaces";
-import { SelectedOption } from "src/types";
-import { ConfirmModal, ModalWrapper } from "src/components/modal";
-import { SingleSelect } from "src/components/inputs";
-import { Button } from "src/components";
-import { ButtonColor } from "src/enums";
+import { Button } from "src/components/button/button.component";
+import { SingleSelect } from "src/components/inputs/single-select/single-select.component";
+import { ButtonColor } from "src/enums/button-color/button-color";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { useAPI } from "src/hooks/api/api.hook";
+import { useVisibilityToggle } from "src/hooks/visibility-toggle/visibility-toggle.hook";
+import { ModalWrapperProps } from "src/interfaces/modal/modal-wrapper-props.interface";
+import { SelectedOption } from "src/types/other/selected-option.type";
+
+import { ModalWrapper } from "../../modal-wrapper.component";
+import { ConfirmModal } from "../confirm-modal/confirm-modal.component";
 
 interface MergeVirtualUserModalProps extends ModalWrapperProps {
   virtualUserID: string;

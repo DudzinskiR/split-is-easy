@@ -1,4 +1,5 @@
-import { NavbarCategory, UpdateValue } from "src/types";
+import { NavbarCategory } from "src/types/navbar/navbar-category.type";
+import { UpdateValue } from "src/types/navbar/navbar-update-value.type";
 
 /**
  * Function processing navigation categories, replacing links according to update values,

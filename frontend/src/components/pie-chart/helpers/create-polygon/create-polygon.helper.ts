@@ -6,7 +6,7 @@
 //  4    3    2   //
 //----------------//
 
-import { toRadians } from "src/utils/helpers";
+import { toRadians } from "src/utils/helpers/to-radians/to-radians";
 
 const pointsCoordinates = [
   "100% 0%",

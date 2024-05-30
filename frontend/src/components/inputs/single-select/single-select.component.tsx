@@ -1,7 +1,7 @@
 import { ReactNode, useRef } from "react";
-import { Dropdown } from "../dropdown";
-import { SelectedOption } from "src/types";
-import { ButtonProps } from "src/components";
+import { ButtonProps } from "src/components/button/button.component";
+import { SelectedOption } from "src/types/other/selected-option.type";
+import { Dropdown } from "../dropdown/dropdown.component";
 
 export interface SingleSelectProps {
   options: SelectedOption[];

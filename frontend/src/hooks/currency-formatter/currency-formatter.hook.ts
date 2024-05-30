@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { CurrencyMode } from "src/enums";
-import { Currency } from "src/types";
-import { useNumberFormatter } from "src/hooks";
-import { useCurrencyHook } from "src/features";
+import { CurrencyMode } from "src/enums/currency-mode/currency-mode";
+import { useCurrencyHook } from "src/features/currency/hook/currency.hook";
+import { Currency } from "src/types/currency/currency.type";
+
+import { useNumberFormatter } from "../number-formatter/number-formatter.hook";
 
 export const useCurrencyFormatter = (config?: {
   currencyCode?: string;

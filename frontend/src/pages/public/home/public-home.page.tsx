@@ -1,15 +1,14 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
-import { ScrollToButton } from "src/components/scroll-to-button";
 import { twJoin } from "tailwind-merge";
-import {
-  FaqSection,
-  FeaturesSection,
-  FooterSection,
-  HeroSection,
-  PublicNavbar,
-  ScreenshotsSection,
-  WorkSection,
-} from "./components";
+
+import { ScrollToButton } from "src/components/scroll-to-button/scroll-to-button";
+import { PublicNavbar } from "./components";
+import { FaqSection } from "./components/sections/faq-section";
+import { FeaturesSection } from "./components/sections/features-section";
+import { FooterSection } from "./components/sections/footer-section";
+import { WorkSection } from "./components/sections/work-section";
+import { ScreenshotsSection } from "./components/sections/screenshots-section/screenshots-section";
+import { HeroSection } from "./components/sections/hero-section";
 
 export type NavbarElement = {
   component: ReactNode;

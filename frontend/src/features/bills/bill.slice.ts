@@ -1,12 +1,10 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import {
-  Bill,
-  BillAdminData,
-  BillPayment,
-  TransactionBetweenUsers,
-  UserBalance,
-} from "src/types";
 import { revertAll } from "../revert-all";
+import { BillAdminData } from "src/types/bill/bill-admin-data.type";
+import { BillPayment } from "src/types/bill/bill-payment.type";
+import { Bill } from "src/types/bill/bill.type";
+import { TransactionBetweenUsers } from "src/types/bill/transaction-between-users.type";
+import { UserBalance } from "src/types/bill/user-balance.type";
 
 const initialState = {
   bills: {} as Record<string, Bill>,

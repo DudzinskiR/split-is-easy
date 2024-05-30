@@ -1,11 +1,14 @@
-import { useUsersHook } from "src/features/users/hook";
-import { useNewPaymentContext } from "../../hook/new-payment.hook";
-import { useCurrencyHook } from "src/features";
 import { ChangeEvent, useEffect } from "react";
-import { UserSplitInfo } from "src/types";
+import { Checkbox } from "src/components/inputs/checkbox/checkbox.component";
+import { InputNumber } from "src/components/inputs/input-number/input-number.component";
+import { useCurrencyHook } from "src/features/currency/hook/currency.hook";
+import { useUsersHook } from "src/features/users/hook/user.hook";
+import { UserSplitInfo } from "src/types/user/user-split-info.type";
+import { checkIsWithinErrorMargin } from "src/utils/helpers/check-is-within-error-margin/check-is-within-error-margin";
+import { roundToPlaces } from "src/utils/helpers/round-to-places/round-to-places";
+
 import { splitAmount, sumValues } from "../../helpers/new-payment.helper";
-import { checkIsWithinErrorMargin, roundToPlaces } from "src/utils/helpers";
-import { Checkbox, InputNumber } from "src/components/inputs";
+import { useNewPaymentContext } from "../../hook/new-payment.hook";
 import { NewPaymentSplitterList } from "../list/new-payment-list.component";
 
 export const NewPaymentAmountSplit = () => {

@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import { useBillsHook } from "src/features";
-import { useGlobalFlagContext } from "src/hooks";
-import { BillPayment } from "src/types";
-import HistoryBoxList from "./list/history-box-list.component";
-import { Box } from "src/components";
+import { Box } from "src/components/box/box.component";
+import { useBillsHook } from "src/features/bills/hook/bill.hook";
+import { useGlobalFlagContext } from "src/hooks/global-flag/global-flag.hook";
+import { BillPayment } from "src/types/bill/bill-payment.type";
+
 import { HistoryBoxFilter } from "./filter/history-box-filter.component";
+import HistoryBoxList from "./list/history-box-list.component";
 
 export const HistoryBox = () => {
   const [payments, setPayments] = useState<BillPayment[]>([]);

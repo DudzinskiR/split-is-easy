@@ -1,4 +1,5 @@
-import { spaceRegex, specialCharacterRegex } from "src/utils/regex";
+import { spaceRegex } from "src/utils/regex/space/space-regex";
+import { specialCharacterRegex } from "src/utils/regex/special-characters/special-characters-regex";
 
 export const isValidUsername = (username: string) => {
   const minLength = 4;

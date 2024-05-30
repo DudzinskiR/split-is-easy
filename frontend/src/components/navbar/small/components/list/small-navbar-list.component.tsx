@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
-import { RootState } from "src/features";
 import { SmallNavbarButton } from "../button/small-navbar-button.component";
+import { RootState } from "src/features/store";
 
 export const SmallNavbarList = () => {
   const categories = useSelector((state: RootState) => state.navbar.navbarList);

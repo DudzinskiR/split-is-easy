@@ -1,8 +1,10 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-
-import { FirebaseProviderID, UserStatus } from "src/enums";
-import { AccountBill, AccountRequest, UserBalance } from "src/types";
-import { revertAll } from "src/features";
+import { FirebaseProviderID } from "src/enums/firebase/firebase-provider-id";
+import { UserStatus } from "src/enums/firebase/user-status";
+import { AccountBill } from "src/types/account/account-bill.type";
+import { AccountRequest } from "src/types/account/account-request.type";
+import { UserBalance } from "src/types/bill/user-balance.type";
+import { revertAll } from "../revert-all";
 
 const initialState = {
   userID: "-1",
