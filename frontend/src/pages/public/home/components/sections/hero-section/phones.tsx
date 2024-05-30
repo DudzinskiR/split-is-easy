@@ -8,12 +8,9 @@ import { toRadians3 } from "src/utils/helpers/to-radians3/to-radians3";
 import { Transform3D } from "src/utils/math/transform/transform-3d";
 import { Vector2 } from "src/utils/math/vector/vector-2";
 import { Vector3 } from "src/utils/math/vector/vector-3";
-// import { Group } from "three";
-
-import { useFrame } from "@react-three/fiber";
 import { Group } from "three/src/Three.js";
 
-// const Front1Model = lazy(() => import("src/assets/models/front1-model"));
+import { useFrame } from "@react-three/fiber";
 
 const phoneA = new Transform3D(
   new Vector3(-1.8, 0, -0.5),
