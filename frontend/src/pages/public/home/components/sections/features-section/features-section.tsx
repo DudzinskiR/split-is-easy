@@ -2,7 +2,9 @@ import { MoneyImage, NoteImage, ServerImage } from "src/assets/landing-page";
 import { FeatureBox } from "./components";
 import { PiRocket } from "react-icons/pi";
 import { twJoin } from "tailwind-merge";
+import { useFadeInOnVisible } from "src/hooks/fade-in-on-visible/fade-in-on-visible";
 export const FeaturesSection = () => {
+  const { ref, isVisible } = useFadeInOnVisible();
   return (
     <div className="w-screen lg:h-[900px] bg-[#070818] flex justify-center">
       <div className="relative h-full max-w-7xl w-full">
@@ -11,10 +13,12 @@ export const FeaturesSection = () => {
         </div>
         <div
           className={twJoin(
-            "lg:absolute mt-32 right-0  top-[125px]",
+            "lg:absolute mt-32 right-0  top-[125px] duration-1000",
             "lg:w-[30vw] lg:top-[300px] lg:mr-10",
-            "xl:w-[500px]"
+            "xl:w-[500px]",
+            isVisible ? "opacity-100" : "opacity-0 top-[175px] lg:top-[350px]"
           )}
+          ref={ref}
         >
           <PiRocket className="text-orange-500 absolute text-6xl top-10 lg:top-[-80px] absolute-center-x" />
           <div className="text-white text-6xl font-semibold text-center">
