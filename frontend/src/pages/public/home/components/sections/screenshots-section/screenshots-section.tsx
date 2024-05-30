@@ -2,11 +2,9 @@ import { lazy, Suspense, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Background2, Background3 } from "src/assets/landing-page/background";
 import { Ping } from "src/components/ping/ping.component";
-import { useElementPosition } from "src/hooks/element-position/element-position";
-import { useOffsetScrollY } from "src/hooks/offset-scroll-y/offset-scroll-y";
-import { useWindowSize } from "src/hooks/window-size/window-size.hook";
-import { smoothStep } from "src/utils/helpers/smooth-step/smooth-step";
+import { useFadeInOnVisible } from "src/hooks/fade-in-on-visible/fade-in-on-visible";
 import { Vector2 } from "src/utils/math/vector/vector-2";
+import { twJoin, twMerge } from "tailwind-merge";
 
 const PhoneCanvas = lazy(() =>
   import("./components/phone-canvas").then((module) => ({
@@ -15,34 +13,22 @@ const PhoneCanvas = lazy(() =>
 );
 export const ScreenshotsSection = () => {
   const [screenshotIndex, setScreenshotIndex] = useState(0);
-  const { offsetScrollY } = useOffsetScrollY();
-  const { ref, position } = useElementPosition();
-  const { height } = useWindowSize();
-
+  const { ref: elementRef, isVisible } = useFadeInOnVisible({
+    offset: 500,
+  });
   return (
-    <div
-      className="bg-[#0e1129] h-screen max-h-[1000px] w-full relative"
-      ref={ref}
-    >
+    <div className="bg-[#0e1129] h-screen max-h-[1000px] w-full relative">
       <Background2
-        className="absolute bottom-0"
-        style={{
-          left: `${
-            smoothStep(offsetScrollY - position.y + height, height + 200) *
-              500 -
-            500
-          }px`,
-        }}
+        className={twJoin(
+          "absolute bottom-0 duration-[3000ms]",
+          isVisible ? "left-0 opacity-100" : "left-[-500px] opacity-0"
+        )}
       />
       <Background3
-        className="absolute top-0"
-        style={{
-          right: `${
-            smoothStep(offsetScrollY - position.y + height - 200, height) *
-              500 -
-            500
-          }px`,
-        }}
+        className={twJoin(
+          "absolute top-0 duration-[3000ms]",
+          isVisible ? "right-0 opacity-100" : "right-[-500px] opacity-0"
+        )}
       />
       <div className="absolute absolute-center w-[800px] h-[800px]">
         <Ping
@@ -54,12 +40,23 @@ export const ScreenshotsSection = () => {
         />
       </div>
 
-      <div className="h-full">
+      <div
+        className={twJoin(
+          "h-full w-full duration-[3000ms]",
+          isVisible ? "opacity-100" : "opacity-0"
+        )}
+        ref={elementRef}
+      >
         <Suspense>
           <PhoneCanvas screenshotIndex={screenshotIndex} />
         </Suspense>
       </div>
-      <div className="text-white absolute absolute-center-x top-[80px] text-5xl p-5 bg-clip-padding backdrop-filter backdrop-blur bg-[#04050e] bg-opacity-30 rounded-lg border-2 border-slate-700">
+      <div
+        className={twMerge(
+          "text-white absolute absolute-center-x top-[80px] text-5xl p-5 bg-clip-padding backdrop-filter backdrop-blur bg-[#04050e] bg-opacity-30 rounded-lg border-2 border-slate-700 duration-1000",
+          isVisible ? "opacity-100" : "opacity-0"
+        )}
+      >
         Screenshots
       </div>
       <div

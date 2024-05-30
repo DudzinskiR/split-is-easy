@@ -1,16 +1,34 @@
 import { ReactNode } from "react";
-import { twMerge } from "tailwind-merge";
+import { useFadeInOnVisible } from "src/hooks/fade-in-on-visible/fade-in-on-visible";
+import { twJoin, twMerge } from "tailwind-merge";
 
 interface WorkBoxProps {
   title: string;
   subtitle: string;
   icon: ReactNode;
   colors: string;
+  fadeInTimeout: number;
 }
 
-export const WorkBox = ({ title, subtitle, icon, colors }: WorkBoxProps) => {
+export const WorkBox = ({
+  title,
+  subtitle,
+  icon,
+  colors,
+  fadeInTimeout,
+}: WorkBoxProps) => {
+  const { ref, isVisible } = useFadeInOnVisible({
+    timeout: fadeInTimeout,
+    offset: 100,
+  });
   return (
-    <div className="relative h-full group w-full">
+    <div
+      className={twJoin(
+        "relative h-full group w-full duration-1000",
+        isVisible ? "opacity-100 top-0" : "opacity-0 top-10"
+      )}
+      ref={ref}
+    >
       <div
         className={twMerge(
           "text-8xl absolute bottom-3 left-5 group-hover:rotate-[-25deg] duration-1000",
