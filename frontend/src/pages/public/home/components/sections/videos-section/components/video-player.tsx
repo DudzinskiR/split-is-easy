@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { useTimers } from "src/hooks/timers/timers.hook";
 import { twJoin, twMerge } from "tailwind-merge";
+import { FaPlay } from "react-icons/fa";
+import { FaPause } from "react-icons/fa";
 
 interface VideoPlayerProps {
   className?: string;
@@ -34,6 +36,7 @@ export const VideoPlayer = ({
 
   useEffect(() => {
     setShow(false);
+    videoRef.current?.pause();
     onProgress(0);
     newTimer(() => {
       setShow(true);
@@ -56,12 +59,12 @@ export const VideoPlayer = ({
 
   return (
     <div
-      className={twMerge("bg-slate-800 p-3", className)}
+      className={twMerge("bg-[#0e1129] p-3 pb-0 rounded-xl", className)}
       onClick={playButtonHandler}
     >
       <video
         className={twJoin(
-          "w-full duration-300",
+          "duration-300 h-[700px] w-[700px]",
           isShow ? "opacity-100" : "opacity-0"
         )}
         src={localSrc}
@@ -71,9 +74,11 @@ export const VideoPlayer = ({
         onTimeUpdate={onTimeHandler}
       />
       <button
-        className="bg-red-500 size-[30px] mt-3 ml-3"
+        className="size-[30px] mt-3 ml-3 mb-3 text-2xl text-white/50"
         onClick={playButtonHandler}
-      ></button>
+      >
+        {isPlay ? <FaPause /> : <FaPlay />}
+      </button>
     </div>
   );
 };
