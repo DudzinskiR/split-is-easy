@@ -9,6 +9,7 @@ import { FooterSection } from "./components/sections/footer-section";
 import { WorkSection } from "./components/sections/work-section";
 import { ScreenshotsSection } from "./components/sections/screenshots-section/screenshots-section";
 import { HeroSection } from "./components/sections/hero-section";
+import { VideosSection } from "./components/sections/videos-section/videos-section";
 
 export type NavbarElement = {
   component: ReactNode;
@@ -18,6 +19,7 @@ export type NavbarElement = {
 const segments: NavbarElement[] = [
   { component: <HeroSection />, name: "home" },
   { component: <WorkSection /> },
+  { component: <VideosSection /> },
   { component: <ScreenshotsSection />, name: "screenshots" },
   { component: <FeaturesSection />, name: "features" },
   { component: <FaqSection />, name: "FAQ" },
