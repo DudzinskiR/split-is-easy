@@ -59,20 +59,22 @@ export const VideoPlayer = ({
 
   return (
     <div
-      className={twMerge("bg-[#0e1129] p-3 pb-0 rounded-xl", className)}
+      className={twMerge("bg-[#0e1129] p-3 pb-0 rounded-xl mx-5", className)}
       onClick={playButtonHandler}
     >
-      <video
-        className={twJoin(
-          "duration-300 h-[700px] w-[700px]",
-          isShow ? "opacity-100" : "opacity-0"
-        )}
-        src={localSrc}
-        muted
-        onEnded={onEnded}
-        ref={videoRef}
-        onTimeUpdate={onTimeHandler}
-      />
+      <div className="w-full flex justify-center">
+        <video
+          className={twJoin(
+            "duration-300 h-[700px] w-[700px]",
+            isShow ? "opacity-100" : "opacity-0"
+          )}
+          src={localSrc}
+          muted
+          onEnded={onEnded}
+          ref={videoRef}
+          onTimeUpdate={onTimeHandler}
+        />
+      </div>
       <button
         className="size-[30px] mt-3 ml-3 mb-3 text-2xl text-white/50"
         onClick={playButtonHandler}
