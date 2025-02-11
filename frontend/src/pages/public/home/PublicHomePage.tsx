@@ -7,7 +7,7 @@ import { FaqSection } from "./components/sections/FaqSection/FaqSection";
 import { FeaturesSection } from "./components/sections/FeaturesSection/FeaturesSection";
 import { FooterSection } from "./components/sections/FooterSection/FooterSection";
 import { HeroSection } from "./components/sections/HeroSection/HeroSection";
-import { ScreenshotsSection } from "./components/sections/ScreenshotsSection/ScreenshotsSection";
+// import { ScreenshotsSection } from "./components/sections/ScreenshotsSection/ScreenshotsSection";
 import { VideosSection } from "./components/sections/VideosSection/VideosSection";
 import { WorkSection } from "./components/sections/WorkSection/WorkSection";
 
@@ -20,7 +20,7 @@ const segments: NavbarElement[] = [
   { component: <HeroSection />, name: "home" },
   { component: <WorkSection /> },
   { component: <VideosSection /> },
-  { component: <ScreenshotsSection />, name: "screenshots" },
+  // { component: <ScreenshotsSection />, name: "screenshots" },
   { component: <FeaturesSection />, name: "features" },
   { component: <FaqSection />, name: "FAQ" },
   { component: <FooterSection /> },

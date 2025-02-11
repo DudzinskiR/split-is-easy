@@ -1,25 +1,14 @@
-import { lazy, Suspense } from "react";
 import { Background1 } from "src/assets/landing-page/background";
 import { Button } from "src/components/Button/Button";
 import { Ping } from "src/components/Ping/Ping";
 import { RandomRevealText } from "src/components/RandomRevealText/RandomRevealText";
-import { useRotatePhones } from "src/hooks/useRotatePhones/useRotatePhones";
 import { Vector2 } from "src/utils/math/vector/Vector2";
 import { twJoin } from "tailwind-merge";
 
-const PhonesCanvas = lazy(() =>
-  import("./PhonesCanvas").then((module) => ({ default: module.PhonesCanvas }))
-);
-
 export const HeroSection = () => {
-  const { rotation, containerRef, phonesRef } = useRotatePhones();
-
   return (
     <>
-      <div
-        className="relative flex justify-center h-[850px] max-h-[100vh] w-screen bg-[#0e1129]"
-        ref={containerRef}
-      >
+      <div className="relative flex justify-center h-[850px] max-h-[100vh] w-screen bg-[#0e1129]">
         <Background1 className="absolute right-0 top-0" />
         <Ping
           position={new Vector2(100, 350)}
@@ -60,11 +49,8 @@ export const HeroSection = () => {
               "size-[90vw] top-[300px]",
               "lg:top-[50px] lg:size-[700px] lg:right-[-80px] lg:translate-x-0"
             )}
-            ref={phonesRef}
           >
-            <Suspense>
-              <PhonesCanvas rotation={rotation} />
-            </Suspense>
+            <img src="/img/render3D.png" />
           </div>
         </div>
       </div>
