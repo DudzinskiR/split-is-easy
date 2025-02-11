@@ -1,4 +1,4 @@
-import { lazy, Suspense, useState } from "react";
+// import { useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { Background2, Background3 } from "src/assets/landing-page/background";
 import { Ping } from "src/components/Ping/Ping";
@@ -6,13 +6,8 @@ import { useFadeInOnVisible } from "src/hooks/useFadeInOnVisible/useFadeInOnVisi
 import { Vector2 } from "src/utils/math/vector/Vector2";
 import { twJoin, twMerge } from "tailwind-merge";
 
-const PhoneCanvas = lazy(() =>
-  import("./components/PhoneCanvas").then((module) => ({
-    default: module.PhoneCanvas,
-  }))
-);
 export const ScreenshotsSection = () => {
-  const [screenshotIndex, setScreenshotIndex] = useState(0);
+  // const [screenshotIndex, setScreenshotIndex] = useState(0);
   const { ref: elementRef, isVisible } = useFadeInOnVisible({
     offset: 500,
   });
@@ -46,11 +41,7 @@ export const ScreenshotsSection = () => {
           isVisible ? "opacity-100" : "opacity-0"
         )}
         ref={elementRef}
-      >
-        <Suspense>
-          <PhoneCanvas screenshotIndex={screenshotIndex} />
-        </Suspense>
-      </div>
+      ></div>
       <div
         className={twMerge(
           "text-white absolute absolute-center-x top-[80px] text-5xl p-5 bg-clip-padding backdrop-filter backdrop-blur bg-[#04050e] bg-opacity-30 rounded-lg border-2 border-slate-700 duration-1000",
@@ -61,7 +52,7 @@ export const ScreenshotsSection = () => {
       </div>
       <div
         className="absolute h-screen top-0 w-1/2 flex justify-center items-center group"
-        onClick={() => setScreenshotIndex((prev) => prev - 1)}
+        // onClick={() => setScreenshotIndex((prev) => prev - 1)}
       >
         <div className="relative text-slate-200 text-6xl group-hover:text-8xl duration-300">
           <IoIosArrowBack />
@@ -70,7 +61,7 @@ export const ScreenshotsSection = () => {
 
       <div
         className="absolute h-screen top-0 w-1/2 right-0 flex justify-center items-center group"
-        onClick={() => setScreenshotIndex((prev) => prev + 1)}
+        // onClick={() => setScreenshotIndex((prev) => prev + 1)}
       >
         <div className="relative text-slate-200 text-6xl group-hover:text-8xl duration-300">
           <IoIosArrowForward />
