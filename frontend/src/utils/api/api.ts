@@ -1,7 +1,7 @@
 import axios from "axios";
-import { DefaultResponse } from "src/types/response/default-response.type";
 
-import { getToken } from "../firebase/firebase-helper";
+import { getToken } from "../firebase/firebaseHelper";
+import { DefaultResponse } from "src/types/response/DefaultResponse";
 
 export class API {
   private static API_ROOT = `${import.meta.env.VITE_API_ROOT}/api`;

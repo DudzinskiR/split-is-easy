@@ -1,8 +1,8 @@
 import { useGLTF } from "@react-three/drei";
 import { GLTF } from "three-stdlib";
-import { toRadians3 } from "src/utils/helpers/to-radians3/to-radians3";
 import { Mesh } from "three/src/objects/Mesh.js";
 import { MeshStandardMaterial } from "three/src/materials/MeshStandardMaterial.js";
+import { toRadians3 } from "src/utils/helpers/toRadians3/toRadians3";
 
 type GLTFResult = GLTF & {
   nodes: {

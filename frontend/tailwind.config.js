@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 import vitePluginRequire from "vite-plugin-require";
-import { animation, transform } from "./tailwind";
-import { position } from "./tailwind/position/position";
 const defaultTheme = vitePluginRequire("tailwindcss/defaultTheme");
+
+import { animation } from "./tailwind/animation/animation";
+import { transform } from "./tailwind/transform/transform";
+import { position } from "./tailwind/position/position";
 
 export default {
   content: ["./index.html", "./src/**/*.{js,jsx,ts,tsx}"],

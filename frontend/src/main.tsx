@@ -5,7 +5,7 @@ import "./main.css";
 import { Provider } from "react-redux";
 import { setupStore } from "./features/store.ts";
 import { BrowserRouter } from "react-router-dom";
-import { GlobalFlagContextProvider } from "./contexts/global-flag/global-flag.tsx";
+import { GlobalFlagContextProvider } from "./contexts/GlobalFlag/GlobalFlag.tsx";
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>

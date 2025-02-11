@@ -1,6 +1,9 @@
 import plugin from "tailwindcss/plugin";
-import { animationDelay, animationDuration, animationFill } from "./plugins";
 import { PluginAPI } from "tailwindcss/types/config";
+
+import { animationDelay } from "./plugins/animationDelay/animationDelay";
+import { animationDuration } from "./plugins/animationDuration/animationDuration";
+import { animationFill } from "./plugins/animationFill/animationFill";
 
 const plugins: ((api: PluginAPI) => void)[] = [
   animationDelay,

@@ -1,6 +1,9 @@
 import plugin from "tailwindcss/plugin";
 import { PluginAPI } from "tailwindcss/types/config";
-import { absoluteCenter, absoluteCenterX, absoluteCenterY } from "./plugins";
+
+import { absoluteCenter } from "./plugins/absolute-center/absoluteCenter";
+import { absoluteCenterX } from "./plugins/absolute-center/absoluteCenterX";
+import { absoluteCenterY } from "./plugins/absolute-center/absoluteCenterY";
 
 const plugins: ((api: PluginAPI) => void)[] = [
   absoluteCenter,
