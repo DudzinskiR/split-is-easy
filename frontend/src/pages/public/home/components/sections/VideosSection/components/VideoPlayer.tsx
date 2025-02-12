@@ -1,8 +1,7 @@
 import { useEffect, useRef, useState } from "react";
+import { FaPause, FaPlay } from "react-icons/fa";
+import { useTimers } from "src/hooks/useTimers/useTimers";
 import { twJoin, twMerge } from "tailwind-merge";
-import { FaPlay } from "react-icons/fa";
-import { FaPause } from "react-icons/fa";
-import { useTimers } from "src/hooks/newTimer/newTimer";
 
 interface VideoPlayerProps {
   className?: string;

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { useTimers } from "../newTimer/newTimer";
+import { useTimers } from "../useTimers/useTimers";
 
 interface UseFadeInOnVisibleProps {
   offset?: number;

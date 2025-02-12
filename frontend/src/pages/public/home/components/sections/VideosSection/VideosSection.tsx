@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { useTimers } from "src/hooks/newTimer/newTimer";
 import { useFadeInOnVisible } from "src/hooks/useFadeInOnVisible/useFadeInOnVisible";
+import { useTimers } from "src/hooks/useTimers/useTimers";
 import { twJoin } from "tailwind-merge";
 
 import { VideoDescription } from "./components/VideoDescription";

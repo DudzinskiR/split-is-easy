@@ -1,5 +1,5 @@
 import { ReactNode, useEffect, useState } from "react";
-import { useTimers } from "src/hooks/newTimer/newTimer";
+import { useTimers } from "src/hooks/useTimers/useTimers";
 import { ModalWrapperProps } from "src/interfaces/modal/ModalWrapperProps";
 import { twMerge } from "tailwind-merge";
 
