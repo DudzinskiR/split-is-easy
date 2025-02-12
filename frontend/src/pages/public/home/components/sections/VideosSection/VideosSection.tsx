@@ -14,7 +14,7 @@ export const VideosSection = () => {
   const { isVisible, ref } = useFadeInOnVisible({ offset: 800 });
 
   return (
-    <div className="bg-[#070818] py-5 flex justify-center" ref={ref}>
+    <div className="bg-[#070818] py-5 pb-16 flex justify-center" ref={ref}>
       <div
         className={twJoin(
           "flex flex-col lg:flex-row justify-between max-w-8xl w-full gap-5 lg:gap-1 xl:gap-10 duration-500",
