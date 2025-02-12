@@ -12,6 +12,22 @@ const initialState = {
   bills: {} as Record<string, Bill>,
 };
 
+initialState.bills["DEMO"] = {
+  id: "DEMO",
+  name: "DEMO",
+  currency: "DOL",
+  users: [],
+  admins: [],
+  admin: {
+    invitationCode: "DEMO",
+    requireAccept: false,
+    requests: [],
+  },
+  payments: [],
+  transaction: [],
+  usersBalance: [],
+};
+
 export const billsSlice = createSlice({
   name: "BILLS",
   initialState: initialState,
