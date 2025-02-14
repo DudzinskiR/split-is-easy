@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { useCurrencyFormatter } from "src/hooks/useCurrencyFormatter/useCurrencyFormatter";
 
 import { getSegmentLabelPosition } from "../../helpers/getSegmentLabelPosition/getSegmentLabelPosition";
 import { getSegmentLabelStyle } from "../../helpers/getSegmentLabelStyle/getSegmentLabelStyle";
 import { usePieChartContext } from "../../hook/usePieChartContext";
 import { SegmentData } from "../../interface/SegmentData";
+import { demoCurrencyWithoutFormat } from "src/pages/demo/mock/demoCurrencyWithoutFormat";
 
 export interface PieChartSegmentLabelProps {
   data: SegmentData;
@@ -19,8 +19,7 @@ export const PieChartSegmentLabel = ({
     x: 0,
     y: 0,
   });
-  const { size, maxLabelWidth, currencyCode } = usePieChartContext();
-  const { currencyWithFormat, setCurrencyCode } = useCurrencyFormatter();
+  const { size, maxLabelWidth } = usePieChartContext();
 
   useEffect(() => {
     const centerAngle = data.angle / 2;
@@ -30,11 +29,6 @@ export const PieChartSegmentLabel = ({
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [data, size]);
 
-  useEffect(() => {
-    setCurrencyCode(currencyCode);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currencyCode]);
-
   return (
     <>
       <div
@@ -43,7 +37,7 @@ export const PieChartSegmentLabel = ({
       >
         <div className="truncate">{data.label}</div>
         <div className="absolute flex justify-center w-full whitespace-nowrap">
-          {currencyWithFormat(data.value)}
+          {demoCurrencyWithoutFormat(data.value)}
         </div>
       </div>
       <div

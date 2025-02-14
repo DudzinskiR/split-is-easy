@@ -15,7 +15,7 @@ const initialState = {
 initialState.bills["DEMO"] = {
   id: "DEMO",
   name: "DEMO",
-  currency: "DOL",
+  currency: "USD",
   users: [],
   admins: [],
   admin: {
