@@ -68,7 +68,7 @@ export class InvitationService {
       throw InvitationExceptionFactory.createInvitationHasBeenUsed();
     }
 
-    if (user.requests.find((item) => item.toString() === bill._id)) {
+    if (user.requests.find((item) => item.toString() === bill.id)) {
       throw InvitationExceptionFactory.createInvitationHasBeenUsed();
     }
 
@@ -136,7 +136,7 @@ export class InvitationService {
       throw InvitationExceptionFactory.createInvitationHasBeenUsed();
     }
 
-    if (user.requests.find((item) => item.toString() === bill._id)) {
+    if (user.requests.find((item) => item.toString() === bill.id)) {
       throw InvitationExceptionFactory.createInvitationHasBeenUsed();
     }
 

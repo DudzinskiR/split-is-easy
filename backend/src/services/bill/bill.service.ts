@@ -29,7 +29,7 @@ export class BillService {
 
     await newBill.save();
 
-    user.bills.push(newBill._id);
+    user.bills.push(newBill.id);
     if (user.save) user.save();
 
     sendToSockets(user.id, "ACCOUNT/BILL/NEW", {
@@ -38,7 +38,7 @@ export class BillService {
       currencyCode: newBill.currency,
     });
 
-    return { id: newBill._id };
+    return { id: newBill.id };
   }
 
   static async getBillsList(user: UserDocument) {
@@ -49,7 +49,7 @@ export class BillService {
 
     const bills = userData.bills.map((item) => {
       return {
-        billID: item._id,
+        billID: item.id,
         name: item.name,
         balance:
           item.usersBalance.find(

@@ -53,7 +53,7 @@ export class BillIDAdminUserService {
 
     if (
       !bill.users.find((item) => item.toString() === userID) &&
-      !bill.virtualUsers.find((item) => item._id.toString() === userID)
+      !bill.virtualUsers.find((item) => item.id.toString() === userID)
     ) {
       throw UserExceptionFactory.createUserNotFoundException(userID);
     }
@@ -98,7 +98,7 @@ export class BillIDAdminUserService {
         .map((item) => item.toString())
         .filter((item) => item !== userID),
       ...bill.virtualUsers
-        .map((item) => item._id.toString())
+        .map((item) => item.id.toString())
         .filter((item) => item !== userID),
     ];
     const paymentCalculator = new PaymentCalculator(usersID, bill.payments);
@@ -106,18 +106,18 @@ export class BillIDAdminUserService {
     bill.transaction = paymentCalculator.getTransactions();
     bill.usersBalance = paymentCalculator.getBalance();
     const isNormalUser = bill.users.find(
-      (item) => item._id.toString() === userID
+      (item) => item.id.toString() === userID
     );
 
     if (isNormalUser) {
-      bill.users = bill.users.filter((item) => item._id.toString() !== userID);
+      bill.users = bill.users.filter((item) => item.id.toString() !== userID);
       await UserModel.updateOne(
         { _id: userID },
         { $pull: { bills: new ObjectId(billID) } }
       );
     } else {
       bill.virtualUsers = bill.virtualUsers.filter(
-        (item) => item._id.toString() !== userID
+        (item) => item.id.toString() !== userID
       );
     }
 

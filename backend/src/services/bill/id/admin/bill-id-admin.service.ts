@@ -200,7 +200,7 @@ export class BillIDAdminService {
     const updates = newPayments.map((payment) => {
       return {
         updateOne: {
-          filter: { _id: payment._id },
+          filter: { _id: payment.id },
           update: {
             $set: {
               splitType: payment.splitType,
@@ -218,7 +218,7 @@ export class BillIDAdminService {
     const paymentCalculator = new PaymentCalculator(
       [
         ...bill.users.map((item) => item.toString()),
-        ...bill.virtualUsers.map((item) => item._id.toString()),
+        ...bill.virtualUsers.map((item) => item.id.toString()),
       ],
       newPayments
     );
@@ -226,7 +226,7 @@ export class BillIDAdminService {
     bill.transaction = paymentCalculator.getTransactions();
     bill.usersBalance = paymentCalculator.getBalance();
     bill.virtualUsers = bill.virtualUsers.filter(
-      (item) => item._id.toString() !== virtualUserID
+      (item) => item.id.toString() !== virtualUserID
     );
 
     if (bill.save) await bill.save();

@@ -64,7 +64,7 @@ export class BillIDAdminController {
     }
 
     const virtualUser = req.bill?.virtualUsers.find(
-      (item) => item._id.toString() === virtualUserID
+      (item) => item.id.toString() === virtualUserID
     );
 
     if (!virtualUser) {
