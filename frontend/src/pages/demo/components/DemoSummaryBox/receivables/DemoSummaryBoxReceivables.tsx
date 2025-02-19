@@ -45,7 +45,7 @@ export const DemoSummaryBoxReceivables = ({
     setSettleData({
       toUserID: userID,
       currency: state.bill.currency || "",
-      value: demoCurrencyWithoutFormat(value, "WITHOUT_SYMBOL") || "",
+      value: demoCurrencyWithoutFormat(value) || "",
       text: `${state.username[getAccountID()]} gave the money to ${
         state.username[userID]
       }`,
@@ -59,22 +59,24 @@ export const DemoSummaryBoxReceivables = ({
 
     return (
       <div className="flex flex-col items-center w-full">
-        {transactionToRender.map((item) => (
-          <ExpandableBar
-            key={item.fromUserID}
-            className="my-[6px] w-11/12"
-            barElement={
-              <div className="flex flex-row justify-between w-full">
-                <div className="font-semibold text-slate-700">
-                  {state.username[item.fromUserID]}
+        {transactionToRender
+          .sort((a, b) => b.amount - a.amount)
+          .map((item) => (
+            <ExpandableBar
+              key={item.fromUserID}
+              className="my-[6px] w-11/12"
+              barElement={
+                <div className="flex flex-row justify-between w-full">
+                  <div className="font-semibold text-slate-700">
+                    {state.username[item.fromUserID]}
+                  </div>
+                  <div className="font-semibold text-slate-700 italic">
+                    {demoCurrencyWithoutFormat(item.amount)}
+                  </div>
                 </div>
-                <div className="font-semibold text-slate-700 italic">
-                  {demoCurrencyWithoutFormat(item.amount)}
-                </div>
-              </div>
-            }
-          />
-        ))}
+              }
+            />
+          ))}
       </div>
     );
   };

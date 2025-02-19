@@ -1,4 +1,4 @@
-import { generateNewPayment } from "../helper/GenerateNewPayment";
+import { generateNewPayment } from "../helper/generateNewPayment";
 import { DemoPageStates } from "./demoPageState";
 
 const paymentAmounts = [
@@ -67,11 +67,11 @@ export const demoPageInitValues: DemoPageStates = {
       requests: [],
     },
     payments: [
-      generateNewPayment("0", "1", "2", paymentAmounts[0]),
-      generateNewPayment("1", "1", "3", paymentAmounts[1]),
+      generateNewPayment("4", "1", "2", paymentAmounts[0]),
+      generateNewPayment("3", "1", "3", paymentAmounts[1]),
       generateNewPayment("2", "1", "4", paymentAmounts[2]),
-      generateNewPayment("3", "1", "5", paymentAmounts[3]),
-      generateNewPayment("4", "1", "6", paymentAmounts[4]),
+      generateNewPayment("1", "1", "5", paymentAmounts[3]),
+      generateNewPayment("0", "1", "6", paymentAmounts[4]),
     ],
     usersBalance: [
       {

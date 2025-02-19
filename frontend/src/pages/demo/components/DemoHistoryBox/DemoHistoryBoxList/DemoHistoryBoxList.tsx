@@ -35,13 +35,17 @@ export const DemoHistoryBoxList = ({ payments }: DemoHistoryBoxListProps) => {
         key={id}
         style={style}
         className="px-3"
-        isOpen={isOpenList[index]}
+        isOpen={isOpenList[id]}
         resizeCallback={(val) => {
-          updateExtraHeight(val, index);
+          updateExtraHeight(
+            val,
+            state.bill.payments.length - parseInt(`${id}`) - 1
+            // parseInt(`${id}`)
+          );
         }}
         onClick={() => {
           setOpenList((prev) => {
-            prev[index] = !prev[index];
+            prev[id] = !prev[id];
             return { ...prev };
           });
         }}

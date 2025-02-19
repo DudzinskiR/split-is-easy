@@ -9,6 +9,7 @@ export const DemoHistoryBox = () => {
   const { state } = useDemoPageContext();
   const [payments, setPayments] = useState<BillPayment[]>([]);
 
+  const [paymentsToShow, setPaymentsToShow] = useState<BillPayment[]>([]);
   useEffect(() => {
     setPayments(state.bill.payments);
   }, [state.bill]);
@@ -16,13 +17,13 @@ export const DemoHistoryBox = () => {
   return (
     <Box title="History" className="relative pb-2 flex flex-col">
       <DemoHistoryBoxFilter
-        payments={state.bill.payments}
+        payments={payments}
         users={state.bill.users.map((item) => item.id)}
         onChange={(val) => {
-          setPayments(val);
+          setPaymentsToShow(val);
         }}
       />
-      <DemoHistoryBoxList payments={payments} />
+      <DemoHistoryBoxList payments={paymentsToShow} />
     </Box>
   );
 };

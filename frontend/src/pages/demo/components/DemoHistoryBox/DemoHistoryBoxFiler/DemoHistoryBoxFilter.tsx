@@ -60,16 +60,18 @@ export const DemoHistoryBoxFilter = ({
       getDecimalPlacesFromCurrency()
     )
   );
+
   useEffect(() => {
     onChange(filter(payments));
-    console.log(1);
+    console.log("state");
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [state]);
 
   useEffect(() => {
+    console.log("nowe");
     onChange(filter(payments));
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [payments.length]);
+  }, [payments]);
 
   const getOptionsFromUserList = () => {
     return state.users.map<SelectedOption>((item) => {

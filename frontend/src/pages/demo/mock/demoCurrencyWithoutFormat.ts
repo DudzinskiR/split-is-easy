@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export const demoCurrencyWithoutFormat = (value: number, option?: string) => {
+export const demoCurrencyWithoutFormat = (value: number) => {
   const isNegative = value < 0;
   const valueToShow = calcValue(Math.abs(value));
 
