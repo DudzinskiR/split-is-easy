@@ -71,7 +71,7 @@ export const DemoPage = () => {
         openLoginModal={() => setOpenModal(true)}
       >
         <DemoNavbar />
-        <div className="w-full container">
+        <div className="w-full xl:container">
           <div className="flex lg:flex-row flex-col w-full justify-between mt-5 gap-5 px-5">
             <DemoSummaryBox />
             <DemoHistoryBox />
