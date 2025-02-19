@@ -1,13 +1,13 @@
 import { useSelector } from "react-redux";
 import { Suspense, lazy, useEffect } from "react";
-import { PublicLoadingScreen } from "./pages/loading/public-loading-screen/public-loading-screen";
-import { UserLoadingScreen } from "./pages/loading/user-loading-screen/user-loading-screen";
-import { useFirebaseAuth } from "./hooks/firebase-auth/firebase-auth.hook";
+import { PublicLoadingScreen } from "./pages/loading/PublicLoadingScreen/PublicLoadingScreen";
+import { UserLoadingScreen } from "./pages/loading/UserLoadingScreen/UserLoadingScreen";
+import { useFirebaseAuth } from "./hooks/useFirebaseAuth/useFirebaseAuth";
 import { RootState } from "./features/store";
 import { socket } from "./utils/socket/socket";
 
-const PublicLayout = lazy(() => import("./layouts/public/public.layout"));
-const UserLayout = lazy(() => import("./layouts/user/user.layout"));
+const PublicLayout = lazy(() => import("./layouts/public/PublicLayout"));
+const UserLayout = lazy(() => import("./layouts/user/UserLayout"));
 
 function App() {
   useFirebaseAuth();

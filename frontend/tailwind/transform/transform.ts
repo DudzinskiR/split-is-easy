@@ -1,6 +1,9 @@
 import plugin from "tailwindcss/plugin";
 import { PluginAPI } from "tailwindcss/types/config";
-import { transformStyle, transformString, perspective } from "./plugins";
+
+import { perspective } from "./plugins/perspective/perspective";
+import { transformString } from "./plugins/transformString/transformString";
+import { transformStyle } from "./plugins/transformStyle/transformStyle";
 
 const plugins: ((api: PluginAPI) => void)[] = [
   transformStyle,

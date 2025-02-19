@@ -31,7 +31,7 @@ export class BillIDService {
     usersList.push(
       ...bill.users.map<User>((item) => {
         const type = !!bill.admins.find(
-          (admin) => admin.toString() === item._id.toString()
+          (admin) => admin.toString() === item.id.toString()
         )
           ? "ADMIN"
           : "NORMAL";
@@ -44,7 +44,7 @@ export class BillIDService {
     );
 
     const result = {
-      id: bill._id,
+      id: bill.id,
       currency: bill.currency,
       users: usersList,
       admins: bill.admins,
@@ -80,7 +80,7 @@ export class BillIDService {
       )
       .map((item) => {
         return {
-          id: item._id,
+          id: item.id,
           title: item.title,
           amount: item.amount,
           paidBy: item.paidBy,
@@ -143,7 +143,7 @@ export class BillIDService {
         .map((item) => item.toString())
         .filter((item) => item !== userID),
       ...bill.virtualUsers
-        .map((item) => item._id.toString())
+        .map((item) => item.id.toString())
         .filter((item) => item !== userID),
     ];
     const paymentCalculator = new PaymentCalculator(usersID, bill.payments);
@@ -151,7 +151,7 @@ export class BillIDService {
     bill.transaction = paymentCalculator.getTransactions();
     bill.usersBalance = paymentCalculator.getBalance();
 
-    bill.users = bill.users.filter((item) => item._id.toString() !== userID);
+    bill.users = bill.users.filter((item) => item.id.toString() !== userID);
     await UserModel.updateOne(
       { _id: userID },
       { $pull: { bills: new ObjectId(billID) } }

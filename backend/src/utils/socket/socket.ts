@@ -40,17 +40,16 @@ export const connectToSocket = () => {
     try {
       const decodedToken = await getDecodedToken(socket.handshake.auth.token);
       const user = await getUserFromDB(decodedToken);
-
-      if (!sockets[user._id]) {
-        sockets[user._id] = [socket];
+      if (!sockets[user.id]) {
+        sockets[user.id] = [socket];
       } else {
-        sockets[user._id].push(socket);
+        sockets[user.id].push(socket);
       }
       socket.on("disconnect", () => {
         if (envConfig.NODE_ENV === "development")
           console.log(`User disconnected`);
 
-        sockets[user._id] = sockets[user._id].filter(
+        sockets[user.id] = sockets[user.id].filter(
           (item) => item.id !== socket.id
         );
       });

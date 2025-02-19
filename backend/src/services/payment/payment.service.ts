@@ -44,7 +44,7 @@ export class PaymentService {
     if (
       !(
         bill.users.find((item) => item.toString() === data.paidBy) ||
-        bill.virtualUsers.find((item) => item._id.toString() === data.paidBy)
+        bill.virtualUsers.find((item) => item.id.toString() === data.paidBy)
       )
     ) {
       throw UserExceptionFactory.createUserNotFoundException(data.paidBy);
@@ -55,7 +55,7 @@ export class PaymentService {
         !(
           bill.users.find((item) => item.toString() === participant.userID) ||
           bill.virtualUsers.find(
-            (item) => item._id.toString() === participant.userID
+            (item) => item.id.toString() === participant.userID
           )
         )
       ) {
@@ -97,7 +97,7 @@ export class PaymentService {
 
     const usersID = [
       ...bill.users.map((item) => item.toString()),
-      ...bill.virtualUsers.map((item) => item._id.toString()),
+      ...bill.virtualUsers.map((item) => item.id.toString()),
     ];
 
     const paymentCalculator = new PaymentCalculator(usersID, billPayments);

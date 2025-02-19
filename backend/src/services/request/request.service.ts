@@ -13,7 +13,7 @@ export class RequestService {
     const requests = user.requests.map((item) => {
       return {
         billName: item.name,
-        billID: item._id,
+        billID: item.id,
       };
     });
     return requests;
