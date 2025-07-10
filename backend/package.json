@@ -6,7 +6,7 @@
   "scripts": {
     "build": "tsc --project tsconfig.json && tsc-alias -p tsconfig.json",
     "host": "node ./dist/index.js",
-    "start": "npm run build && node ./dist/index.js",
+    "start": "ts-node src/index.ts",
     "dev": "nodemon"
   },
   "author": "",
