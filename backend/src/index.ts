@@ -1,4 +1,5 @@
 import "express-async-errors";
+import "tsconfig-paths/register";
 
 import cors from "cors";
 import express, { Application } from "express";
